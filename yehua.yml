@@ -1,0 +1,10 @@
+overrides: "pyexcel.yaml"
+name: "yehua"
+nick_name: 
+version: 0.0.1
+release: 0.0.1
+command_line_interface: yehua
+entry_point: yehua.main:main
+dependencies:
+  - example_lib>=0.4.4
+description: A command line tool to auto generate a pyexcel related python package
