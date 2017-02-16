@@ -44,7 +44,7 @@ CLASSIFIERS = [
 ]
 
 INSTALL_REQUIRES = [
-    'example_lib>=0.4.4',
+    'jinja2',
 ]
 
 
