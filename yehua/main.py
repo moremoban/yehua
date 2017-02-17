@@ -34,7 +34,7 @@ def main():
         a = raw_input(optional['nickname'])
         answers['nickname'] = a
     
-    template_loader = FileSystemLoader("templates")
+    template_loader = FileSystemLoader(get_resource_dir("templates"))
     jj2_environment = Environment(
         loader=template_loader,
         keep_trailing_newline=True,
@@ -63,17 +63,22 @@ def main():
         f.write(rendered_content)
     
     for f in ['README.rst', 'test.bat', 'test.sh', 'requirements.txt', 'setup.py', os.path.join('tests', 'requirements.txt')]:
-        source = os.path.join('templates', f)
+        source = os.path.join(get_resource_dir('templates'), f)
         dest = os.path.join(project_moban, f)
         shutil.copy(source, dest)
     
     for f in ['CHANGELOG.rst', 'Makefile']:
-        source = os.path.join('static', f)
+        source = os.path.join(get_resource_dir('static'), f)
         dest = os.path.join(project_name, f)
         shutil.copy(source, dest)
     
     for f in ['__init__.py']:
-        source = os.path.join('static', f)
+        source = os.path.join(get_resource_dir('static'), f)
         dest = os.path.join(project_src, f)
         shutil.copy(source, dest)
 
+
+def get_resource_dir(folder):
+    current_path = os.path.dirname(__file__)
+    resource_path = os.path.join(current_path, '..', folder)
+    return resource_path
