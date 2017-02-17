@@ -45,12 +45,21 @@ def main():
     project_moban = os.path.join(project_name, '.moban.d')
     project_moban_tests = os.path.join(project_name, '.moban.d', 'tests')
     project_tests = os.path.join(project_name, 'tests')
+    docs_path = os.path.join('docs', 'source')
+    project_docs = os.path.join(project_name, 'docs')
+    project_source = os.path.join(project_docs, 'source')
+    project_moban_docs = os.path.join(project_moban, 'docs')
+    project_moban_docs_source = os.path.join(project_moban_docs, 'source')
     project_src = os.path.join(project_name, project_name.lower().replace('-', '_'))
     os.mkdir(project_name) # project name
     os.mkdir(project_moban) # project name
     os.mkdir(project_moban_tests) # project name
+    os.mkdir(project_moban_docs)
+    os.mkdir(project_moban_docs_source)
     os.mkdir(project_tests) # project name
     os.mkdir(project_src)
+    os.mkdir(project_docs)
+    os.mkdir(project_source)
     
     template = jj2_environment.get_template('project.yml')
     with open(os.path.join(project_name, project_name + '.yml'), 'w') as f:
@@ -61,10 +70,17 @@ def main():
     with open(os.path.join(project_name, '.moban.yml'), 'w') as f:
         rendered_content = template.render(**answers)
         f.write(rendered_content)
-    
-    for f in ['README.rst', 'test.bat', 'test.sh', 'requirements.txt', 'setup.py', os.path.join('tests', 'requirements.txt')]:
-        source = os.path.join(get_resource_dir('templates'), f)
-        dest = os.path.join(project_moban, f)
+
+    template_list = ['README.rst', 'test.bat', 'test.sh', 'requirements.txt', ('setup.py.jj2', 'setup.py'),
+                     os.path.join('tests', 'requirements.txt'),
+                     (os.path.join(docs_path, 'conf.py.jj2'), os.path.join(docs_path, 'conf.py'))]
+    for f in template_list:
+        if isinstance(f, tuple):
+            source = os.path.join(get_resource_dir('templates'), f[0])
+            dest = os.path.join(project_moban, f[1])
+        else:
+            source = os.path.join(get_resource_dir('templates'), f)
+            dest = os.path.join(project_moban, f)
         shutil.copy(source, dest)
     
     for f in ['CHANGELOG.rst', 'Makefile']:
@@ -72,13 +88,18 @@ def main():
         dest = os.path.join(project_name, f)
         shutil.copy(source, dest)
     
-    for f in ['__init__.py']:
-        source = os.path.join(get_resource_dir('static'), f)
-        dest = os.path.join(project_src, f)
+    for f in [('__init__.py.jj2', '__init__.py')]:
+        if isinstance(f, tuple):
+            source = os.path.join(get_resource_dir('static'), f[0])
+            dest = os.path.join(project_src, f[1])
+        else:
+            source = os.path.join(get_resource_dir('static'), f)
+            dest = os.path.join(project_src, f)
         shutil.copy(source, dest)
 
 
 def get_resource_dir(folder):
     current_path = os.path.dirname(__file__)
-    resource_path = os.path.join(current_path, '..', folder)
+    resource_path = os.path.join(current_path, folder)
+    print(resource_path)
     return resource_path
