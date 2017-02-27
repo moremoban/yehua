@@ -1,3 +1,13 @@
+questions:
+  - project_name: "What is your project name?"
+  - description: "What is the description?"
+  - project_type:
+    - question: "What is project type?"
+      "1. pyexcel plugins":
+        - nickname: "What is the nick name?"
+      "2. command line interface":
+        - cli: "What is the name of cli executable?"
+      "3. python's C externsion": "N/A"
 layout:
   - tests
   - docs:
@@ -7,7 +17,7 @@ layout:
     - docs:
       - source
 templates:
-  - {{project_name}}.yml: project.yml
+  - "{{project_name}}.yml": project.yml
   - .moban.yml: .moban.yml
 static:
   - ".moban.d/README.rst": "README.rst"
