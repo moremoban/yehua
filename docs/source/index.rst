@@ -34,3 +34,11 @@ or clone it and install it:
     $ cd yehua
     $ python setup.py install
 
+
+Documentation
+--------------------------------------------------------------------------------
+
+.. toctree::
+
+   usage
+   filespec

@@ -12,3 +12,11 @@ Installation
 
 {%include "installation.rst.jj2" %}
 
+
+Documentation
+--------------------------------------------------------------------------------
+
+.. toctree::
+
+   usage
+   filespec
