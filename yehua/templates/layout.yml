@@ -1,0 +1,22 @@
+layout:
+  - tests
+  - docs:
+    - source
+  - .moban.d:
+    - tests
+    - docs:
+      - source
+templates:
+  - {{project_name}}.yml: project.yml
+  - .moban.yml: .moban.yml
+static:
+  - ".moban.d/README.rst": "README.rst"
+  - ".moban.d/test.bat": "test.bat"
+  - ".moban.d/test.sh": "test.sh"
+  - ".moban.d/requirements.txt": requirements.txt
+  - ".moban.d/setup.py": setup.py.jj2
+  - ".moban.d/tests/requirements.txt": "tests/requirements.txt"
+  - ".moban.d/docs/source/conf.py": "docs/source/conf.py.jj2"
+  - Makefile: Makefile
+  - CHANGELOG.rst: CHANGELOG.rst
+  - "{{project_src}}/__init__.py": __init__.py.jj2

@@ -3,7 +3,7 @@ configuration:
   template_dir:
   - "commons/templates"
   - ".moban.d"
-  configuration: {{project}}.yml
+  configuration: {{project_name}}.yml
 targets:
   - README.rst: README.rst
   - setup.py: setup.py
@@ -13,5 +13,5 @@ targets:
   - "tests/requirements.txt": "tests/requirements.txt"
   - test.sh: test.sh.jj2
   - test.bat: test.sh.jj2
-  - .travis.yml: .travis.yml.jj2
+  - .travis.yml: travis.yml.jj2
   - .gitignore: .gitignore.jj2

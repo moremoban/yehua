@@ -45,6 +45,7 @@ CLASSIFIERS = [
 
 INSTALL_REQUIRES = [
     'jinja2',
+    'PyYAML',
 ]
 
 

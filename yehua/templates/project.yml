@@ -1,12 +1,12 @@
 overrides: "pyexcel.yaml"
 name: "{{project}}"
-nick_name: {{nickname}}
-version: 0.0.1
-release: 0.0.1
+nick_name: "{{nickname}}"
+version: "0.0.1"
+release: "0.0.1"
 {% if type == '2'%}
-command_line_interface: {{cli}}
-entry_point: {{project | replace('-', '_')}}.main:main
+command_line_interface: "{{cli}}"
+entry_point: "{{project | replace('-', '_')}}.main:main"
 {% endif %}
 dependencies:
   - example_lib>=0.4.4
-description: {{description}}
+description: "{{description}}"

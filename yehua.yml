@@ -7,4 +7,5 @@ command_line_interface: yehua
 entry_point: yehua.main:main
 dependencies:
   - jinja2
+  - PyYAML
 description: A command line tool to auto generate a pyexcel related python package
