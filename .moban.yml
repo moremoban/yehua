@@ -14,3 +14,4 @@ targets:
   - test.sh: test.sh.jj2
   - test.bat: test.sh.jj2
   - .gitignore: .gitignore.jj2
+  - "docs/source/conf.py": "docs/source/conf.py"

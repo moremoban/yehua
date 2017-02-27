@@ -31,7 +31,7 @@ def raise_complex_question(question):
         a = raw_input('\n'.join(long_question))
         for key in suggested_answers:
             if key.startswith(a) and subq[key] != 'N/A':
-               additional_answers = get_user_inputs(subq[key])
+                additional_answers = get_user_inputs(subq[key])
         break
     return a, additional_answers
 
@@ -39,7 +39,8 @@ def raise_complex_question(question):
 class Project:
     def __init__(self):
         layout = 'layout.yml'
-        with open(os.path.join(get_resource_dir("templates"), layout), "r") as f:
+        layout_file = os.path.join(get_resource_dir("templates"), layout)
+        with open(layout_file, "r") as f:
             first_stage = yaml.load(f)
             self.answers = get_user_inputs(first_stage['questions'])
         self.name = self.answers['project_name']
@@ -57,26 +58,33 @@ class Project:
         )
         self.directives = yaml.load(renderred_content)
         self.layout = {self.name: self.directives['layout']}
-        self.layout[self.name].append(project_src) # create project src
+        self.layout[self.name].append(project_src)  # create project src
 
     def create_all_directories(self):
         make_directories(None, self.layout)
 
     def templating(self):
-        data = self.answers
-        for template  in self.directives['templates']:
+        for template in self.directives['templates']:
             for output, template_file in template.items():
                 template = self.jj2_environment.get_template(template_file)
-                with open(os.path.join(self.name, output), 'w') as f:
-                    rendered_content = template.render(**data)
-                    f.write(rendered_content)
+                rendered_content = template.render(**self.answers)
+                save_file(os.path.join(self.name, output), rendered_content)
 
     def copy_static_files(self):
         for static in self.directives['static']:
             for output, source in static.items():
                 static_path = get_resource_dir('static')
-                shutil.copy(os.path.join(static_path, source),
-                            os.path.join(self.name, output))
+                copy_file(os.path.join(static_path, source),
+                          os.path.join(self.name, output))
+
+
+def copy_file(source, dest):
+    shutil.copy(source, dest)
+
+
+def save_file(filename, filecontent):
+    with open(os.path.join(filename), 'w') as f:
+        f.write(filecontent)
 
 
 def make_directories(parent, node_dictionary):
