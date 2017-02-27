@@ -12,11 +12,8 @@ yehua - Let you focus on data, instead of file formats
    :target: http://yehua.readthedocs.org/en/latest/
 
 
-The sphinx library uses pyexcel to read an excel files and renders into an excel-alike sheet in your sphinx documentation. The excel file formats are:
 
-   #. csv, tsv, csvz, tsvz
-   #. xls, xlsx, xlsm
-   #. ods
+**yehua** A command line tool to auto generate a pyexcel related python package
 
 
 
