@@ -1,4 +1,4 @@
-`yehua` - Let you focus on data, instead of file formats
+`yehua` - Let you focus on code, instead of setup details
 ================================================================================
 
 :Author: C.W.
@@ -8,6 +8,7 @@
 :Development: |release|
 :Released: |version|
 :Generated: |today|
+
 
 Introduction
 --------------------------------------------------------------------------------

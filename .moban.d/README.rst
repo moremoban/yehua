@@ -8,3 +8,6 @@
 {%include "yehua.feature.rst"%}
 
 {%endblock%}
+
+{%block slogan%}Let you focus on code, instead of setup details
+{%endblock%}

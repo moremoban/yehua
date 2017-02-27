@@ -1,5 +1,5 @@
 ================================================================================
-yehua - Let you focus on data, instead of file formats
+yehua - Let you focus on code, instead of setup details
 ================================================================================
 
 .. image:: https://api.travis-ci.org/pyexcel/yehua.svg?branch=master
