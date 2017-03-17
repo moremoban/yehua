@@ -39,13 +39,15 @@ def raise_complex_question(question):
 class Project:
     def __init__(self):
         layout = 'layout.yml'
+        self.template_dir = get_resource_dir("templates")
+        self.static_dir = get_resource_dir("static")
         layout_file = os.path.join(get_resource_dir("templates"), layout)
         with open(layout_file, "r") as f:
             first_stage = yaml.load(f)
             self.answers = get_user_inputs(first_stage['questions'])
         self.name = self.answers['project_name']
         project_src = self.name.lower().replace('-', '_')
-        template_loader = FileSystemLoader(get_resource_dir("templates"))
+        template_loader = FileSystemLoader(self.template_dir)
         self.jj2_environment = Environment(
             loader=template_loader,
             keep_trailing_newline=True,
@@ -73,7 +75,7 @@ class Project:
     def copy_static_files(self):
         for static in self.directives['static']:
             for output, source in static.items():
-                static_path = get_resource_dir('static')
+                static_path = self.static_dir
                 copy_file(os.path.join(static_path, source),
                           os.path.join(self.name, output))
 
