@@ -1,3 +1,6 @@
+configuration:
+  template_path: ./templates
+  static_path: ./static
 questions:
   - project_name: "What is your project name?"
   - description: "What is the description?"

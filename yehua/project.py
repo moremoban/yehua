@@ -3,6 +3,8 @@ import yaml
 from jinja2 import Environment, FileSystemLoader
 import shutil
 
+from yehua.utils import get_resource_dir
+
 
 padding = "A: "
 
@@ -37,23 +39,26 @@ def raise_complex_question(question):
 
 
 class Project:
-    def __init__(self):
-        layout = 'layout.yml'
-        self.template_dir = get_resource_dir("templates")
-        self.static_dir = get_resource_dir("static")
-        layout_file = os.path.join(get_resource_dir("templates"), layout)
+    def __init__(self, yehua_file):
+        layout_file = yehua_file
+        base_path = os.path.dirname(layout_file)
+        if not os.path.exists(layout_file):
+            layout_file = 'layout.yml'
+            layout_file = os.path.join(get_resource_dir("templates"), layout_file)
+        #self.template_dir = get_resource_dir("templates")
+        #self.static_dir = get_resource_dir("static")
         with open(layout_file, "r") as f:
             first_stage = yaml.load(f)
+            self.template_dir = os.path.join(base_path,
+                                             first_stage['configuration']['template_path'])
+            self.static_dir = os.path.join(base_path,
+                                           first_stage['configuration']['static_path'])
             self.answers = get_user_inputs(first_stage['questions'])
         self.name = self.answers['project_name']
         project_src = self.name.lower().replace('-', '_')
-        template_loader = FileSystemLoader(self.template_dir)
-        self.jj2_environment = Environment(
-            loader=template_loader,
-            keep_trailing_newline=True,
-            trim_blocks=True,
-            lstrip_blocks=True)
-        template = self.jj2_environment.get_template(layout)
+        tmp_env = self._create_jj2_environment(base_path)
+        self.jj2_environment = self._create_jj2_environment(self.template_dir)
+        template = tmp_env.get_template(os.path.basename(layout_file))
         renderred_content = template.render(
             project_src=project_src,
             project_name=self.name
@@ -78,6 +83,15 @@ class Project:
                 static_path = self.static_dir
                 copy_file(os.path.join(static_path, source),
                           os.path.join(self.name, output))
+
+    def _create_jj2_environment(self, path):
+        template_loader = FileSystemLoader(path)
+        environment = Environment(
+            loader=template_loader,
+            keep_trailing_newline=True,
+            trim_blocks=True,
+            lstrip_blocks=True)
+        return environment
 
 
 def copy_file(source, dest):
@@ -105,9 +119,3 @@ def make_directories(parent, node_dictionary):
 
 def _mkdir(path):
     os.mkdir(path)
-
-
-def get_resource_dir(folder):
-    current_path = os.path.dirname(__file__)
-    resource_path = os.path.join(current_path, folder)
-    return resource_path
