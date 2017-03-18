@@ -11,6 +11,10 @@ questions:
         - cli: "What is the name of cli executable?"
       "3. C externsion": "N/A"
   - license: "What is your project's license?"
+  - author: "What name do you want to put as author?"
+  - contact: "What contact email do you want to put down?"
+  - organisation: "Which github organisation are you going to associate it with?"
+  - company: "Which company will be placed in the files?"
 layout:
   - tests
   - docs:

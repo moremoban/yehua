@@ -1,10 +1,16 @@
 name: "{{project}}"
-nick_name: "{{nickname}}"
+organisation: "{{organisation}}"
+author: "{{author}}"
+contact: "{{contact}}"
+company: "{{company}}"
 version: "0.0.1"
 release: "0.0.1"
 {% if type == '2'%}
 command_line_interface: "{{cli}}"
 entry_point: "{{project | replace('-', '_')}}.main:main"
+{% endif %}
+{% if type == '3'%}
+external_module_library: x
 {% endif %}
 license: {{license}}
 dependencies:
