@@ -6,11 +6,11 @@ questions:
   - description: "What is the description?"
   - project_type:
     - question: "What is project type?"
-      "1. pyexcel plugins":
-        - nickname: "What is the nick name?"
+      "1. library": "N/A"
       "2. command line interface":
         - cli: "What is the name of cli executable?"
-      "3. python's C externsion": "N/A"
+      "3. C externsion": "N/A"
+  - license: "What is your project's license?"
 layout:
   - tests
   - docs:
@@ -23,13 +23,15 @@ templates:
   - "{{project_name}}.yml": project.yml
   - .moban.yml: .moban.yml
 static:
-  - ".moban.d/README.rst": "README.rst"
-  - ".moban.d/test.bat": "test.bat"
-  - ".moban.d/test.sh": "test.sh"
-  - ".moban.d/requirements.txt": requirements.txt
-  - ".moban.d/setup.py": setup.py.jj2
-  - ".moban.d/tests/requirements.txt": "tests/requirements.txt"
-  - ".moban.d/docs/source/conf.py": "docs/source/conf.py.jj2"
+  - ".moban.d/README.rst.jj2": "README.rst"
+  - ".moban.d/test.sh.jj2": "test.sh"
+  - ".moban.d/requirements.txt.jj2": requirements.txt
+  - ".moban.d/setup.py.jj2": setup.py.jj2
+  - ".moban.d/tests/requirements.txt.jj2": "tests/requirements.txt"
+  - ".moban.d/docs/source/conf.py.jj2": "docs/source/conf.py.jj2"
   - Makefile: Makefile
   - CHANGELOG.rst: CHANGELOG.rst
+  - MANIFEST.in: MANIFEST.in
+  - .travis.yml: travis.yml.jj2
+  - .gitignore: gitignore
   - "{{project_src}}/__init__.py": __init__.py.jj2

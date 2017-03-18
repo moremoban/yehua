@@ -1,5 +1,6 @@
-{% extends 'tests/requirements.txt.jj2' %}
+nose
+codecov
+coverage
+flake8
 {%block extras %}
-pyexcel
-pyexcel-xls
 {%endblock%}
