@@ -13,7 +13,7 @@ def main():
 
 
 def get_yehua_file():
-    yehua_file = os.environ.get('YEHUA_FILEx', None)
+    yehua_file = os.environ.get('YEHUA_FILE', None)
     if yehua_file is None:
         if os.path.exists("yehua.yml"):
             yehua_file = os.path.abspath("yehua.yml")

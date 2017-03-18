@@ -44,15 +44,16 @@ class Project:
         base_path = os.path.dirname(layout_file)
         if not os.path.exists(layout_file):
             layout_file = 'layout.yml'
-            layout_file = os.path.join(get_resource_dir("templates"), layout_file)
-        #self.template_dir = get_resource_dir("templates")
-        #self.static_dir = get_resource_dir("static")
+            layout_file = os.path.join(get_resource_dir("templates"),
+                                       layout_file)
         with open(layout_file, "r") as f:
             first_stage = yaml.load(f)
-            self.template_dir = os.path.join(base_path,
-                                             first_stage['configuration']['template_path'])
-            self.static_dir = os.path.join(base_path,
-                                           first_stage['configuration']['static_path'])
+            self.template_dir = os.path.join(
+                base_path,
+                first_stage['configuration']['template_path'])
+            self.static_dir = os.path.join(
+                base_path,
+                first_stage['configuration']['static_path'])
             self.answers = get_user_inputs(first_stage['questions'])
         self.name = self.answers['project_name']
         project_src = self.name.lower().replace('-', '_')
