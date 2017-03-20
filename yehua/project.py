@@ -1,7 +1,8 @@
 import os
 import yaml
-from jinja2 import Environment, FileSystemLoader
 import shutil
+from datetime import datetime
+from jinja2 import Environment, FileSystemLoader
 
 from yehua.utils import get_resource_dir
 
@@ -61,8 +62,10 @@ class Project:
         self.jj2_environment = self._create_jj2_environment(self.template_dir)
         template = tmp_env.get_template(os.path.basename(layout_file))
         renderred_content = template.render(
+            # varaiables to project.yml
             project_src=project_src,
-            project_name=self.name
+            project_name=self.name,
+            now=datetime.utcnow()
         )
         self.directives = yaml.load(renderred_content)
         self.layout = {self.name: self.directives['layout']}

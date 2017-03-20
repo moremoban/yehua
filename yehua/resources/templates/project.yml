@@ -5,6 +5,7 @@ contact: "{{contact}}"
 company: "{{company}}"
 version: "0.0.1"
 release: "0.0.1"
+copyright_year: {{now.year}}
 {% if project_type == '2'%}
 command_line_interface: "{{cli}}"
 entry_point: "{{project_name | replace('-', '_')}}.main:main"
