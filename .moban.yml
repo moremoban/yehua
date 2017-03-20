@@ -3,16 +3,16 @@ configuration:
   template_dir:
   - "commons/templates"
   - ".moban.d"
-  configuration: yehua.yml
+  configuration: yehua.yaml
 targets:
-  - README.rst: README.rst
-  - setup.py: setup.py
-  - requirements.txt: requirements.txt
+  - README.rst: README.rst.jj2
+  - setup.py: setup.py.jj2
+  - requirements.txt: requirements.txt.jj2
   - LICENSE: LICENSE.jj2
   - MANIFEST.in: MANIFEST.in.jj2
-  - "tests/requirements.txt": "tests/requirements.txt"
+  - "tests/requirements.txt": "tests/requirements.txt.jj2"
   - test.sh: test.sh.jj2
   - test.bat: test.sh.jj2
   - .gitignore: .gitignore.jj2
-  - "docs/source/conf.py": "docs/source/conf.py"
+  - "docs/source/conf.py": "docs/source/conf.py.jj2"
   - "docs/source/index.rst": "docs/source/index.rst"

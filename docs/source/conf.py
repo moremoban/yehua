@@ -8,7 +8,6 @@ extensions = [
     'sphinx.ext.doctest',
     'sphinx.ext.intersphinx',
     'sphinx.ext.viewcode',
-    'sphinx.ext.autosummary'
 ]
 
 spelling_word_list_filename = 'spelling_wordlist.txt'
@@ -23,12 +22,6 @@ release = '0.0.1'
 exclude_patterns = []
 pygments_style = 'sphinx'
 html_theme = 'default'
-
-
-def setup(app):
-    app.add_stylesheet('theme_overrides.css')
-
-
 html_static_path = ['_static']
 htmlhelp_basename = 'yehuadoc'
 latex_elements = {}

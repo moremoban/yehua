@@ -7,7 +7,7 @@ version: "0.0.1"
 release: "0.0.1"
 {% if project_type == '2'%}
 command_line_interface: "{{cli}}"
-entry_point: "{{project | replace('-', '_')}}.main:main"
+entry_point: "{{project_name | replace('-', '_')}}.main:main"
 {% endif %}
 {% if project_type == '3'%}
 external_module_library: {{project_name}}
