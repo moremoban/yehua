@@ -36,20 +36,12 @@ DESCRIPTION = (
     ''
 )
 KEYWORDS = [
-    'excel',
-    'python',
-    'pyexcel',
     {%block additional_keywords%}
     {%endblock%}
 ]
 
 CLASSIFIERS = [
-    'Topic :: Office/Business',
-    'Topic :: Utilities',
-    'Topic :: Software Development :: Libraries',
     'Programming Language :: Python',
-    'License :: OSI Approved :: BSD License',
-    'Intended Audience :: Developers',
     'Programming Language :: Python :: 2.6',
     'Programming Language :: Python :: 2.7',
     'Programming Language :: Python :: 3.3',

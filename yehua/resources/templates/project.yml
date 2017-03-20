@@ -1,18 +1,18 @@
-name: "{{project}}"
+name: "{{project_name}}"
 organisation: "{{organisation}}"
 author: "{{author}}"
 contact: "{{contact}}"
 company: "{{company}}"
 version: "0.0.1"
 release: "0.0.1"
-{% if type == '2'%}
+{% if project_type == '2'%}
 command_line_interface: "{{cli}}"
 entry_point: "{{project | replace('-', '_')}}.main:main"
 {% endif %}
-{% if type == '3'%}
-external_module_library: x
+{% if project_type == '3'%}
+external_module_library: {{project_name}}
 {% endif %}
 license: {{license}}
 dependencies:
-  - example_lib>=0.4.4
+  - update_your_dependencies_here>=0.4.4
 description: "{{description}}"
