@@ -93,5 +93,3 @@ ENV/
 commons/
 commons
 .moban.hashes
-{%block extra%}
-{%endblock%}

@@ -56,6 +56,7 @@ class Project:
                 base_path,
                 first_stage['configuration']['static_path'])
             self.answers = get_user_inputs(first_stage['questions'])
+        self.answers['now'] = datetime.utcnow()
         self.name = self.answers['project_name']
         project_src = self.name.lower().replace('-', '_')
         tmp_env = self._create_jj2_environment(base_path)
@@ -65,7 +66,6 @@ class Project:
             # varaiables to project.yml
             project_src=project_src,
             project_name=self.name,
-            now=datetime.utcnow()
         )
         self.directives = yaml.load(renderred_content)
         self.layout = {self.name: self.directives['layout']}

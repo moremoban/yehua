@@ -1,1 +1,1 @@
-**yehua** {{description}}
+**yehua** is {{description|lower}}

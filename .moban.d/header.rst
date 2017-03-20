@@ -1,4 +1,18 @@
-{%extends "header.rst.jj2" %}
+`{{name}}` - Let you focus on code, instead of setup scaffolding
+================================================================================
 
-{%block slogan%}Let you focus on code, instead of setup details
-{%endblock%}
+:Author: {{author}}
+:Source code: http://github.com/{{organisation}}/{{name}}.git
+:Issues: http://github.com/{{organisation}}/{{name}}/issues
+:License: {{license}} License
+{% if version == release%}
+  {%if version=="0.0.1"%}
+:Development: |release|
+  {%else%}  
+:Released: |version|
+  {%endif%}
+{%else%}
+:Development: |release|
+:Released: |version|
+{%endif%}
+:Generated: |today|

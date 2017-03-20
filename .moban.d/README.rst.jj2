@@ -1,13 +1,20 @@
-{% extends "BASIC-README.rst.jj2" %}
+================================================================================
+{{name}}
+================================================================================
 
-{%block constraint%}
+.. image:: https://api.travis-ci.org/{{organisation}}/{{name}}.svg?branch=master
+   :target: http://travis-ci.org/{{organisation}}/{{name}}
+
+.. image:: https://codecov.io/github/{{organisation}}/{{name}}/coverage.png
+    :target: https://codecov.io/github/{{organisation}}/{{name}}
+
+{%block documentation_link%}
+.. image:: https://readthedocs.org/projects/{{name|lower}}/badge/?version=latest
+   :target: http://{{name|lower}}.readthedocs.org/en/latest/
 {%endblock%}
 
-{%block features %}
 
-{%include "yehua.feature.rst"%}
+Installation
+================================================================================
 
-{%endblock%}
-
-{%block slogan%}Let you focus on code, instead of setup details
-{%endblock%}
+{%include "installation.rst.jj2" %}

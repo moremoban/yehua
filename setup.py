@@ -4,7 +4,6 @@ except ImportError:
     from ez_setup import use_setuptools
     use_setuptools()
     from setuptools import setup, find_packages
-from platform import python_implementation
 import sys
 PY2 = sys.version_info[0] == 2
 PY26 = PY2 and sys.version_info[1] < 7
@@ -12,7 +11,7 @@ PY26 = PY2 and sys.version_info[1] < 7
 NAME = 'yehua'
 AUTHOR = 'C.W.'
 VERSION = '0.0.1'
-EMAIL = 'wangc_2011 (at) hotmail.com'
+EMAIL = 'wa'
 LICENSE = 'New BSD'
 ENTRY_POINTS = {
     'console_scripts': [
@@ -20,22 +19,15 @@ ENTRY_POINTS = {
     ]
 }
 DESCRIPTION = (
-    'A command line tool to auto generate a pyexcel related python package' +
+    'A command line tool to provide a default scaffolding for a python pack' +
+    'age.' +
     ''
 )
 KEYWORDS = [
-    'excel',
-    'python',
-    'pyexcel',
 ]
 
 CLASSIFIERS = [
-    'Topic :: Office/Business',
-    'Topic :: Utilities',
-    'Topic :: Software Development :: Libraries',
     'Programming Language :: Python',
-    'License :: OSI Approved :: BSD License',
-    'Intended Audience :: Developers',
     'Programming Language :: Python :: 2.6',
     'Programming Language :: Python :: 2.7',
     'Programming Language :: Python :: 3.3',

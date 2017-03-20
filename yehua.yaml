@@ -1,11 +1,15 @@
-overrides: "pyexcel.yaml"
 name: "yehua"
-nick_name: 
-version: 0.0.1
-release: 0.0.1
-command_line_interface: yehua
-entry_point: yehua.main:main
+organisation: "chfw"
+author: "C.W."
+contact: "wa"
+company: "Onni Software Ltd."
+version: "0.0.1"
+release: "0.0.1"
+copyright_year: 2017
+command_line_interface: "yehua"
+entry_point: "yehua.main:main"
+license: New BSD
 dependencies:
   - jinja2
   - PyYAML
-description: A command line tool to auto generate a pyexcel related python package
+description: A command line tool to provide a default scaffolding for a python package.

@@ -1,19 +1,18 @@
-`yehua` - Let you focus on code, instead of setup details
+`yehua` - Let you focus on code, instead of setup scaffolding
 ================================================================================
 
 :Author: C.W.
-:Source code: http://github.com/pyexcel/yehua.git
-:Issues: http://github.com/pyexcel/yehua/issues
+:Source code: http://github.com/chfw/yehua.git
+:Issues: http://github.com/chfw/yehua/issues
 :License: New BSD License
 :Development: |release|
-:Released: |version|
 :Generated: |today|
 
 
 Introduction
 --------------------------------------------------------------------------------
 
-**yehua** A command line tool to auto generate a pyexcel related python package
+**yehua** is a command line tool to provide a default scaffolding for a python package.
 
 
 Installation
@@ -30,7 +29,7 @@ or clone it and install it:
 
 .. code-block:: bash
 
-    $ git clone http://github.com/pyexcel/yehua.git
+    $ git clone http://github.com/chfw/yehua.git
     $ cd yehua
     $ python setup.py install
 

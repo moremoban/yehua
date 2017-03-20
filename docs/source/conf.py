@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 DESCRIPTION = (
-    'A command line tool to auto generate a pyexcel related python package' +
+    'A command line tool to provide a default scaffolding for a python pack' +
+    'age.' +
     ''
 )
 extensions = [
@@ -15,7 +16,7 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 project = u'yehua'
-copyright = u'2015-2017 Onni Software Ltd.'
+copyright = u'2017 Onni Software Ltd.'
 version = '0.0.1'
 release = '0.0.1'
 exclude_patterns = []

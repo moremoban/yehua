@@ -3,18 +3,18 @@ configuration:
   static_path: ./static
 questions:
   - project_name: "What is your project name?"
-  - description: "What is the description?"
+  - description: "What does it do?"
+  - license: "What is your project's license?"
+  - author: "What name do you want to put as author?"
+  - contact: "What contact email do you want to put down?"
+  - organisation: "Which github profile/organisation are you going to associate it with?"
+  - company: "Which entity will be placed in the copyright clause?"
   - project_type:
-    - question: "What is project type?"
+    - question: "Finally, what is project type?"
       "1. library": "N/A"
       "2. command line interface":
         - cli: "What is the name of cli executable?"
       "3. C externsion": "N/A"
-  - license: "What is your project's license?"
-  - author: "What name do you want to put as author?"
-  - contact: "What contact email do you want to put down?"
-  - organisation: "Which github organisation are you going to associate it with?"
-  - company: "Which company will be placed in the files?"
 layout:
   - tests
   - docs:
