@@ -13,39 +13,33 @@ class Project:
         if not os.path.exists(yehua_file):
             raise Exception("%s does not exist" % yehua_file)
         self.project_file = yehua_file
+        self.project_name = None
         self.answers = None
         self.name = None
-
-    def digest(self):
-        """
-        Prepare the work space
-
-        The running sequence is fixed here. Do not change them unless
-        you know what it does
-        """
+        self.directives = None
         self._ask_questions()
         self._append_magic_variables()
         self._template_yehua_file()
 
     def create_all_directories(self):
-        project_src = self.name.lower().replace('-', '_')
-        layout = {self.name: self.directives['layout']}
-        layout[self.name].append(project_src)  # create project src
-        make_directories(None, layout)
+        temp = {self.answers['project_name']: self.directives['layout']}
+        self.directives['layout'].append(self.answers['project_src'])
+        make_directories(None, temp)
 
     def templating(self):
         for template in self.directives['templates']:
             for output, template_file in template.items():
                 template = self.jj2_environment.get_template(template_file)
                 rendered_content = template.render(**self.answers)
-                save_file(os.path.join(self.name, output), rendered_content)
+                save_file(os.path.join(self.project_name, output),
+                          rendered_content)
 
     def copy_static_files(self):
         for static in self.directives['static']:
             for output, source in static.items():
-                static_path = self.static_dir
-                copy_file(os.path.abspath(os.path.join(static_path, source)),
-                          os.path.join(self.name, output))
+                source = os.path.abspath(os.path.join(self.static_dir, source))
+                dest = os.path.join(self.project_name, output)
+                copy_file(source, dest)
 
     def _ask_questions(self):
         base_path = os.path.dirname(self.project_file)
@@ -60,19 +54,19 @@ class Project:
             self.answers = get_user_inputs(first_stage['questions'])
 
     def _append_magic_variables(self):
+        self.project_name = self.answers['project_name']
+        project_src = make_project_src(self.project_name)
         self.answers['now'] = datetime.utcnow()
+        self.answers['project_src'] = project_src
+
         self.jj2_environment = self._create_jj2_environment(self.template_dir)
 
     def _template_yehua_file(self):
-        self.name = self.answers['project_name']
         base_path = os.path.dirname(self.project_file)
         tmp_env = self._create_jj2_environment(base_path)
-        project_src = self.name.lower().replace('-', '_')
         template = tmp_env.get_template(os.path.basename(self.project_file))
         renderred_content = template.render(
-            # varaiables to project.yml
-            project_src=project_src,
-            project_name=self.name,
+            **self.answers
         )
         self.directives = yaml.load(renderred_content)
 
@@ -84,6 +78,10 @@ class Project:
             trim_blocks=True,
             lstrip_blocks=True)
         return environment
+
+
+def make_project_src(project_name):
+    return project_name.lower().replace('-', '_')
 
 
 def copy_file(source, dest):

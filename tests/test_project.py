@@ -16,7 +16,6 @@ def test_project(inputs, mkdir):
         project_name='test-me'
     )
     project = Project(get_yehua_file())
-    project.digest()
     project.create_all_directories()
     calls = mkdir.call_args_list
     calls = [str(call) for call in calls]
@@ -62,7 +61,6 @@ def test_project_templating(inputs, save_file):
     )
     save_file.side_effect = mock_save_file
     project = Project(get_yehua_file())
-    project.digest()
     project.templating()
 
 
@@ -74,7 +72,6 @@ def test_project_copy_static(inputs, copy_file):
         project_name='test-me'
     )
     project = Project(get_yehua_file())
-    project.digest()
     project.copy_static_files()
     calls = copy_file.call_args_list
     calls = [split_call_arguments(call) for call in calls]
