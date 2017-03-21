@@ -1,11 +1,14 @@
 import sys
+import signal
 
 from yehua.project import Project
 from yehua.utils import get_yehua_file
 
 
+__version__ = "0.0.1"
+
 HELP_TEXT = """
-Usage:
+Usage: %s
 
    yehua [yehua_file/help]
 
@@ -19,7 +22,7 @@ If no argument is given, the command looks for the instruction file in the
 shell environment variable "YEHUA_FILE" first, then for "yehua.yml" at
 current working directory, and at last use the default "yehua.yml" in its
 own package.
-"""
+""" % __version__
 
 
 def main():
@@ -42,3 +45,10 @@ def main():
 def usage():
     print(HELP_TEXT)
     sys.exit(0)
+
+
+def control_c_quit(_, __):
+    print('\n')
+    sys.exit(0)
+
+signal.signal(signal.SIGINT, control_c_quit)
