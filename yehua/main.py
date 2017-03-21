@@ -1,12 +1,9 @@
-import os
 import sys
 
 from yehua.project import Project
-from yehua.utils import get_resource_dir
+from yehua.utils import get_yehua_file
 
 
-DEFAULT_FILE = "yehua.yml"
-ENVIRONMENT_KEY = 'YEHUA_FILE'
 HELP_TEXT = """
 Usage:
 
@@ -40,17 +37,6 @@ def main():
     project.create_all_directories()
     project.templating()
     project.copy_static_files()
-
-
-def get_yehua_file():
-    yehua_file = os.environ.get(ENVIRONMENT_KEY, None)
-    if yehua_file is None:
-        if os.path.exists(DEFAULT_FILE):
-            yehua_file = os.path.abspath(DEFAULT_FILE)
-        else:
-            default = get_resource_dir("resources")
-            yehua_file = os.path.join(default, DEFAULT_FILE)
-    return yehua_file
 
 
 def usage():

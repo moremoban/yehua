@@ -12,6 +12,10 @@ Installation
 
 {%include "installation.rst.jj2" %}
 
+Usage
+--------------------------------------------------------------------------------
+
+{%include "usage.rst.jj2"%}
 
 Documentation
 --------------------------------------------------------------------------------
@@ -20,3 +24,6 @@ Documentation
 
    usage
    filespec
+
+
+.. _moban: https://github.com/chfw/moban

@@ -6,9 +6,9 @@ from nose.tools import eq_
 
 
 @patch('yehua.project.get_user_inputs')
-@patch('yehua.project._mkdir')
-@patch('yehua.project.save_file')
-@patch('yehua.project.copy_file')
+@patch('yehua.utils.mkdir')
+@patch('yehua.utils.save_file')
+@patch('yehua.utils.copy_file')
 def test_main(copy, save, mkdir, inputs):
     copy.return_value = 0
     save.return_value = 0

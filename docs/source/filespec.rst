@@ -3,6 +3,9 @@ Yehua file specification
 
 Here is the sample startup file::
 
+    configuration:
+	  - template_path: ./relative_path_to_this_file
+	  - static_path: ./relative_path_to_this_file
     questions:
       - simple_keyword: "Simple Question?"
       - complex_question:
@@ -24,3 +27,4 @@ Here is the sample startup file::
     static:
       - ".moban.d/README.rst": "README.rst"
       - "{{project_src}}/__init__.py": __init__.py.jj2
+

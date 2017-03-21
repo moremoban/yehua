@@ -1,6 +1,20 @@
 import os
 import shutil
 
+DEFAULT_FILE = "yehua.yml"
+ENVIRONMENT_KEY = 'YEHUA_FILE'
+
+
+def get_yehua_file():
+    yehua_file = os.environ.get(ENVIRONMENT_KEY, None)
+    if yehua_file is None:
+        if os.path.exists(DEFAULT_FILE):
+            yehua_file = os.path.abspath(DEFAULT_FILE)
+        else:
+            default = get_resource_dir("resources")
+            yehua_file = os.path.join(default, DEFAULT_FILE)
+    return yehua_file
+
 
 def get_resource_dir(folder):
     current_path = os.path.dirname(__file__)
@@ -22,20 +36,19 @@ def make_directories(parent, node_dictionary):
                 mkdir(os.path.join(the_parent, item))
 
 
-def mkdir(path):
-    os.mkdir(path)
-
-
 def make_project_src(project_name):
     return project_name.lower().replace('-', '_')
 
 
+# The following Python depdencies are trusted to work
 def copy_file(source, dest):
     shutil.copy(source, dest)
+
+
+def mkdir(path):
+    os.mkdir(path)
 
 
 def save_file(filename, filecontent):
     with open(os.path.join(filename), 'w') as f:
         f.write(filecontent)
-
-

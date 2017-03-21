@@ -29,3 +29,14 @@ or clone it and install it:
     $ git clone http://github.com/chfw/yehua.git
     $ cd yehua
     $ python setup.py install
+
+Usage
+================================================================================
+
+Simply type in ::
+
+    $ yehua
+
+And then::
+
+    $ moban
