@@ -37,6 +37,7 @@ def main():
     else:
         yehua_file = get_yehua_file()
     project = Project(yehua_file)
+    project.digest()
     project.create_all_directories()
     project.templating()
     project.copy_static_files()

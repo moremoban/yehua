@@ -12,6 +12,10 @@ entry_point: "{{project_name | replace('-', '_')}}.main:main"
 {% endif %}
 {% if project_type == '3'%}
 external_module_library: {{project_name}}
+sources:
+{% for source in sources: %}
+  - '{{source}}'
+{% endfor %}
 {% endif %}
 license: {{license}}
 dependencies:

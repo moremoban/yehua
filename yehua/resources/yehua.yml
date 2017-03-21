@@ -14,7 +14,8 @@ questions:
       "1. library": "N/A"
       "2. command line interface":
         - cli: "What is the name of cli executable?"
-      "3. C externsion": "N/A"
+      "3. C externsion":
+        - sources: "What are the source files?(Comma separated list is expected. For example: pymodule.c,file.c)"
 layout:
   - tests
   - docs:
