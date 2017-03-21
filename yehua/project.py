@@ -44,7 +44,7 @@ class Project:
         for static in self.directives['static']:
             for output, source in static.items():
                 static_path = self.static_dir
-                copy_file(os.path.join(static_path, source),
+                copy_file(os.path.abspath(os.path.join(static_path, source)),
                           os.path.join(self.name, output))
 
     def _ask_questions(self):

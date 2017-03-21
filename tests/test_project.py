@@ -1,6 +1,7 @@
 # flake8: noqa
 
 import os
+import re
 from mock import patch
 from yehua.project import Project
 from nose.tools import eq_
@@ -76,19 +77,28 @@ def test_project_copy_static(inputs, copy_file):
     project.digest()
     project.copy_static_files()
     calls = copy_file.call_args_list
-    calls = [str(call) for call in calls]
+    calls = [split_call_arguments(call) for call in calls]
     expected = [
-        "call('%s/yehua/resources/./static/README.rst', 'test-me/.moban.d/README.rst.jj2')",
-        "call('%s/yehua/resources/./static/test.sh', 'test-me/.moban.d/test.sh.jj2')",
-        "call('%s/yehua/resources/./static/requirements.txt', 'test-me/.moban.d/requirements.txt.jj2')",
-        "call('%s/yehua/resources/./static/setup.py.jj2', 'test-me/.moban.d/setup.py.jj2')",
-        "call('%s/yehua/resources/./static/tests/requirements.txt', 'test-me/.moban.d/tests/requirements.txt.jj2')",
-        "call('%s/yehua/resources/./static/docs/source/conf.py.jj2', 'test-me/.moban.d/docs/source/conf.py.jj2')",
-        "call('%s/yehua/resources/./static/Makefile', 'test-me/Makefile')",
-        "call('%s/yehua/resources/./static/CHANGELOG.rst', 'test-me/CHANGELOG.rst')",
-        "call('%s/yehua/resources/./static/MANIFEST.in', 'test-me/MANIFEST.in')",
-        "call('%s/yehua/resources/./static/travis.yml.jj2', 'test-me/.travis.yml')",
-        "call('%s/yehua/resources/./static/gitignore', 'test-me/.gitignore')",
-        "call('%s/yehua/resources/./static/__init__.py.jj2', 'test-me/test_me/__init__.py')"]
-    expected = [call % os.getcwd() for call in expected]
+        ["README.rst", "test-me/.moban.d/README.rst.jj2"],
+        ["test.sh", "test-me/.moban.d/test.sh.jj2"],
+        ["requirements.txt", "test-me/.moban.d/requirements.txt.jj2"],
+        ["setup.py.jj2", "test-me/.moban.d/setup.py.jj2"],
+        ["tests/requirements.txt", "test-me/.moban.d/tests/requirements.txt.jj2"],
+        ["docs/source/conf.py.jj2", "test-me/.moban.d/docs/source/conf.py.jj2"],
+        ["Makefile", "test-me/Makefile"],
+        ["CHANGELOG.rst", "test-me/CHANGELOG.rst"],
+        ["MANIFEST.in", "test-me/MANIFEST.in"],
+        ["travis.yml.jj2", "test-me/.travis.yml"],
+        ["gitignore", "test-me/.gitignore"],
+        ["__init__.py.jj2", "test-me/test_me/__init__.py"]
+    ]
+    basepath = os.path.join(os.getcwd(), 'yehua', 'resources', 'static')
+    expected = [[ os.path.join(basepath, path[0]), path[1]] for path in expected]
     eq_(calls, expected)
+
+
+def split_call_arguments(mock_call):
+    pattern = "call\('(.*)', '(.*)'\)"
+    result = re.match(pattern, str(mock_call))
+    return [result.group(1), result.group(2)]
+
