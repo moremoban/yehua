@@ -8,7 +8,7 @@ from nose.tools import eq_
 from yehua.main import get_yehua_file
 
 
-@patch('yehua.project._mkdir')
+@patch('yehua.utils.mkdir')
 @patch('yehua.project.get_user_inputs')
 def test_project(inputs, mkdir):
     mkdir.return_value = 0
@@ -33,7 +33,7 @@ def test_project(inputs, mkdir):
     eq_(calls, expected)
 
 
-@patch('yehua.project.save_file')
+@patch('yehua.utils.save_file')
 @patch('yehua.project.get_user_inputs')
 def test_project_templating(inputs, save_file):
 
@@ -64,7 +64,7 @@ def test_project_templating(inputs, save_file):
     project.templating()
 
 
-@patch('yehua.project.copy_file')
+@patch('yehua.utils.copy_file')
 @patch('yehua.project.get_user_inputs')
 def test_project_copy_static(inputs, copy_file):
     copy_file.return_value = 0
