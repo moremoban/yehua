@@ -18,6 +18,5 @@ sources:
 {% endfor %}
 {% endif %}
 license: {{license}}
-dependencies:
-  - update_your_dependencies_here>=0.4.4
+dependencies: []
 description: "{{description}}"
