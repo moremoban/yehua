@@ -92,7 +92,7 @@ def get_user_inputs(questions):
                 if additional:
                     answers.update(additional)
             else:
-                a = raw_input(question + ' ' + padding)
+                a = utils.yehua_input(question + ' ' + padding)
                 answers[key] = a
     return answers
 
@@ -103,7 +103,7 @@ def raise_complex_question(question):
         subquestion = subq.pop('question')
         suggested_answers = sorted(subq.keys())
         long_question = [subquestion] + suggested_answers + [padding]
-        a = raw_input('\n'.join(long_question))
+        a = utils.yehua_input('\n'.join(long_question))
         for key in suggested_answers:
             if key.startswith(a) and subq[key] != 'N/A':
                 additional_answers = get_user_inputs(subq[key])

@@ -18,6 +18,9 @@ Introduction
 
 **yehua** is a command line tool to provide a default scaffolding for a python package. It provides a blank python package where your organisation's specific static infomation is injected. Future updates is linked with `moban`_ which instantly applies the update accurately. What's more, the python package is github and travis-ci friendly. 
 
+.. note::
+
+   Documentation is coming soon
 
 Installation
 --------------------------------------------------------------------------------

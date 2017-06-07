@@ -1,5 +1,5 @@
 ================================================================================
-yehua - Python Package Generator
+yehua - Let you focus on code, instead of setup scaffolding
 ================================================================================
 
 .. image:: https://api.travis-ci.org/chfw/yehua.svg?branch=master

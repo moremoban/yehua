@@ -1,8 +1,16 @@
 import os
+import sys
 import shutil
 
 DEFAULT_FILE = "yehua.yml"
 ENVIRONMENT_KEY = 'YEHUA_FILE'
+PY2 = sys.version_info[0] == 2
+
+
+if PY2:
+    yehua_input = raw_input
+else:
+    yehua_input = input
 
 
 def get_yehua_file():
