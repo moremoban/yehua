@@ -51,4 +51,5 @@ def control_c_quit(_, __):
     print('\n')
     sys.exit(0)
 
+
 signal.signal(signal.SIGINT, control_c_quit)
