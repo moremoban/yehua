@@ -13,6 +13,8 @@
    :target: http://{{name|lower}}.readthedocs.org/en/latest/
 {%endblock%}
 
+.. image:: https://img.shields.io/gitter/room/gitterHQ/gitter.svg
+   :target: https://gitter.im/chfw_yehua/Lobby
 
 Installation
 ================================================================================

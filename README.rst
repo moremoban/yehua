@@ -11,6 +11,8 @@ yehua - Let you focus on code, instead of setup scaffolding
 .. image:: https://readthedocs.org/projects/yehua/badge/?version=latest
    :target: http://yehua.readthedocs.org/en/latest/
 
+.. image:: https://img.shields.io/gitter/room/gitterHQ/gitter.svg
+   :target: https://gitter.im/chfw_yehua/Lobby
 
 Installation
 ================================================================================
