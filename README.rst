@@ -2,6 +2,10 @@
 yehua - Let you focus on code, instead of setup scaffolding
 ================================================================================
 
+.. image:: https://badges.gitter.im/chfw_yehua/Lobby.svg
+   :alt: Join the chat at https://gitter.im/chfw_yehua/Lobby
+   :target: https://gitter.im/chfw_yehua/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge
+
 .. image:: https://api.travis-ci.org/chfw/yehua.svg?branch=master
    :target: http://travis-ci.org/chfw/yehua
 
