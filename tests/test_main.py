@@ -43,6 +43,14 @@ def test_main_help():
             eq_(out.getvalue(), HELP_TEXT)
 
 
+def test_yehua_file_passed_in_command_line():
+    args = ['yehua', '/tmp/yehua.yml']
+    with patch('yehua.main.Project') as mocked_project:
+        with patch.object(sys, 'argv', args):
+            main()
+            mocked_project.assert_called()
+
+
 def test_get_yehua_file_1():
     file_name = "testme"
     os.environ['YEHUA_FILE'] = file_name
