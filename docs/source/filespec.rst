@@ -1,4 +1,4 @@
-Yehua file specification
+Example yehua file
 ================================================================================
 
 Here is the sample startup file::
@@ -27,4 +27,3 @@ Here is the sample startup file::
     static:
       - ".moban.d/README.rst": "README.rst"
       - "{{project_src}}/__init__.py": __init__.py.jj2
-
