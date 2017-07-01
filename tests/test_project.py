@@ -99,3 +99,39 @@ def split_call_arguments(mock_call):
     result = re.match(pattern, str(mock_call))
     return [result.group(1), result.group(2)]
 
+
+def test_get_simple_user_inputs():
+    from yehua.project import get_user_inputs
+    
+    simple_questions = [
+            {
+                "hello": "world?"
+            }
+    ]
+
+    with patch("yehua.utils.yehua_input") as yehua_input:
+        yehua_input.return_value = "hello"
+        answers = get_user_inputs(simple_questions)
+        assert answers["hello"] == "hello"
+
+
+def test_get_complex_user_inputs():
+    from yehua.project import get_user_inputs
+    
+    simple_questions = [
+            {
+                "hello": [{
+                    "question": "Multiple choice question?",
+                    "1. option 1": "N/A",
+                    "2. option 2": [{
+                        "option 2": "What is your answer?"
+                    }]
+                }]
+            }
+    ]
+
+    with patch("yehua.utils.yehua_input") as yehua_input:
+        yehua_input.side_effect = [ "2", "hello" ]
+        answers = get_user_inputs(simple_questions)
+        eq_(answers["hello"], "2")
+        eq_(answers["option 2"], "hello")
