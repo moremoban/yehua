@@ -29,6 +29,7 @@ What's more, you can provide your own python package templates and your own
 ref:`yehua file <Yehua file specification>`to customize **yehua** to meet
 your own needs.
 
+
 .. note::
 
    Documentation is coming soon
@@ -54,13 +55,16 @@ or clone it and install it:
 Usage
 --------------------------------------------------------------------------------
 
+.. image:: https://github.com/chfw/yehua/raw/master/yehua-usage.gif
+
 Simply type in ::
 
     $ yehua
 
-And then::
+And then go into the generate project folder::
 
     $ moban
+
 Documentation
 --------------------------------------------------------------------------------
 

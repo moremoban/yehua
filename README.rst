@@ -37,10 +37,12 @@ or clone it and install it:
 Usage
 ================================================================================
 
+.. image:: https://github.com/chfw/yehua/raw/master/yehua-usage.gif
+
 Simply type in ::
 
     $ yehua
 
-And then::
+And then go into the generate project folder::
 
     $ moban
