@@ -25,7 +25,6 @@ class Project:
 
     def create_all_directories(self):
         temp = {self.answers['project_name']: self.directives['layout']}
-        self.directives['layout'].append(self.answers['project_src'])
         utils.make_directories(None, temp)
 
     def templating(self):
@@ -57,9 +56,7 @@ class Project:
 
     def _append_magic_variables(self):
         self.project_name = self.answers['project_name']
-        project_src = utils.make_project_src(self.project_name)
         self.answers['now'] = datetime.utcnow()
-        self.answers['project_src'] = project_src
 
         self.jj2_environment = self._create_jj2_environment(self.template_dir)
 

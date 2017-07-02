@@ -17,6 +17,7 @@ questions:
       "3. C externsion":
         - sources: "What are the source files?(Comma separated list is expected. For example: pymodule.c,file.c)"
 layout:
+  - "{{project_name|lower|replace('-', '_')}}"
   - tests
   - docs:
     - source
@@ -39,4 +40,4 @@ static:
   - MANIFEST.in: MANIFEST.in
   - .travis.yml: travis.yml.jj2
   - .gitignore: gitignore
-  - "{{project_src}}/__init__.py": __init__.py.jj2
+  - "{{project_name|lower|replace('-', '_')}}/__init__.py": __init__.py.jj2
