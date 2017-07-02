@@ -6,10 +6,6 @@ Introduction
 
 {%include "yehua.feature.rst"%}
 
-.. note::
-
-   Documentation is coming soon
-
 Installation
 --------------------------------------------------------------------------------
 

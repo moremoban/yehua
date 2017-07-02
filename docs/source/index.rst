@@ -29,10 +29,6 @@ What's more, you can provide your own python package templates and your own
 yehua file to customize **yehua** to meet your own needs.
 
 
-.. note::
-
-   Documentation is coming soon
-
 Installation
 --------------------------------------------------------------------------------
 
