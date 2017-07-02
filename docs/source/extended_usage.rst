@@ -13,11 +13,11 @@ Evaluation
 --------------------------------------------------------------------------------
 
 Please first checkout yehua repository so that you will have the access to
-example directory. Then make sure you have **yehua** installed. Let's do these
-steps to evaluate it::
+example directory. Then make sure you have **yehua** installed.
 
-    $ cd /tmp
-	$ yehua
+.. image:: https://github.com/chfw/yehua/raw/master/yehua-npm-usage.gif
+   :width: 600px
+
 
 yehua.yml for npm package
 --------------------------------------------------------------------------------
