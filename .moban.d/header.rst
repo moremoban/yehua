@@ -6,11 +6,7 @@
 :Issues: http://github.com/{{organisation}}/{{name}}/issues
 :License: {{license}} License
 {% if version == release%}
-  {%if version=="0.0.1"%}
-:Development: |release|
-  {%else%}  
 :Released: |version|
-  {%endif%}
 {%else%}
 :Development: |release|
 :Released: |version|
