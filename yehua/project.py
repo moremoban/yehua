@@ -21,8 +21,10 @@ class Project:
         self._template_yehua_file()
 
     def create_all_directories(self):
-        temp = {self.answers['project_name']: self.directives['layout']}
-        utils.make_directories(None, temp)
+        folder_tree = {
+            self.answers['project_name']: self.directives.get('layout', None)
+        }
+        utils.make_directories(None, folder_tree)
 
     def templating(self):
         for template in self.directives['templates']:
@@ -99,7 +101,7 @@ def raise_complex_question(question):
         suggested_answers = sorted(subq.keys())
         long_question = [subquestion] + suggested_answers
         choice = '(%s): ' % (
-            ','.join([str(x) for x in xrange(1, len(long_question))]))
+            ','.join([str(x) for x in range(1, len(long_question))]))
         long_question.append(choice)
         a = utils.yehua_input('\n'.join(long_question))
         for key in suggested_answers:

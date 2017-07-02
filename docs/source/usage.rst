@@ -1,16 +1,20 @@
-How it works
+Default use case: scaffolding a python package
 ================================================================================
 
 **yehua** reads a configuration file named yehua.yml which then instruct **yehua
 to ask questions to collect project specific variables, and create the file
-structures. Its default usage is to create a blank python package but it is not
-limited to it. You can provide your own yehua file and do something else.
+structures.
+
+It takes a yehua file from command line option, or YEHUA_FILE in the environment
+varaible. If none is found, it resorts to the default yehua.yml file included
+in the package. And the default yehua.yml create a blank python package.
 
 
-Default behaviour
+Default yehua.yml file
 --------------------------------------------------------------------------------
 
-Let us go through the default yehua file. And then talk about the customization.
+Let us go through the default yehua file. And then talk about the customization
+in the next chapter
 
 configuration section
 ********************************************************************************

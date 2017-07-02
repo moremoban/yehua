@@ -1,0 +1,28 @@
+introduction: |
+  This utility will walk you through creating a package.json file.
+  It only covers the most common items, and tries to guess sensible defaults.
+  
+  See `npm help json` for definitive documentation on these fields
+  and exactly what they do.
+  
+  Use `npm install <pkg> --save` afterwards to install a package and
+  save it as a dependency in the package.json file.
+  
+  Press ^C at any time to quit.
+configuration:
+  template_path: .
+  static_path: .
+questions:
+  - project_name: "name:"
+  - version: "version:"
+  - description: "description:"
+  - entry_point: "entry point:"
+  - test_command: "test command:"
+  - git_repo: "git repository:"
+  - keywords: "keywords:"
+  - author: "author:"
+  - license: "license:"
+templates:
+  - package.json: package.json.jj2
+static:
+  - index.js: index.js

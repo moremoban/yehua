@@ -37,6 +37,8 @@ def make_directories(parent, node_dictionary):
         else:
             the_parent = key
         mkdir(the_parent)
+        if value is None:
+            continue
         for item in value:
             if isinstance(item, dict):
                 make_directories(the_parent, item)

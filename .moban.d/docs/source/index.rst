@@ -26,6 +26,6 @@ Documentation
 .. toctree::
 
    usage
-
+   extended_usage
 
 .. _moban: https://github.com/chfw/moban
