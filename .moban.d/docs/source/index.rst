@@ -26,7 +26,6 @@ Documentation
 .. toctree::
 
    usage
-   filespec
 
 
 .. _moban: https://github.com/chfw/moban
