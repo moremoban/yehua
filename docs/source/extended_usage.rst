@@ -27,8 +27,32 @@ Let us go through the variant yehua file.
 configuration section
 ********************************************************************************
 
-
-
 .. literalinclude:: ../../examples/npm-init/yehua.yml
    :lines: 12-15
 
+the current directory where yehua.yml file is, is configured as the folder for
+templates and static files.
+
+user questions section
+********************************************************************************
+
+.. literalinclude:: ../../examples/npm-init/yehua.yml
+   :lines: 15-24
+
+the questions here are prompted to collect user inputs.
+
+templates section
+********************************************************************************
+
+.. literalinclude:: ../../examples/npm-init/yehua.yml
+   :lines: 25-26
+
+Now the variables are used in template package.json.jj2 into package.json.
+
+static section
+********************************************************************************
+
+.. literalinclude:: ../../examples/npm-init/yehua.yml
+   :lines: 27-28
+
+Now, **yehua** simply copies index.js to target package folder.

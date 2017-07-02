@@ -27,5 +27,6 @@ Documentation
 
    usage
    extended_usage
+   enterprise_usage
 
 .. _moban: https://github.com/chfw/moban

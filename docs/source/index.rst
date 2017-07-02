@@ -26,8 +26,7 @@ is linked with `moban`_ which instantly applies the update accurately.
 What's more, the python package is github and travis-ci friendly.
 
 What's more, you can provide your own python package templates and your own
-ref:`yehua file <Yehua file specification>`to customize **yehua** to meet
-your own needs.
+yehua file to customize **yehua** to meet your own needs.
 
 
 .. note::
@@ -73,5 +72,6 @@ Documentation
 
    usage
    extended_usage
+   enterprise_usage
 
 .. _moban: https://github.com/chfw/moban
