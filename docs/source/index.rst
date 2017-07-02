@@ -56,6 +56,7 @@ Usage
 --------------------------------------------------------------------------------
 
 .. image:: https://github.com/chfw/yehua/raw/master/yehua-usage.gif
+   :width: 600px
 
 Simply type in ::
 
@@ -71,6 +72,6 @@ Documentation
 .. toctree::
 
    usage
-
+   extended_usage
 
 .. _moban: https://github.com/chfw/moban

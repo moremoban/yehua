@@ -38,6 +38,7 @@ Usage
 ================================================================================
 
 .. image:: https://github.com/chfw/yehua/raw/master/yehua-usage.gif
+   :width: 600px
 
 Simply type in ::
 
