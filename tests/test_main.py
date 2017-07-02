@@ -21,17 +21,18 @@ def test_main(copy, save, mkdir, inputs):
     main()
     calls = mkdir.call_args_list
     calls = [str(call) for call in calls]
-    assert calls == [
+    expected = [
         "call('test-me')",
+        "call('test-me/test_me')",
         "call('test-me/tests')",
         "call('test-me/docs')",
         "call('test-me/docs/source')",
         "call('test-me/.moban.d')",
         "call('test-me/.moban.d/tests')",
         "call('test-me/.moban.d/docs')",
-        "call('test-me/.moban.d/docs/source')",
-        "call('test-me/test_me')"
+        "call('test-me/.moban.d/docs/source')"
     ]
+    eq_(calls, expected)
 
 
 @raises(SystemExit)

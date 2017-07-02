@@ -15,20 +15,21 @@ def test_project(inputs, mkdir):
     inputs.return_value = dict(
         project_name='test-me'
     )
-    project = Project(get_yehua_file())
+    yehua_file = get_yehua_file()
+    project = Project(yehua_file)
     project.create_all_directories()
     calls = mkdir.call_args_list
     calls = [str(call) for call in calls]
     expected = [
         "call('test-me')",
+        "call('test-me/test_me')",
         "call('test-me/tests')",
         "call('test-me/docs')",
         "call('test-me/docs/source')",
         "call('test-me/.moban.d')",
         "call('test-me/.moban.d/tests')",
         "call('test-me/.moban.d/docs')",
-        "call('test-me/.moban.d/docs/source')",
-        "call('test-me/test_me')"
+        "call('test-me/.moban.d/docs/source')"
     ]
     eq_(calls, expected)
 
