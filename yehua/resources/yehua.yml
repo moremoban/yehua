@@ -1,21 +1,24 @@
+introduction: |
+  Yehua will walk you through creating a blank python package.
+  Press ^C to quit at any time.
 configuration:
   template_path: ./templates
   static_path: ./static
 questions:
-  - project_name: "What is your project name?"
-  - description: "What does it do?"
-  - license: "What is your project's license?"
-  - author: "What name do you want to put as author?"
-  - contact: "What contact email do you want to put down?"
-  - organisation: "Which github profile/organisation are you going to associate it with?"
-  - company: "Which entity will be placed in the copyright clause?"
+  - project_name: "project name:"
+  - description: "description:"
+  - license: "license:"
+  - author: "author:"
+  - contact: "contact email:"
+  - organisation: "github profile/organisation:"
+  - company: "copyright owner:"
   - project_type:
-    - question: "Finally, what is project type?"
+    - question: "project type?"
       "1. library": "N/A"
       "2. command line interface":
-        - cli: "What is the name of cli executable?"
+        - cli: "cli executable name?"
       "3. C externsion":
-        - sources: "What are the source files?(Comma separated list is expected. For example: pymodule.c,file.c)"
+        - sources: "source files?(Comma separated list is expected. For example: pymodule.c,file.c)"
 layout:
   - "{{project_name|lower|replace('-', '_')}}"
   - tests

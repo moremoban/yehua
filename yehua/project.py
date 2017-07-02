@@ -7,9 +7,6 @@ from jinja2 import Environment, FileSystemLoader
 import yehua.utils as utils
 
 
-padding = "A: "
-
-
 class Project:
     def __init__(self, yehua_file):
         if not os.path.exists(yehua_file):
@@ -46,6 +43,7 @@ class Project:
         base_path = os.path.dirname(self.project_file)
         with open(self.project_file, "r") as f:
             first_stage = yaml.load(f)
+            print(first_stage['introduction'])
             self.template_dir = os.path.join(
                 base_path,
                 first_stage['configuration']['template_path'])
@@ -89,7 +87,7 @@ def get_user_inputs(questions):
                 if additional:
                     answers.update(additional)
             else:
-                a = utils.yehua_input(question + ' ' + padding)
+                a = utils.yehua_input(question + ' ')
                 answers[key] = a
     return answers
 
@@ -99,7 +97,10 @@ def raise_complex_question(question):
     for subq in question:
         subquestion = subq.pop('question')
         suggested_answers = sorted(subq.keys())
-        long_question = [subquestion] + suggested_answers + [padding]
+        long_question = [subquestion] + suggested_answers
+        choice = '(%s): ' % (
+            ','.join([str(x) for x in xrange(1, len(long_question))]))
+        long_question.append(choice)
         a = utils.yehua_input('\n'.join(long_question))
         for key in suggested_answers:
             if key.startswith(a) and subq[key] != 'N/A':
