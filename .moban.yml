@@ -13,3 +13,4 @@ targets:
   - test.bat: test.sh.jj2
   - "docs/source/conf.py": "docs/source/conf.py.jj2"
   - "docs/source/index.rst": "docs/source/index.rst"
+  - 'yehua/_version.py': 'version.py.jj2'
