@@ -12,6 +12,7 @@ extensions = [
     'sphinx.ext.doctest',
     'sphinx.ext.intersphinx',
     'sphinx.ext.viewcode',
+    'sphinxcontrib.spelling'
 {%block SPHINX_EXTENSIONS%}
 {%endblock%}
 ]
@@ -19,7 +20,7 @@ extensions = [
 templates_path = ['_templates']
 source_suffix = '.rst'
 master_doc = 'index'
-
+spelling_word_list_filename = 'spelling_wordlist.txt'
 project = u'{{name}}'
 copyright = u'{{copyright_year}} {{company}}'
 version = '{{release}}'

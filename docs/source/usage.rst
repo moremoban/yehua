@@ -6,7 +6,7 @@ to ask questions to collect project specific variables, and create the file
 structures.
 
 It takes a yehua file from command line option, or YEHUA_FILE in the environment
-varaible. If none is found, it resorts to the default yehua.yml file included
+variable. If none is found, it resorts to the default yehua.yml file included
 in the package. And the default yehua.yml create a blank python package.
 
 

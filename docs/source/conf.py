@@ -9,12 +9,13 @@ extensions = [
     'sphinx.ext.doctest',
     'sphinx.ext.intersphinx',
     'sphinx.ext.viewcode',
+    'sphinxcontrib.spelling'
 ]
 
 templates_path = ['_templates']
 source_suffix = '.rst'
 master_doc = 'index'
-
+spelling_word_list_filename = 'spelling_wordlist.txt'
 project = u'yehua'
 copyright = u'2017 Onni Software Ltd.'
 version = '0.0.1'
