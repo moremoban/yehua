@@ -103,6 +103,7 @@ EXTRAS_REQUIRE = {
 EXTRAS_REQUIRE = {}
 {% endif %}
 {% endif %}
+FILES = ['README.rst', 'CONTRIBUTORS.rst', 'CHANGELOG.rst']
 
 
 def read_files(*files):
@@ -149,7 +150,7 @@ if __name__ == '__main__':
         version=VERSION,
         author_email=EMAIL,
         description=DESCRIPTION,
-        long_description=read_files('README.rst', 'CHANGELOG.rst'),
+        long_description=read_files(*FILES),
         license=LICENSE,
         keywords=KEYWORDS,
 {% if external_module_library %}

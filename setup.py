@@ -45,6 +45,7 @@ INSTALL_REQUIRES = [
 PACKAGES = find_packages(exclude=['ez_setup', 'examples', 'tests'])
 EXTRAS_REQUIRE = {
 }
+FILES = ['README.rst', 'CONTRIBUTORS.rst', 'CHANGELOG.rst']
 
 
 def read_files(*files):
@@ -91,7 +92,7 @@ if __name__ == '__main__':
         version=VERSION,
         author_email=EMAIL,
         description=DESCRIPTION,
-        long_description=read_files('README.rst', 'CHANGELOG.rst'),
+        long_description=read_files(*FILES),
         license=LICENSE,
         keywords=KEYWORDS,
         extras_require=EXTRAS_REQUIRE,
