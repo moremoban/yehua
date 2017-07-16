@@ -44,6 +44,6 @@ Simply type in ::
 
     $ yehua
 
-And then go into the generate project folder::
+And then go into the generated project folder::
 
     $ moban
