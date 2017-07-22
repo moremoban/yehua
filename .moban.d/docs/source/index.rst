@@ -1,3 +1,4 @@
+{% from "usage.rst.jj2" import usage %}
 {%include "header.rst" %}
 
 
@@ -14,7 +15,7 @@ Installation
 Usage
 --------------------------------------------------------------------------------
 
-{%include "usage.rst.jj2"%}
+{{ usage('sphinx') }}
 
 Documentation
 --------------------------------------------------------------------------------

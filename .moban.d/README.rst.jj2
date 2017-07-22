@@ -1,3 +1,6 @@
+{% from "usage.rst.jj2" import usage %}
+
+
 ================================================================================
 {{name}} - Let you focus on code, instead of setup scaffolding
 ================================================================================
@@ -5,8 +8,8 @@
 .. image:: https://api.travis-ci.org/{{organisation}}/{{name}}.svg?branch=master
    :target: http://travis-ci.org/{{organisation}}/{{name}}
 
-.. image:: https://codecov.io/github/{{organisation}}/{{name}}/coverage.png
-    :target: https://codecov.io/github/{{organisation}}/{{name}}
+.. image:: https://codecov.io/gh/{{organisation}}/{{name}}/coverage.png
+    :target: https://codecov.io/gh/{{organisation}}/{{name}}
 
 {%block documentation_link%}
 .. image:: https://readthedocs.org/projects/{{name|lower}}/badge/?version=latest
@@ -21,9 +24,9 @@
 Installation
 ================================================================================
 
-{%include "installation.rst.jj2" %}
+{% include "installation.rst.jj2" %}
 
 Usage
 ================================================================================
 
-{%include "usage.rst.jj2" %}
+{{ usage('reademe') }}
