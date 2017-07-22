@@ -57,9 +57,9 @@ Why is moban involved here? It helps reduce duplicated meta data when
 your project grows. For example, yehua had this tutorial in README and in sphinx
 documentation. I wrote it in one file and moban copies it to both
 places. What's more, it helps further when the number of your
-project grows. For example, `pyexcel` project has dozens of
+project grows. For example, `pyexcel`_ project has dozens of
 sub projects. I wrote most of the generic documentation in
-`pyexcel-commons`_ and moban copies them across all sub projects.
+`pyexcel commons`_ and moban copies them across all sub projects.
 
 Step 4 Start coding
 *************************
@@ -147,5 +147,6 @@ done so. And then go to travis and activate your project.
 
 .. _hello project: https://github.com/chfw/hello
 .. _pyexcel commons: https://github.com/pyexcel/pyexcel-commons
+.. _pyexcel: https://github.com/pyexcel
 
 {% endmacro %}
