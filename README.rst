@@ -7,7 +7,7 @@ yehua - Let you focus on code, instead of setup scaffolding
 .. image:: https://api.travis-ci.org/chfw/yehua.svg?branch=master
    :target: http://travis-ci.org/chfw/yehua
 
-.. image:: https://codecov.io/gh/chfw/yehua/coverage.png
+.. image:: https://codecov.io/gh/chfw/yehua/branch/master/graph/badge.svg
     :target: https://codecov.io/gh/chfw/yehua
 
 .. image:: https://readthedocs.org/projects/yehua/badge/?version=latest

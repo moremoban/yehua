@@ -8,13 +8,11 @@
 .. image:: https://api.travis-ci.org/{{organisation}}/{{name}}.svg?branch=master
    :target: http://travis-ci.org/{{organisation}}/{{name}}
 
-.. image:: https://codecov.io/gh/{{organisation}}/{{name}}/coverage.png
+.. image:: https://codecov.io/gh/{{organisation}}/{{name}}/branch/master/graph/badge.svg
     :target: https://codecov.io/gh/{{organisation}}/{{name}}
 
-{%block documentation_link%}
 .. image:: https://readthedocs.org/projects/{{name|lower}}/badge/?version=latest
    :target: http://{{name|lower}}.readthedocs.org/en/latest/
-{%endblock%}
 
 .. image:: https://badges.gitter.im/chfw_yehua/Lobby.svg
    :alt: Join the chat at https://gitter.im/chfw_yehua/Lobby
