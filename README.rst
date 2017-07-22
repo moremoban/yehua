@@ -142,11 +142,6 @@ Then create your project repository in github and do these to push it out::
     $ git push origin master
 
 
-|slide9|
-
-|slide10|
-
-
 You can find the `hello project`_ on github.
 
 Step 8 enable travis
@@ -157,25 +152,25 @@ will need to do is to register with travis.org if you have not
 done so. And then go to travis and activate your project. 
 
 
-.. |slide1| image:: _static/yehua-0.png
+.. |slide1| image:: docs/source/_static/yehua-0.png
    :scale: 100%
-.. |slide2| image:: _static/yehua-1.png
+.. |slide2| image:: docs/source/_static/yehua-1.png
    :scale: 100%
-.. |slide3| image:: _static/yehua-2.png
+.. |slide3| image:: docs/source/_static/yehua-2.png
    :scale: 100%
-.. |slide4| image:: _static/yehua-3.png
+.. |slide4| image:: docs/source/_static/yehua-3.png
    :scale: 100%
-.. |slide5| image:: _static/yehua-4.png
+.. |slide5| image:: docs/source/_static/yehua-4.png
    :scale: 100%
-.. |slide6| image:: _static/yehua-5.png
+.. |slide6| image:: docs/source/_static/yehua-5.png
    :scale: 100%
-.. |slide7| image:: _static/yehua-6.png
+.. |slide7| image:: docs/source/_static/yehua-6.png
    :scale: 100%
-.. |slide8| image:: _static/yehua-7.png
+.. |slide8| image:: docs/source/_static/yehua-7.png
    :scale: 100%
-.. |slide9| image:: _static/github.png
+.. |slide9| image:: docs/source/_static/github.png
    :scale: 60%
-.. |slide10| image:: _static/push2github.png
+.. |slide10| image:: docs/source/_static/push2github.png
    :scale: 60%
 
 .. _hello project: https://github.com/chfw/hello
