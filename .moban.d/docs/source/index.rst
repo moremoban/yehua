@@ -26,3 +26,8 @@ Documentation
    extended_usage
    enterprise_usage
 
+License
+================================================================================
+
+NEW BSD License
+

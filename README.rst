@@ -196,3 +196,10 @@ done so. And then go to travis and activate your project.
 .. _pyexcel commons: https://github.com/pyexcel/pyexcel-commons
 .. _pyexcel: https://github.com/pyexcel
 
+
+
+
+License
+================================================================================
+
+NEW BSD License
