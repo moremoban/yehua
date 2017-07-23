@@ -14,3 +14,4 @@ What's more, the python package is github and travis-ci friendly.
 What's more, you can provide your own python package templates and your own
 yehua file to customize **yehua** to meet your own needs.
 
+.. _moban: https://github.com/chfw/moban
