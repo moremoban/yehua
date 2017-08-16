@@ -4,7 +4,7 @@
   {%set package=external_module_library%}
 {%else%}
   {%if command_line_interface%}
-    {%set package=command_line_interface + '_cli' %}
+    {%set package=command_line_interface %}
   {%else%}
     {%set package=name%}
   {%endif%}
