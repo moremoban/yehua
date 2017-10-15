@@ -2,6 +2,7 @@
 
 import os
 import re
+import unittest
 from mock import patch
 from yehua.project import Project
 from nose.tools import eq_
@@ -34,47 +35,54 @@ def test_project(inputs, mkdir):
     eq_(calls, expected)
 
 
+@patch('os.system')
 @patch('yehua.utils.mkdir')
 @patch('yehua.project.get_user_inputs')
-def test_project_get_mobans(inputs, mkdir):
+def test_project_get_mobans(inputs, mkdir, system_call):
+    test_project_name = 'test-me'
     mkdir.return_value = 0
     inputs.return_value = dict(
-        project_name='test-me'
+        project_name=test_project_name
     )
     yehua_file = get_yehua_file()
     project = Project(yehua_file)
     project.get_mobans()
+    formatter=('cd %s && ' +
+               'git clone https://github.com/moremoban/setupmobans.git mobans')
+    system_call.assert_called_once_with(formatter % test_project_name)
 
 
-@patch('yehua.utils.save_file')
-@patch('yehua.project.get_user_inputs')
-def test_project_templating(inputs, save_file):
+class TestProject(unittest.TestCase):
+        
+    @patch('yehua.utils.save_file')
+    @patch('yehua.project.get_user_inputs')
+    def test_project_templating(self, inputs, save_file):
 
-    def mock_save_file(filename, filecontent):
-        #file_to_write = os.path.join(
-        #    "tests", "fixtures",
-        #    "project_templating", filename)
-        #path = os.path.dirname(file_to_write)
-        #if not os.path.exists(path):
-        #    print(path)
-        #    os.mkdir(path)
-        #with open(file_to_write, 'w') as f:
-        #    f.write(filecontent)
-        file_to_read = os.path.join(
-            "tests",
-            "fixtures",
-            "project_templating",
-            filename)
-        with open(file_to_read, 'r') as f:
-            expected = f.read()
-            eq_(filecontent, expected)
-
-    inputs.return_value = dict(
-        project_name='test-me'
-    )
-    save_file.side_effect = mock_save_file
-    project = Project(get_yehua_file())
-    project.templating()
+        def mock_save_file(filename, filecontent):
+            #file_to_write = os.path.join(
+            #    "tests", "fixtures",
+            #    "project_templating", filename)
+            #path = os.path.dirname(file_to_write)
+            #if not os.path.exists(path):
+            #    print(path)
+            #    os.mkdir(path)
+            #with open(file_to_write, 'w') as f:
+            #    f.write(filecontent)
+            file_to_read = os.path.join(
+                "tests",
+                "fixtures",
+                "project_templating",
+                filename)
+            with open(file_to_read, 'r') as f:
+                expected = f.read()
+                self.assertMultiLineEqual(filecontent, expected)
+    
+        inputs.return_value = dict(
+            project_name='test-me'
+        )
+        save_file.side_effect = mock_save_file
+        project = Project(get_yehua_file())
+        project.templating()
 
 
 @patch('yehua.utils.copy_file')
@@ -89,18 +97,12 @@ def test_project_copy_static(inputs, copy_file):
     calls = copy_file.call_args_list
     calls = [split_call_arguments(call) for call in calls]
     expected = [
-        ["README.rst", "test-me/.moban.d/README.rst.jj2"],
-        ["test.sh", "test-me/.moban.d/test.sh.jj2"],
-        ["requirements.txt", "test-me/.moban.d/requirements.txt.jj2"],
-        ["setup.py.jj2", "test-me/.moban.d/setup.py.jj2"],
-        ["tests/requirements.txt", "test-me/.moban.d/tests/requirements.txt.jj2"],
-        ["docs/source/conf.py.jj2", "test-me/.moban.d/docs/source/conf.py.jj2"],
+        ["CUSTOM_README.rst", "test-me/.moban.d/CUSTOM_README.rst.jj2"],
+        ["custom_setup.py.jj2", "test-me/.moban.d/custom_setup.py.jj2"],
+        ["tests/custom_requirements.txt.jj2", "test-me/.moban.d/tests/custom_requirements.txt.jj2"],
         ["Makefile", "test-me/Makefile"],
         ["CHANGELOG.rst", "test-me/CHANGELOG.rst"],
-        ["MANIFEST.in", "test-me/MANIFEST.in"],
-        ["travis.yml.jj2", "test-me/.travis.yml"],
-        ["gitignore", "test-me/.gitignore"],
-        ["__init__.py.jj2", "test-me/test_me/__init__.py"]
+        ["MANIFEST.in", "test-me/MANIFEST.in"]
     ]
     basepath = os.path.join(os.getcwd(), 'yehua', 'resources', 'static')
     expected = [[ os.path.join(basepath, path[0]), path[1]] for path in expected]

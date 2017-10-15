@@ -11,6 +11,6 @@ targets:
   - "docs/source/conf.py": "docs/source/conf.py.jj2"
   - test.sh: test.script.jj2
   - "{{project_name | replace('-', '_')}}/_version.py": "_version.py.jj2"
-  - "{{project_name | replace('-', '_')}}/__init__.py": "__init__.py.jj2"  
+  - "{{project_name | replace('-', '_')}}/__init__.py": "__init__.py.jj2"
   - .gitignore: gitignore.jj2
   - .tavis.yml: travis.yml.jj2

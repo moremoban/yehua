@@ -4,9 +4,13 @@ configuration:
   - ".moban.d"
   configuration: test-me.yml
 targets:
-  - README.rst: README.rst.jj2
-  - setup.py: setup.py.jj2
+  - README.rst: CUSTOM_README.rst.jj2
+  - setup.py: custom_setup.py.jj2
   - requirements.txt: requirements.txt.jj2
-  - "tests/requirements.txt": "tests/requirements.txt.jj2"
+  - "tests/requirements.txt": "tests/custom_requirements.txt.jj2"
   - "docs/source/conf.py": "docs/source/conf.py.jj2"
-  - test.sh: test.sh.jj2
+  - test.sh: test.script.jj2
+  - "test_me/_version.py": "_version.py.jj2"
+  - "test_me/__init__.py": "__init__.py.jj2"
+  - .gitignore: gitignore.jj2
+  - .tavis.yml: travis.yml.jj2
