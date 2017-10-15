@@ -56,6 +56,7 @@ class Project:
     def initialize_git_and_add_all(self):
         project_name = self.answers['project_name']
         cmd = 'cd %s && git init' % project_name
+        os.system(cmd)
         project_files = [
             "CHANGELOG.rst",
             "MANIFEST.in",
