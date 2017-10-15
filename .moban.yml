@@ -1,16 +1,14 @@
 configuration:
-  configuration_dir: "commons/config"
   template_dir:
-  - "commons/templates"
+  - "mobans/templates"
   - ".moban.d"
   configuration: yehua.yaml
 targets:
-  - README.rst: README.rst.jj2
-  - setup.py: setup.py.jj2
+  - README.rst: CUSTOM_README.rst.jj2
+  - setup.py: custom_setup.py.jj2
   - requirements.txt: requirements.txt.jj2
   - "tests/requirements.txt": "tests/requirements.txt.jj2"
-  - test.sh: test.sh.jj2
-  - test.bat: test.sh.jj2
+  - test.sh: test.script.jj2
   - "docs/source/conf.py": "docs/source/conf.py.jj2"
   - "docs/source/index.rst": "docs/source/index.rst"
   - 'yehua/_version.py': 'version.py.jj2'

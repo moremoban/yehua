@@ -1,7 +1,0 @@
-six
-nose
-codecov
-coverage
-flake8
-{%block extras %}
-{%endblock%}

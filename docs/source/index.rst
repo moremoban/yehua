@@ -34,6 +34,7 @@ yehua file to customize **yehua** to meet your own needs.
 Installation
 --------------------------------------------------------------------------------
 
+
 You can install it via pip:
 
 .. code-block:: bash
@@ -57,9 +58,12 @@ Usage
 .. image:: https://github.com/chfw/yehua/raw/master/yehua-usage.gif
    :width: 600px
 
+Please note, since version 0.0.2, the command line is shortened. Due to
+time constaints, the demo video uses `yehua` still.
+
 Simply type in and you are taken care of::
 
-    $ yehua
+    $ yh
 
 
 Tutorial
@@ -68,7 +72,7 @@ Tutorial
 Let's make a python command line utility using `yehua`. The command
 will be `hello` and it prints `world`. You will need to issue::
 
-    $ pip install yehua moban
+    $ pip install yehua
 
 before proceeding.
 

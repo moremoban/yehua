@@ -6,7 +6,7 @@ yehua - Let you focus on code, instead of setup scaffolding
    :target: http://travis-ci.org/chfw/yehua
 
 .. image:: https://codecov.io/gh/chfw/yehua/branch/master/graph/badge.svg
-    :target: https://codecov.io/gh/chfw/yehua
+   :target: https://codecov.io/gh/chfw/yehua
 
 .. image:: https://readthedocs.org/projects/yehua/badge/?version=latest
    :target: http://yehua.readthedocs.org/en/latest/
@@ -14,7 +14,6 @@ yehua - Let you focus on code, instead of setup scaffolding
 .. image:: https://badges.gitter.im/chfw_yehua/Lobby.svg
    :alt: Join the chat at https://gitter.im/chfw_yehua/Lobby
    :target: https://gitter.im/chfw_yehua/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge
-
 
 Introduction
 ================================================================================
@@ -37,8 +36,10 @@ yehua file to customize **yehua** to meet your own needs.
 
 .. _moban: https://github.com/chfw/moban
 
+
 Installation
 ================================================================================
+
 
 You can install it via pip:
 
@@ -63,9 +64,12 @@ Usage
 .. image:: https://github.com/chfw/yehua/raw/master/yehua-usage.gif
    :width: 600px
 
+Please note, since version 0.0.2, the command line is shortened. Due to
+time constaints, the demo video uses `yehua` still.
+
 Simply type in and you are taken care of::
 
-    $ yehua
+    $ yh
 
 
 Tutorial
@@ -74,7 +78,7 @@ Tutorial
 Let's make a python command line utility using `yehua`. The command
 will be `hello` and it prints `world`. You will need to issue::
 
-    $ pip install yehua moban
+    $ pip install yehua
 
 before proceeding.
 
@@ -196,7 +200,6 @@ done so. And then go to travis and activate your project.
 .. _pyexcel: https://github.com/pyexcel
 .. _moban: https://github.com/moremoban/moban
 .. _setupmobans: https://github.com/moremoban/setupmobans
-
 
 
 License

@@ -1,21 +1,20 @@
-try:
-    from setuptools import setup, find_packages
-except ImportError:
-    from ez_setup import use_setuptools
-    use_setuptools()
-    from setuptools import setup, find_packages
+# Template by setupmobans
+import os
+import codecs
+from shutil import rmtree
+from setuptools import setup, find_packages, Command
 import sys
 PY2 = sys.version_info[0] == 2
 PY26 = PY2 and sys.version_info[1] < 7
 
 NAME = 'yehua'
 AUTHOR = 'C.W.'
-VERSION = '0.0.2'
-EMAIL = 'wa'
+VERSION = ''
+EMAIL = 'wangc_2011@hotmail.com'
 LICENSE = 'New BSD'
 ENTRY_POINTS = {
     'console_scripts': [
-        'yehua = yehua.main:main'
+        'yh = yehua.main:main'
     ]
 }
 DESCRIPTION = (
@@ -23,11 +22,19 @@ DESCRIPTION = (
     'age.' +
     ''
 )
+URL = 'https://github.com/chfw/yehua'
+DOWNLOAD_URL = '%s/archive/0.0.1.tar.gz' % URL
+FILES = ['README.rst',  'CHANGELOG.rst']
 KEYWORDS = [
+    'python'
 ]
 
 CLASSIFIERS = [
+    'Topic :: Office/Business',
+    'Topic :: Utilities',
+    'Topic :: Software Development :: Libraries',
     'Programming Language :: Python',
+    'Intended Audience :: Developers',
     'Programming Language :: Python :: 2.6',
     'Programming Language :: Python :: 2.7',
     'Programming Language :: Python :: 3.3',
@@ -40,14 +47,48 @@ INSTALL_REQUIRES = [
     'jinja2',
     'PyYAML',
     'moban',
-    'gease',
 ]
 
 
 PACKAGES = find_packages(exclude=['ez_setup', 'examples', 'tests'])
 EXTRAS_REQUIRE = {
 }
-FILES = ['README.rst', 'CONTRIBUTORS.rst', 'CHANGELOG.rst']
+PUBLISH_COMMAND = '{0} setup.py sdist bdist_wheel upload -r pypi'.format(
+    sys.executable)
+GS_COMMAND = ('gs yehua v0.0.1 ' +
+              "Find 0.0.1 in changelog for more details")
+here = os.path.abspath(os.path.dirname(__file__))
+
+
+class PublishCommand(Command):
+    """Support setup.py upload."""
+
+    description = 'Build and publish the package on github and pypi'
+    user_options = []
+
+    @staticmethod
+    def status(s):
+        """Prints things in bold."""
+        print('\033[1m{0}\033[0m'.format(s))
+
+    def initialize_options(self):
+        pass
+
+    def finalize_options(self):
+        pass
+
+    def run(self):
+        try:
+            self.status('Removing previous builds…')
+            rmtree(os.path.join(here, 'dist'))
+        except OSError:
+            pass
+
+        self.status('Building Source and Wheel (universal) distribution…')
+        if os.system(GS_COMMAND) == 0:
+            os.system(PUBLISH_COMMAND)
+
+        sys.exit()
 
 
 def read_files(*files):
@@ -61,7 +102,7 @@ def read_files(*files):
 
 def read(afile):
     """Read a file into setup"""
-    with open(afile, 'r') as opened_file:
+    with codecs.open(afile, 'r', 'utf-8') as opened_file:
         content = filter_out_test_code(opened_file)
         content = "".join(list(content))
         return content
@@ -84,7 +125,11 @@ def filter_out_test_code(file_handle):
                     found_test_code = False
                     yield line
         else:
-            yield line
+            for keyword in ['|version|', '|today|']:
+                if keyword in line:
+                    break
+            else:
+                yield line
 
 
 if __name__ == '__main__':
@@ -94,6 +139,8 @@ if __name__ == '__main__':
         version=VERSION,
         author_email=EMAIL,
         description=DESCRIPTION,
+        url=URL,
+        download_url=DOWNLOAD_URL,
         long_description=read_files(*FILES),
         license=LICENSE,
         keywords=KEYWORDS,
@@ -104,5 +151,9 @@ if __name__ == '__main__':
         include_package_data=True,
         zip_safe=False,
         entry_points=ENTRY_POINTS,
-        classifiers=CLASSIFIERS
+        classifiers=CLASSIFIERS,
+        setup_requires=['gease'],
+        cmdclass={
+            'publish': PublishCommand,
+        }
     )
