@@ -9,7 +9,7 @@
 **yehua** is {{description|lower}} It create a blank python package that is
 usable and ready to push to github. 
 
-Future updates on your organisation's specific static information can be instantly applies the update accurately using `moban`_. What's more, the python package is github and travis-ci friendly.
+Future updates on your organisation's specific static information can be instantly applies the update accurately using `moban`_ . What's more, the python package is github and travis-ci friendly.
 
 What's more, you can provide your own python package templates and your own
 yehua file to customize **yehua** to meet your own needs.
