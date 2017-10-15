@@ -39,6 +39,7 @@ def main():
     project.get_mobans()
     project.templating()
     project.copy_static_files()
+    project.inflate_all_by_moban()
 
 
 def usage():

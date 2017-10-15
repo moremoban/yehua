@@ -34,6 +34,18 @@ def test_project(inputs, mkdir):
     eq_(calls, expected)
 
 
+@patch('yehua.utils.mkdir')
+@patch('yehua.project.get_user_inputs')
+def test_project_get_mobans(inputs, mkdir):
+    mkdir.return_value = 0
+    inputs.return_value = dict(
+        project_name='test-me'
+    )
+    yehua_file = get_yehua_file()
+    project = Project(yehua_file)
+    project.get_mobans()
+
+
 @patch('yehua.utils.save_file')
 @patch('yehua.project.get_user_inputs')
 def test_project_templating(inputs, save_file):

@@ -27,7 +27,12 @@ class Project:
         utils.make_directories(None, folder_tree)
 
     def get_mobans(self):
-        print(self.directives['mobans'])
+        for repo in self.directives['mobans']:
+            for key, value in repo.items():
+                cmd = 'cd %s && git clone %s %s' % (
+                    self.answers['project_name'],
+                    value, key)
+                os.system(cmd)
 
     def templating(self):
         for template in self.directives['templates']:
@@ -43,6 +48,10 @@ class Project:
                 source = os.path.abspath(os.path.join(self.static_dir, source))
                 dest = os.path.join(self.project_name, output)
                 utils.copy_file(source, dest)
+
+    def inflate_all_by_moban(self):
+        cmd = 'cd %s && moban' % self.answers['project_name']
+        os.system(cmd)
 
     def _ask_questions(self):
         base_path = os.path.dirname(self.project_file)

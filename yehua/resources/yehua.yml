@@ -29,20 +29,16 @@ layout:
     - docs:
       - source
 mobans:
-  - 'mobans': https://github.com/moremobans/setupmobans
+  - 'mobans': https://github.com/moremoban/setupmobans.git
 templates:
   - "{{project_name}}.yml": project.yml
   - .moban.yml: .moban.yml
+  - "{{project_name|lower|replace('-', '_')}}/__init__.py": __init__.py.jj2
 static:
-  - ".moban.d/README.rst.jj2": "README.rst"
-  - ".moban.d/test.sh.jj2": "test.sh"
-  - ".moban.d/requirements.txt.jj2": requirements.txt
-  - ".moban.d/setup.py.jj2": setup.py.jj2
-  - ".moban.d/tests/requirements.txt.jj2": "tests/requirements.txt"
-  - ".moban.d/docs/source/conf.py.jj2": "docs/source/conf.py.jj2"
+  - ".moban.d/CUSTOM_README.rst.jj2": "CUSTOM_README.rst"
+  - ".moban.d/custom_setup.py.jj2": custom_setup.py.jj2
+  - ".moban.d/tests/custom_requirements.txt.jj2": "tests/custom_requirements.txt"
   - Makefile: Makefile
   - CHANGELOG.rst: CHANGELOG.rst
   - MANIFEST.in: MANIFEST.in
-  - .travis.yml: travis.yml.jj2
-  - .gitignore: gitignore
-  - "{{project_name|lower|replace('-', '_')}}/__init__.py": __init__.py.jj2
+
