@@ -53,6 +53,32 @@ class Project:
         cmd = 'cd %s && moban' % self.answers['project_name']
         os.system(cmd)
 
+    def initialize_git_and_add_all(self):
+        project_name = self.answers['project_name']
+        cmd = 'cd %s && git init' % project_name
+        project_files = [
+            "CHANGELOG.rst",
+            "MANIFEST.in",
+            "Makefile",
+            "README.rst",
+            "%s.yml" % project_name,
+            "%s" % utils.make_project_src(project_name),
+            "docs",
+            "requirements.txt",
+            "setup.cfg",
+            "setup.py",
+            "test.sh",
+            "tests",
+            ".gitignore",
+            ".moban.d",
+            ".travis.yml",
+            ".moban.yml"
+        ]
+        for file in project_files:
+            cmd = 'cd %s && git add' % project_name
+            os.system(cmd)
+        print("Please review changes before commit!")
+
     def _ask_questions(self):
         base_path = os.path.dirname(self.project_file)
         with open(self.project_file, "r") as f:

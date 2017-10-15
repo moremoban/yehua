@@ -26,10 +26,10 @@ Introduction
   organisation? For example, one line change in your company's profile.
   Copy and paste? If yes, you still live in 20th century.
 
-**yehua** is a command line tool to provide a default scaffolding for a python package. It provides a blank python package where
-your organisation's specific static information is injected. Future updates
-is linked with `moban`_ which instantly applies the update accurately.
-What's more, the python package is github and travis-ci friendly.
+**yehua** is a command line tool to provide a default scaffolding for a python package. It create a blank python package that is
+usable and ready to push to github. 
+
+Future updates on your organisation's specific static information can be instantly applies the update accurately using `moban`_. What's more, the python package is github and travis-ci friendly.
 
 What's more, you can provide your own python package templates and your own
 yehua file to customize **yehua** to meet your own needs.
@@ -71,6 +71,15 @@ Simply type in and you are taken care of::
 
     $ yh
 
+It will do these for you:
+
+#. Consult you on your project static information which can update as
+   many as you want to.
+#. Create the Python package folder structure
+#. Initialize the package as git project
+
+You will simply need to commit it after you will have reviewed the
+generated files.
 
 Tutorial
 -----------------

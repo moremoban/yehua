@@ -7,11 +7,12 @@ from yehua.main import main, get_yehua_file, HELP_TEXT, control_c_quit
 from nose.tools import eq_, raises
 
 
+@patch('os.system')
 @patch('yehua.project.get_user_inputs')
 @patch('yehua.utils.mkdir')
 @patch('yehua.utils.save_file')
 @patch('yehua.utils.copy_file')
-def test_main(copy, save, mkdir, inputs):
+def test_main(copy, save, mkdir, inputs, os_system):
     copy.return_value = 0
     save.return_value = 0
     mkdir.return_value = 0

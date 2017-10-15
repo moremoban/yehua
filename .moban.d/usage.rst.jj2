@@ -16,6 +16,15 @@ Simply type in and you are taken care of::
 
     $ yh
 
+It will do these for you:
+
+#. Consult you on your project static information which can update as
+   many as you want to.
+#. Create the Python package folder structure
+#. Initialize the package as git project
+
+You will simply need to commit it after you will have reviewed the
+generated files.
 
 Tutorial
 -----------------
