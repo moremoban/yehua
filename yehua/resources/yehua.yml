@@ -40,4 +40,4 @@ static:
   - Makefile: Makefile
   - CHANGELOG.rst: CHANGELOG.rst
   - MANIFEST.in: MANIFEST.in
-
+  - setup.cfg: setup.cfg

@@ -13,5 +13,4 @@ dependencies:
   - jinja2
   - PyYAML
   - moban
-  - gease
 description: A command line tool to provide a default scaffolding for a python package.

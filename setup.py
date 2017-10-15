@@ -39,6 +39,8 @@ CLASSIFIERS = [
 INSTALL_REQUIRES = [
     'jinja2',
     'PyYAML',
+    'moban',
+    'gease',
 ]
 
 

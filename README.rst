@@ -63,13 +63,10 @@ Usage
 .. image:: https://github.com/chfw/yehua/raw/master/yehua-usage.gif
    :width: 600px
 
-Simply type in ::
+Simply type in and you are taken care of::
 
     $ yehua
 
-And then go into the generate project folder::
-
-    $ moban
 
 Tutorial
 -----------------
@@ -103,6 +100,8 @@ Let's change to 'hello' directory
 
 |slide3|
 
+All meta data is inflated via **`moban`_ automatically**
+The templates come from `setupmobans`_
 Run moban. It inflates the all meta data.
 
 |slide4|
@@ -195,7 +194,8 @@ done so. And then go to travis and activate your project.
 .. _hello project: https://github.com/chfw/hello
 .. _pyexcel commons: https://github.com/pyexcel/pyexcel-commons
 .. _pyexcel: https://github.com/pyexcel
-
+.. _moban: https://github.com/moremoban/moban
+.. _setupmobans: https://github.com/moremoban/setupmobans
 
 
 

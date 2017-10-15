@@ -53,10 +53,45 @@ def test_project_get_mobans(inputs, mkdir, system_call):
 
 
 class TestProject(unittest.TestCase):
-        
-    @patch('yehua.utils.save_file')
-    @patch('yehua.project.get_user_inputs')
-    def test_project_templating(self, inputs, save_file):
+
+    def setUp(self):
+        self.patcher1 = patch('yehua.utils.copy_file')
+        self.copy_file = self.patcher1.start()
+
+        self.patcher2 = patch('yehua.project.get_user_inputs')
+        self.inputs = self.patcher2.start()
+
+        self.patcher3 = patch('yehua.utils.save_file')
+        self.save_file = self.patcher3.start()
+
+    def tearDown(self):
+        self.patcher3.stop()
+        self.patcher2.stop()
+        self.patcher1.stop()
+
+    def test_project_copy_static(self):
+        self.copy_file.return_value = 0
+        self.inputs.return_value = dict(
+            project_name='test-me'
+        )
+        project = Project(get_yehua_file())
+        project.copy_static_files()
+        calls = self.copy_file.call_args_list
+        calls = [split_call_arguments(call) for call in calls]
+        expected = [
+            ["CUSTOM_README.rst", "test-me/.moban.d/CUSTOM_README.rst.jj2"],
+            ["custom_setup.py.jj2", "test-me/.moban.d/custom_setup.py.jj2"],
+            ["tests/custom_requirements.txt.jj2", "test-me/.moban.d/tests/custom_requirements.txt.jj2"],
+            ["Makefile", "test-me/Makefile"],
+            ["CHANGELOG.rst", "test-me/CHANGELOG.rst"],
+            ["MANIFEST.in", "test-me/MANIFEST.in"],
+            ["setup.cfg", "test-me/setup.cfg"]
+        ]
+        basepath = os.path.join(os.getcwd(), 'yehua', 'resources', 'static')
+        expected = [[ os.path.join(basepath, path[0]), path[1]] for path in expected]
+        eq_(calls, expected)
+    
+    def test_project_templating(self):
 
         def mock_save_file(filename, filecontent):
             #file_to_write = os.path.join(
@@ -77,36 +112,12 @@ class TestProject(unittest.TestCase):
                 expected = f.read()
                 self.assertMultiLineEqual(filecontent, expected)
     
-        inputs.return_value = dict(
+        self.inputs.return_value = dict(
             project_name='test-me'
         )
-        save_file.side_effect = mock_save_file
+        self.save_file.side_effect = mock_save_file
         project = Project(get_yehua_file())
         project.templating()
-
-
-@patch('yehua.utils.copy_file')
-@patch('yehua.project.get_user_inputs')
-def test_project_copy_static(inputs, copy_file):
-    copy_file.return_value = 0
-    inputs.return_value = dict(
-        project_name='test-me'
-    )
-    project = Project(get_yehua_file())
-    project.copy_static_files()
-    calls = copy_file.call_args_list
-    calls = [split_call_arguments(call) for call in calls]
-    expected = [
-        ["CUSTOM_README.rst", "test-me/.moban.d/CUSTOM_README.rst.jj2"],
-        ["custom_setup.py.jj2", "test-me/.moban.d/custom_setup.py.jj2"],
-        ["tests/custom_requirements.txt.jj2", "test-me/.moban.d/tests/custom_requirements.txt.jj2"],
-        ["Makefile", "test-me/Makefile"],
-        ["CHANGELOG.rst", "test-me/CHANGELOG.rst"],
-        ["MANIFEST.in", "test-me/MANIFEST.in"]
-    ]
-    basepath = os.path.join(os.getcwd(), 'yehua', 'resources', 'static')
-    expected = [[ os.path.join(basepath, path[0]), path[1]] for path in expected]
-    eq_(calls, expected)
 
 
 def split_call_arguments(mock_call):
