@@ -1,7 +1,6 @@
 configuration:
-  configuration_dir: "commons/config"
   template_dir:
-  - "commons/templates"
+  - "mobans/templates"
   - ".moban.d"
   configuration: test-me.yml
 targets:

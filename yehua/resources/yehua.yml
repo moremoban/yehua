@@ -28,6 +28,8 @@ layout:
     - tests
     - docs:
       - source
+mobans:
+  - 'mobans': https://github.com/moremobans/setupmobans
 templates:
   - "{{project_name}}.yml": project.yml
   - .moban.yml: .moban.yml

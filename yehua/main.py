@@ -3,9 +3,7 @@ import signal
 
 from yehua.project import Project
 from yehua.utils import get_yehua_file
-
-
-__version__ = "0.0.1"
+from yehua._version import __version__
 
 HELP_TEXT = """
 Usage: %s
@@ -38,6 +36,7 @@ def main():
         yehua_file = get_yehua_file()
     project = Project(yehua_file)
     project.create_all_directories()
+    project.get_mobans()
     project.templating()
     project.copy_static_files()
 

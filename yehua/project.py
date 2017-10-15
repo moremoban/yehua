@@ -26,6 +26,9 @@ class Project:
         }
         utils.make_directories(None, folder_tree)
 
+    def get_mobans(self):
+        print(self.directives['mobans'])
+
     def templating(self):
         for template in self.directives['templates']:
             for output, template_file in template.items():
