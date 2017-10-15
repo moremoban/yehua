@@ -13,4 +13,4 @@ targets:
   - "{{project_name | replace('-', '_')}}/_version.py": "_version.py.jj2"
   - "{{project_name | replace('-', '_')}}/__init__.py": "__init__.py.jj2"
   - .gitignore: gitignore.jj2
-  - .tavis.yml: travis.yml.jj2
+  - .travis.yml: travis.yml.jj2
