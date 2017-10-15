@@ -10,6 +10,8 @@ Added
 #. Automatically inflate project meta data. One yehua command and typing a few
    questions are required before a complete project scaffolding
 #. Automatically obtain setupmobans repo for previous task.
+#. Automatically initialize package as git project and add all project files
+   for the user to commit
 
 Removed
 ********
