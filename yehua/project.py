@@ -75,8 +75,8 @@ class Project:
             ".travis.yml",
             ".moban.yml"
         ]
-        for file in project_files:
-            cmd = 'cd %s && git add' % project_name
+        for file_name in project_files:
+            cmd = 'cd %s && git add %s' % (project_name, file_name)
             os.system(cmd)
         print("Please review changes before commit!")
 
