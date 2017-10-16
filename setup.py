@@ -23,7 +23,7 @@ DESCRIPTION = (
     ''
 )
 URL = 'https://github.com/chfw/yehua'
-DOWNLOAD_URL = '%s/archive/0.0.1.tar.gz' % URL
+DOWNLOAD_URL = '%s/archive/0.0.2.tar.gz' % URL
 FILES = ['README.rst',  'CHANGELOG.rst']
 KEYWORDS = [
     'python'
@@ -55,8 +55,8 @@ EXTRAS_REQUIRE = {
 }
 PUBLISH_COMMAND = '{0} setup.py sdist bdist_wheel upload -r pypi'.format(
     sys.executable)
-GS_COMMAND = ('gs yehua v0.0.1 ' +
-              "Find 0.0.1 in changelog for more details")
+GS_COMMAND = ('gs yehua v0.0.2 ' +
+              "Find 0.0.2 in changelog for more details")
 here = os.path.abspath(os.path.dirname(__file__))
 
 

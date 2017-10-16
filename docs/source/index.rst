@@ -5,7 +5,6 @@
 :Source code: http://github.com/chfw/yehua.git
 :Issues: http://github.com/chfw/yehua/issues
 :License: New BSD License
-:Development: |release|
 :Released: |version|
 :Generated: |today|
 
