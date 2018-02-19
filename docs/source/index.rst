@@ -5,6 +5,7 @@
 :Source code: http://github.com/chfw/yehua.git
 :Issues: http://github.com/chfw/yehua/issues
 :License: New BSD License
+:Development: |release|
 :Released: |version|
 :Generated: |today|
 
@@ -32,7 +33,7 @@ Installation
 --------------------------------------------------------------------------------
 
 
-You can install it via pip:
+You can install yehua via pip:
 
 .. code-block:: bash
 
@@ -43,7 +44,7 @@ or clone it and install it:
 
 .. code-block:: bash
 
-    $ git clone http://github.com/chfw/yehua.git
+    $ git clone https://github.com/chfw/yehua.git
     $ cd yehua
     $ python setup.py install
 
@@ -220,4 +221,3 @@ License
 ================================================================================
 
 NEW BSD License
-

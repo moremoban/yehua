@@ -2,6 +2,7 @@
 
 import os
 import re
+import codecs
 import unittest
 from mock import patch
 from yehua.project import Project
@@ -108,7 +109,7 @@ class TestProject(unittest.TestCase):
                 "fixtures",
                 "project_templating",
                 filename)
-            with open(file_to_read, 'r') as f:
+            with codecs.open(file_to_read, 'r', encoding='utf-8') as f:
                 expected = f.read()
                 self.assertMultiLineEqual(filecontent, expected)
     
