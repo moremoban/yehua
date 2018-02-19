@@ -42,3 +42,22 @@ static:
   - CHANGELOG.rst: CHANGELOG.rst
   - MANIFEST.in: MANIFEST.in
   - setup.cfg: setup.cfg
+post-moban:
+  git-repo-files:
+    - "CHANGELOG.rst"
+    - "MANIFEST.in"
+    - "Makefile"
+    - "README.rst"
+    - "{{project_name}}.yml"
+    - "{{project_name | replace('-', '_')}}"
+    - "docs"
+    - "requirements.txt"
+    - "setup.cfg"
+    - "setup.py"
+    - "test.sh"
+    - "tests"
+    - ".gitignore"
+    - ".moban.d"
+    - ".travis.yml"
+    - ".moban.yml"
+

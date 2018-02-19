@@ -53,28 +53,15 @@ class Project:
         cmd = 'cd %s && moban' % self.answers['project_name']
         os.system(cmd)
 
-    def initialize_git_and_add_all(self):
+    def post_moban(self):
+        for key, value in self.directives['post-moban'].items():
+            if key == 'git-repo-files':
+                self.initialize_git_and_add_all(value)
+
+    def initialize_git_and_add_all(self, project_files):
         project_name = self.answers['project_name']
         cmd = 'cd %s && git init' % project_name
         os.system(cmd)
-        project_files = [
-            "CHANGELOG.rst",
-            "MANIFEST.in",
-            "Makefile",
-            "README.rst",
-            "%s.yml" % project_name,
-            "%s" % utils.make_project_src(project_name),
-            "docs",
-            "requirements.txt",
-            "setup.cfg",
-            "setup.py",
-            "test.sh",
-            "tests",
-            ".gitignore",
-            ".moban.d",
-            ".travis.yml",
-            ".moban.yml"
-        ]
         for file_name in project_files:
             cmd = 'cd %s && git add %s' % (project_name, file_name)
             os.system(cmd)

@@ -40,7 +40,7 @@ def main():
     project.templating()
     project.copy_static_files()
     project.inflate_all_by_moban()
-    project.initialize_git_and_add_all()
+    project.post_moban()
 
 
 def usage():
