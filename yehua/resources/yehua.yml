@@ -32,6 +32,7 @@ mobans:
   - 'mobans': https://github.com/moremoban/setupmobans.git
 templates:
   - "{{project_name}}.yml": project.yml
+  - "{{project_name | replace('-', '_')}}/__init__.py": "__init__.py.jj2"
   - .moban.yml: project-moban.yml
 static:
   - ".moban.d/CUSTOM_README.rst.jj2": "CUSTOM_README.rst"
