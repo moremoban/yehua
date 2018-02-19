@@ -1,5 +1,6 @@
 import os
 import sys
+import codecs
 import shutil
 
 DEFAULT_FILE = "yehua.yml"
@@ -60,5 +61,5 @@ def mkdir(path):
 
 
 def save_file(filename, filecontent):
-    with open(os.path.join(filename), 'w') as f:
+    with codecs.open(os.path.join(filename), 'w', encoding='utf-8') as f:
         f.write(filecontent)
