@@ -70,6 +70,9 @@ class Project:
             os.system(cmd)
         print("Please review changes before commit!")
 
+    def end(self):
+        print("All done!! project %s is created" % self.project_name)
+
     def _ask_questions(self):
         base_path = os.path.dirname(self.project_file)
         with open(self.project_file, "r") as f:

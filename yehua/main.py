@@ -41,6 +41,7 @@ def main():
     project.copy_static_files()
     project.inflate_all_by_moban()
     project.post_moban()
+    project.end()
 
 
 def usage():
