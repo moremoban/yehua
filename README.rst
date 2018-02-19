@@ -2,11 +2,11 @@
 yehua - Let you focus on code, instead of setup scaffolding
 ================================================================================
 
-.. image:: https://api.travis-ci.org/chfw/yehua.svg?branch=master
-   :target: http://travis-ci.org/chfw/yehua
+.. image:: https://api.travis-ci.org/moremoban/yehua.svg?branch=master
+   :target: http://travis-ci.org/moremoban/yehua
 
-.. image:: https://codecov.io/gh/chfw/yehua/branch/master/graph/badge.svg
-   :target: https://codecov.io/gh/chfw/yehua
+.. image:: https://codecov.io/gh/moremoban/yehua/branch/master/graph/badge.svg
+   :target: https://codecov.io/gh/moremoban/yehua
 
 .. image:: https://readthedocs.org/projects/yehua/badge/?version=latest
    :target: http://yehua.readthedocs.org/en/latest/
@@ -50,7 +50,7 @@ or clone it and install it:
 
 .. code-block:: bash
 
-    $ git clone https://github.com/chfw/yehua.git
+    $ git clone https://github.com/moremoban/yehua.git
     $ cd yehua
     $ python setup.py install
 

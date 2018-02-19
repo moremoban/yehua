@@ -21,7 +21,7 @@ DESCRIPTION = (
     'A command line tool to provide a default scaffolding for a python' +
     'package.'
 )
-URL = 'https://github.com/chfw/yehua'
+URL = 'https://github.com/moremoban/yehua'
 DOWNLOAD_URL = '%s/archive/0.0.2.tar.gz' % URL
 FILES = ['README.rst', 'CHANGELOG.rst']
 KEYWORDS = [

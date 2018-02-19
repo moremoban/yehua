@@ -2,8 +2,8 @@
 ================================================================================
 
 :Author: C.W.
-:Source code: http://github.com/chfw/yehua.git
-:Issues: http://github.com/chfw/yehua/issues
+:Source code: http://github.com/moremoban/yehua.git
+:Issues: http://github.com/moremoban/yehua/issues
 :License: New BSD License
 :Development: |release|
 :Released: |version|
@@ -44,7 +44,7 @@ or clone it and install it:
 
 .. code-block:: bash
 
-    $ git clone https://github.com/chfw/yehua.git
+    $ git clone https://github.com/moremoban/yehua.git
     $ cd yehua
     $ python setup.py install
 
