@@ -50,10 +50,13 @@ class Project:
                 utils.copy_file(source, dest)
 
     def inflate_all_by_moban(self):
-        cmd = 'cd %s && moban' % self.answers['project_name']
-        os.system(cmd)
+        if len(self.directives['mobans']) > 0:
+            cmd = 'cd %s && moban' % self.answers['project_name']
+            os.system(cmd)
 
     def post_moban(self):
+        if 'post-moban' not in self.directives:
+            return
         for key, value in self.directives['post-moban'].items():
             if key == 'git-repo-files':
                 self.initialize_git_and_add_all(value)
