@@ -12,3 +12,6 @@ targets:
   - "docs/source/conf.py": "docs/source/conf.py.jj2"
   - "docs/source/index.rst": "docs/source/index.rst"
   - 'yehua/_version.py': 'version.py.jj2'
+  - output: CHANGELOG.rst
+    configuration: changelog.yml
+    template: CHANGELOG.rst.jj2
