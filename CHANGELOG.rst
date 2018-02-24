@@ -1,6 +1,16 @@
 Change log
 ================================================================================
 
+0.0.3 - 24/02/2018
+--------------------------------------------------------------------------------
+
+Added
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+#. To add all files to a git repo is being made optional. The action is
+   specified in `git-repo-files` under `post-moban` section. This particular
+   need arises when it is used to scaffold other type of projects such as npm.
+
 0.0.2 - 15/10/2017
 --------------------------------------------------------------------------------
 

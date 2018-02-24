@@ -69,7 +69,7 @@ The files in this section follows this spec:
     - templated_target_file: template.file.in.templates.folder
 
 .. literalinclude:: ../../yehua/resources/yehua.yml
-   :lines: 31-33
+   :lines: 33-36
 
 As you can see, **yehua** would expand `project_name` for you.
 
@@ -82,7 +82,7 @@ File in this section is simply copied over. Here is the spec::
   - relative_file_path: relative_static_file_path_in_static_folder
 
 .. literalinclude:: ../../yehua/resources/yehua.yml
-   :lines: 34-46
+   :lines: 37-44
 
 
 Template files
@@ -107,3 +107,14 @@ Static files
 
 The static files in yehua/resources/static are copied over by yehua according to
 the instruction file.
+
+
+After all actions
+--------------------------------------------------------------------------------
+
+The possible extra actions is `git-repo-files` where you can name the files
+to be added to a git repo. Here is a list of default files to be added to
+the file repo:
+
+.. literalinclude:: ../../yehua/resources/yehua.yml
+   :lines: 46-62

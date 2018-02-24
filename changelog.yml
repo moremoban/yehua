@@ -2,6 +2,12 @@ releases:
 - changes:
   - action: Added
     details:
+    - "To add all files to a git repo is being made optional. The action is specified in `git-repo-files` under `post-moban` section. This particular need arises when it is used to scaffold other type of projects such as npm."
+  date: 24/02/2018
+  version: 0.0.3
+- changes:
+  - action: Added
+    details:
     - Automatically inflate project meta data. One yehua command and typing a few  questions
       are required before a complete project scaffolding
     - Automatically obtain setupmobans repo for previous task.

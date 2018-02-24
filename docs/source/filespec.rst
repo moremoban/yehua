@@ -13,6 +13,8 @@ Here is the sample startup file::
           "1. Answser":
             - follow_up_keyword: "Follow up question?"
           "2. Answer": "N/A"
+    mobans:
+      - 'mobans': 'this is optional'
     layout:
       - tests
       - docs:
@@ -27,3 +29,6 @@ Here is the sample startup file::
     static:
       - ".moban.d/README.rst": "README.rst"
       - "{{project_src}}/__init__.py": __init__.py.jj2
+    post-moban:
+      git-repo-files:
+      - "this_is_optional"
