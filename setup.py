@@ -1,4 +1,6 @@
-# Template by setupmobans
+#!/usr/bin/env python3
+
+# Template by pypi-mobans
 import os
 import sys
 import codecs
@@ -15,7 +17,7 @@ LICENSE = 'New BSD'
 ENTRY_POINTS = {
     'console_scripts': [
         'yh = yehua.main:main'
-    ]
+    ],
 }
 DESCRIPTION = (
     'A command line tool to provide a default scaffolding for a python' +
@@ -29,8 +31,6 @@ KEYWORDS = [
 ]
 
 CLASSIFIERS = [
-    'Topic :: Office/Business',
-    'Topic :: Utilities',
     'Topic :: Software Development :: Libraries',
     'Programming Language :: Python',
     'Intended Audience :: Developers',
@@ -40,6 +40,7 @@ CLASSIFIERS = [
     'Programming Language :: Python :: 3.4',
     'Programming Language :: Python :: 3.5',
     'Programming Language :: Python :: 3.6',
+    'Topic :: Utilities',
 ]
 
 INSTALL_REQUIRES = [
@@ -133,7 +134,8 @@ def read_files(*files):
 
 def read(afile):
     """Read a file into setup"""
-    with codecs.open(afile, 'r', 'utf-8') as opened_file:
+    the_relative_file = os.path.join(HERE, afile)
+    with codecs.open(the_relative_file, 'r', 'utf-8') as opened_file:
         content = filter_out_test_code(opened_file)
         content = "".join(list(content))
         return content

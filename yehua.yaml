@@ -11,6 +11,7 @@ copyright_year: 2017
 command_line_interface: "yh"
 entry_point: "yehua.main:main"
 license: New BSD
+branch: master
 dependencies:
   - jinja2
   - PyYAML
