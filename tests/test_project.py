@@ -48,8 +48,14 @@ def test_project_get_mobans(inputs, mkdir, system_call):
     yehua_file = get_yehua_file()
     project = Project(yehua_file)
     project.get_mobans()
-    formatter=('cd %s && ' +
-               'git clone https://github.com/moremoban/setupmobans.git mobans')
+    formatter=' && '.join(
+        [
+            'cd %s',
+            'git clone https://github.com/moremoban/setupmobans.git mobans',
+            'cd mobans',
+            'git submodule init',
+            'git submodule update'
+        ])
     system_call.assert_called_once_with(formatter % test_project_name)
 
 

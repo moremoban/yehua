@@ -29,10 +29,14 @@ class Project:
     def get_mobans(self):
         for repo in self.directives['mobans']:
             for key, value in repo.items():
-                cmd = 'cd %s && git clone %s %s' % (
-                    self.answers['project_name'],
-                    value, key)
-                os.system(cmd)
+                cmd = [
+                    'cd %s' % self.answers['project_name'],
+                    'git clone %s %s' % (value, key),
+                    'cd %s' % key,
+                    'git submodule init',
+                    'git submodule update'
+                ]
+                os.system(' && '.join(cmd))
 
     def templating(self):
         for template in self.directives['templates']:
