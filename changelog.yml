@@ -1,4 +1,12 @@
+name: yehua
+organisation: moremoban
 releases:
+- changes:
+  - action: Updated
+    details:
+    - "`#11`: keep up-to-date with pypi-mobans"
+  date: 06/07/2018
+  version: 0.0.4
 - changes:
   - action: Added
     details:

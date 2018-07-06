@@ -2,7 +2,7 @@
 yehua - Let you focus on code, instead of setup scaffolding
 ================================================================================
 
-.. image:: https://api.travis-ci.org/moremoban/yehua.svg?branch=master
+.. image:: https://api.travis-ci.org/moremoban/yehua.svg
    :target: http://travis-ci.org/moremoban/yehua
 
 .. image:: https://codecov.io/github/moremoban/yehua/coverage.png
