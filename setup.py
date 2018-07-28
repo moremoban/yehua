@@ -20,8 +20,8 @@ ENTRY_POINTS = {
     ],
 }
 DESCRIPTION = (
-    'A command line tool to provide a default scaffolding for a python' +
-    'package.'
+    'An interactive command line tool to provide a default scaffolding for' +
+    'a python package.'
 )
 URL = 'https://github.com/moremoban/yehua'
 DOWNLOAD_URL = '%s/archive/0.0.4.tar.gz' % URL

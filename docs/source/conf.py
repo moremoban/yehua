@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 DESCRIPTION = (
-    'A command line tool to provide a default scaffolding for a python pack' +
-    'age.' +
+    'An interactive command line tool to provide a default scaffolding for ' +
+    'a python package.' +
     ''
 )
 # -*- coding: utf-8 -*-

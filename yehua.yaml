@@ -16,4 +16,4 @@ dependencies:
   - jinja2
   - PyYAML
   - moban
-description: A command line tool to provide a default scaffolding for a python package.
+description: An interactive command line tool to provide a default scaffolding for a python package.
