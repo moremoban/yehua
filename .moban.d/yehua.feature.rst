@@ -45,34 +45,34 @@ raise an issue and we can talk. This table is not a commerical sales pitch.
     Group          Feature                    cookiecutter-pypackage  cookiecutter-vanguard PyScaffold yehua
     ============== ========================== ======================= ===================== ========== =====
     essential      setup.py                   Y                        Y                     Y         Y
-                   setup.cfg                  Y                        Y                     Y         Y
-                   source code stub           Y                        Y                     Y         Y
+    .              setup.cfg                  Y                        Y                     Y         Y
+    .              source code stub           Y                        Y                     Y         Y
     test setup     requirements.txt                                    Y                     Y         Y
-                   requirements_dev.txt       Y                        Y                               Y
-                   Makefile                   Y                                                        Y
-                   tests code                 Y                        Y                     Y
-                   tox                        Y                                              Y
-                   travis                     Y                                              Y         Y
-                   test coverage                                       Y                               Y
-                   flake8                                                                              Y
+    .              requirements_dev.txt       Y                        Y                               Y
+    .              Makefile                   Y                                                        Y
+    .              tests code                 Y                        Y                     Y
+    .              tox                        Y                                              Y
+    .              travis                     Y                                              Y         Y
+    .              test coverage                                       Y                               Y
+    .              flake8                                                                              Y
     documentation  README.rst                 Y                                              Y         Y
-                   labels                                                                              Y
-                   gitignore                  Y                                              Y         Y
-                   AUTHORS.rst                Y                        Y                     Y
-                   CONTRIBUTING.rst           Y                        Y
-                   HISTORY.rst/CHANGELOG .rst Y                        Y                     Y         Y
-                   LICENCE                    Y                        Y                     Y         Y
-                   MANIFEST.in                Y                        Y                               Y
-                   sphinx docs                Y                        Y                     Y         Y
+    .              labels                                                                              Y
+    .              gitignore                  Y                                              Y         Y
+    .              AUTHORS.rst                Y                        Y                     Y
+    .              CONTRIBUTING.rst           Y                        Y
+    .              HISTORY.rst/CHANGELOG .rst Y                        Y                     Y         Y
+    .              LICENCE                    Y                        Y                     Y         Y
+    .              MANIFEST.in                Y                        Y                               Y
+    .              sphinx docs                Y                        Y                     Y         Y
     usability      interactive shell          Y                        Y                               Y
-                   one liner                                                                 Y
-                   initialize github repo                                                              Y
+    .              one liner                                                                 Y
+    .              initialize github repo                                                              Y
     maintenance    publish on pypi            A                        M                               M
-                   dependency management      M                                              M         A
-                   template customization                                                              Y
-                   version management         M                                              M         A
-                   automated github release                                                            Y
-                   continous templating                                                                Y
+    .              dependency management      M                                              M         A
+    .              template customization                                                              Y
+    .              version management         M                                              M         A
+    .              automated github release                                                            Y
+    .              continous templating                                                                Y
     ============== ========================== ======================= ===================== ========== =====
 
 
