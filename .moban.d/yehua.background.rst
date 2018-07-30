@@ -10,6 +10,6 @@ generic sets of pyexcel-mobans to form pypi-mobans, so that
 a vanilla python package can be created.
 
 
-Why to choose "yehua"? Here is `the little story<https://github.com/moremoban/yehua/issues/5#issuecomment-317218010>`_ behind the choice of name. And this `music video<https://www.youtube.com/watch?v=_JFTOQ6F1-M&frags=pl%2Cwn>`_ would help bridge the cultural gap between you and me.
+Why to choose "yehua"? Here is `the little story <https://github.com/moremoban/yehua/issues/5#issuecomment-317218010>`_ behind the choice of name. And this `music video <https://www.youtube.com/watch?v=_JFTOQ6F1-M&frags=pl%2Cwn>`_ would help bridge the cultural gap between you and me.
 
 

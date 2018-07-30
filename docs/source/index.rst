@@ -55,39 +55,39 @@ raise an issue and we can talk. This table is not a commerical sales pitch.
 
 .. table:: Detailed feature comparision
 
-  ============== =========================  ======================= ===================== ========== =====
-  Group          Feature                    cookiecutter-pypackage  cookiecutter-vanguard PyScaffold yehua
-  ============== =========================  ======================= ===================== ========== =====
-  essential      setup.py                   Y                        Y                     Y         Y
-                 setup.cfg                  Y                        Y                     Y         Y
-                 source code stub           Y                        Y                     Y         Y
-  test setup     requirements.txt                                    Y                     Y         Y
-                 requirements_dev.txt       Y                        Y                               Y
-                 Makefile                   Y                                                        Y
-                 tests code                 Y                        Y                     Y
-                 tox                        Y                                              Y
-                 travis                     Y                                              Y         Y
-                 test coverage                                       Y                               Y
-                 flake8                                                                              Y
-  documentation  README.rst                 Y                                              Y         Y
-                 labels                                                                              Y
-                 gitignore                  Y                                              Y         Y
-                 AUTHORS.rst                Y                        Y                     Y
-                 CONTRIBUTING.rst           Y                        Y
-                 HISTORY.rst/CHANGELOG .rst Y                        Y                     Y         Y
-                 LICENCE                    Y                        Y                     Y         Y
-                 MANIFEST.in                Y                        Y                               Y
-                 sphinx docs                Y                        Y                     Y         Y
-  usability      interactive shell          Y                        Y                               Y
-                 one liner                                                                 Y
-                 initialize github repo                                                              Y
-  maintenance    publish on pypi            A                        M                               M
-                 dependency management      M                                              M         A
-                 template customization                                                              Y
-                 version management         M                                              M         A
-                 automated github release                                                            Y
-                 continous templating                                                                Y
-  ============== =========================  ======================= ===================== ========== =====
+   ============== =========================  ======================= ===================== ========== =====
+   Group          Feature                    cookiecutter-pypackage  cookiecutter-vanguard PyScaffold yehua
+   ============== =========================  ======================= ===================== ========== =====
+   essential      setup.py                   Y                        Y                     Y         Y
+                  setup.cfg                  Y                        Y                     Y         Y
+                  source code stub           Y                        Y                     Y         Y
+   test setup     requirements.txt                                    Y                     Y         Y
+                  requirements_dev.txt       Y                        Y                               Y
+                  Makefile                   Y                                                        Y
+                  tests code                 Y                        Y                     Y
+                  tox                        Y                                              Y
+                  travis                     Y                                              Y         Y
+                  test coverage                                       Y                               Y
+                  flake8                                                                              Y
+   documentation  README.rst                 Y                                              Y         Y
+                  labels                                                                              Y
+                  gitignore                  Y                                              Y         Y
+                  AUTHORS.rst                Y                        Y                     Y
+                  CONTRIBUTING.rst           Y                        Y
+                  HISTORY.rst/CHANGELOG .rst Y                        Y                     Y         Y
+                  LICENCE                    Y                        Y                     Y         Y
+                  MANIFEST.in                Y                        Y                               Y
+                  sphinx docs                Y                        Y                     Y         Y
+   usability      interactive shell          Y                        Y                               Y
+                  one liner                                                                 Y
+                  initialize github repo                                                              Y
+   maintenance    publish on pypi            A                        M                               M
+                  dependency management      M                                              M         A
+                  template customization                                                              Y
+                  version management         M                                              M         A
+                  automated github release                                                            Y
+                  continous templating                                                                Y
+   ============== =========================  ======================= ===================== ========== =====
 
 Comparing with cookiecutter, the difference comes in the later phase
 of the created project. **moremoban** organisation assumes
@@ -311,7 +311,7 @@ generic sets of pyexcel-mobans to form pypi-mobans, so that
 a vanilla python package can be created.
 
 
-Why to choose "yehua"? Here is `the little story<https://github.com/moremoban/yehua/issues/5#issuecomment-317218010>`_ behind the choice of name. And this `music video<https://www.youtube.com/watch?v=_JFTOQ6F1-M&frags=pl%2Cwn>`_ would help bridge the cultural gap between you and me.
+Why to choose "yehua"? Here is `the little story <https://github.com/moremoban/yehua/issues/5#issuecomment-317218010>`_ behind the choice of name. And this `music video <https://www.youtube.com/watch?v=_JFTOQ6F1-M&frags=pl%2Cwn>`_ would help bridge the cultural gap between you and me.
 
 
 
