@@ -9,7 +9,7 @@ PY2 = sys.version_info[0] == 2
 
 
 if PY2:
-    yehua_input = raw_input  # flake8: noqa
+    yehua_input = raw_input  # noqa: F821
 else:
     yehua_input = input
 

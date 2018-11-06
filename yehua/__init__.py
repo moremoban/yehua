@@ -1,1 +1,1 @@
-from yehua._version import __version__, __author__  # flake8: noqa
+from yehua._version import __version__, __author__  # noqa: F401
