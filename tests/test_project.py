@@ -36,29 +36,6 @@ def test_project(inputs, mkdir):
     eq_(calls, expected)
 
 
-@patch('os.system')
-@patch('yehua.utils.mkdir')
-@patch('yehua.project.get_user_inputs')
-def test_project_get_mobans(inputs, mkdir, system_call):
-    test_project_name = 'test-me'
-    mkdir.return_value = 0
-    inputs.return_value = dict(
-        project_name=test_project_name
-    )
-    yehua_file = get_yehua_file()
-    project = Project(yehua_file)
-    project.get_mobans()
-    formatter=' && '.join(
-        [
-            'cd %s',
-            'git clone https://github.com/moremoban/setupmobans.git mobans',
-            'cd mobans',
-            'git submodule init',
-            'git submodule update'
-        ])
-    system_call.assert_called_once_with(formatter % test_project_name)
-
-
 class TestProject(unittest.TestCase):
 
     def setUp(self):

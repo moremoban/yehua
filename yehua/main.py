@@ -36,7 +36,6 @@ def main():
         yehua_file = get_yehua_file()
     project = Project(yehua_file)
     project.create_all_directories()
-    project.get_mobans()
     project.templating()
     project.copy_static_files()
     project.inflate_all_by_moban()

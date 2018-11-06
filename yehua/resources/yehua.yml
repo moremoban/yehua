@@ -28,8 +28,6 @@ layout:
     - tests
     - docs:
       - source
-mobans:
-  - 'mobans': https://github.com/moremoban/setupmobans.git
 templates:
   - "{{project_name}}.yml": project.yml
   - "{{project_name | replace('-', '_')}}/__init__.py": "__init__.py.jj2"

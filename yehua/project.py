@@ -26,18 +26,6 @@ class Project:
         }
         utils.make_directories(None, folder_tree)
 
-    def get_mobans(self):
-        for repo in self.directives['mobans']:
-            for key, value in repo.items():
-                cmd = [
-                    'cd %s' % self.answers['project_name'],
-                    'git clone %s %s' % (value, key),
-                    'cd %s' % key,
-                    'git submodule init',
-                    'git submodule update'
-                ]
-                os.system(' && '.join(cmd))
-
     def templating(self):
         for template in self.directives['templates']:
             for output, template_file in template.items():
@@ -54,9 +42,8 @@ class Project:
                 utils.copy_file(source, dest)
 
     def inflate_all_by_moban(self):
-        if len(self.directives['mobans']) > 0:
-            cmd = 'cd %s && moban' % self.answers['project_name']
-            os.system(cmd)
+        cmd = 'cd %s && moban' % self.answers['project_name']
+        os.system(cmd)
 
     def post_moban(self):
         if 'post-moban' not in self.directives:

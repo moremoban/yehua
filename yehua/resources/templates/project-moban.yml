@@ -1,6 +1,8 @@
+requires:
+  - pypi-mobans-pkg
 configuration:
   template_dir:
-  - "mobans/templates"
+  - "pypi-mobans-pkg:templates"
   - ".moban.d"
   configuration: {{project_name}}.yml
 targets:
