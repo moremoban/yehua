@@ -48,7 +48,7 @@ CLASSIFIERS = [
 INSTALL_REQUIRES = [
     'jinja2',
     'PyYAML',
-    'moban',
+    'moban>=0.3.3',
 ]
 SETUP_COMMANDS = {}
 
