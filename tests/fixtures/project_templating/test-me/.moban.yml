@@ -1,5 +1,5 @@
 requires:
-  - pypi-mobans-pkg
+  - pypi-mobans-pkg==0.0.2
 configuration:
   template_dir:
   - "pypi-mobans-pkg:templates"
@@ -10,8 +10,9 @@ targets:
   - setup.py: custom_setup.py.jj2
   - requirements.txt: requirements.txt.jj2
   - "tests/requirements.txt": "tests/custom_requirements.txt.jj2"
-  - "docs/source/conf.py": "docs/source/conf.py.jj2"
+  - "docs/source/conf.py": "docs/conf.py_t"
   - test.sh: test.script.jj2
   - "test_me/_version.py": "_version.py.jj2"
   - .gitignore: gitignore.jj2
   - .travis.yml: travis.yml.jj2
+  - Pipfile: Pipfile.jj2
