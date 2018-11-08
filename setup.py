@@ -13,7 +13,7 @@ PY26 = PY2 and sys.version_info[1] < 7
 
 NAME = 'yehua'
 AUTHOR = 'C.W.'
-VERSION = '0.0.4'
+VERSION = '0.0.5'
 EMAIL = 'wangc_2011@hotmail.com'
 LICENSE = 'New BSD'
 ENTRY_POINTS = {
@@ -26,7 +26,7 @@ DESCRIPTION = (
     'a python package.'
 )
 URL = 'https://github.com/moremoban/yehua'
-DOWNLOAD_URL = '%s/archive/0.0.4.tar.gz' % URL
+DOWNLOAD_URL = '%s/archive/0.0.5.tar.gz' % URL
 FILES = ['README.rst', 'CHANGELOG.rst']
 KEYWORDS = [
     'python',
@@ -59,8 +59,8 @@ EXTRAS_REQUIRE = {
 # You do not need to read beyond this line
 PUBLISH_COMMAND = '{0} setup.py sdist bdist_wheel upload -r pypi'.format(
     sys.executable)
-GS_COMMAND = ('gs yehua v0.0.4 ' +
-              "Find 0.0.4 in changelog for more details")
+GS_COMMAND = ('gs yehua v0.0.5 ' +
+              "Find 0.0.5 in changelog for more details")
 NO_GS_MESSAGE = ('Automatic github release is disabled. ' +
                  'Please install gease to enable it.')
 UPLOAD_FAILED_MSG = (
