@@ -2,6 +2,15 @@ name: yehua
 organisation: moremoban
 releases:
 - changes:
+  - action: Added
+    details:
+    - "`#6`: provide Pipfile for pipenv"
+  - action: Updated
+    details:
+    - "use pypi-mobans-pkg version 0.0.2"
+  date: 08/11/2018
+  version: 0.0.5
+- changes:
   - action: Updated
     details:
     - "`#11`: keep up-to-date with pypi-mobans"

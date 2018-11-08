@@ -5,13 +5,15 @@ import os
 import sys
 import codecs
 from shutil import rmtree
-from setuptools import setup, find_packages, Command
+
+from setuptools import Command, setup, find_packages
+
 PY2 = sys.version_info[0] == 2
 PY26 = PY2 and sys.version_info[1] < 7
 
 NAME = 'yehua'
 AUTHOR = 'C.W.'
-VERSION = '0.0.4'
+VERSION = '0.0.5'
 EMAIL = 'wangc_2011@hotmail.com'
 LICENSE = 'New BSD'
 ENTRY_POINTS = {
@@ -20,14 +22,14 @@ ENTRY_POINTS = {
     ],
 }
 DESCRIPTION = (
-    'A command line tool to provide a default scaffolding for a python' +
-    'package.'
+    'An interactive command line tool to provide a default scaffolding for' +
+    'a python package.'
 )
 URL = 'https://github.com/moremoban/yehua'
-DOWNLOAD_URL = '%s/archive/0.0.4.tar.gz' % URL
+DOWNLOAD_URL = '%s/archive/0.0.5.tar.gz' % URL
 FILES = ['README.rst', 'CHANGELOG.rst']
 KEYWORDS = [
-    'python'
+    'python',
 ]
 
 CLASSIFIERS = [
@@ -46,7 +48,7 @@ CLASSIFIERS = [
 INSTALL_REQUIRES = [
     'jinja2',
     'PyYAML',
-    'moban',
+    'moban>=0.3.3',
 ]
 SETUP_COMMANDS = {}
 
@@ -57,8 +59,8 @@ EXTRAS_REQUIRE = {
 # You do not need to read beyond this line
 PUBLISH_COMMAND = '{0} setup.py sdist bdist_wheel upload -r pypi'.format(
     sys.executable)
-GS_COMMAND = ('gs yehua v0.0.4 ' +
-              "Find 0.0.4 in changelog for more details")
+GS_COMMAND = ('gs yehua v0.0.5 ' +
+              "Find 0.0.5 in changelog for more details")
 NO_GS_MESSAGE = ('Automatic github release is disabled. ' +
                  'Please install gease to enable it.')
 UPLOAD_FAILED_MSG = (

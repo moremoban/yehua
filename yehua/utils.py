@@ -4,12 +4,12 @@ import codecs
 import shutil
 
 DEFAULT_FILE = "yehua.yml"
-ENVIRONMENT_KEY = 'YEHUA_FILE'
+ENVIRONMENT_KEY = "YEHUA_FILE"
 PY2 = sys.version_info[0] == 2
 
 
 if PY2:
-    yehua_input = raw_input  # flake8: noqa
+    yehua_input = raw_input  # noqa: F821
 else:
     yehua_input = input
 
@@ -48,7 +48,7 @@ def make_directories(parent, node_dictionary):
 
 
 def make_project_src(project_name):
-    return project_name.lower().replace('-', '_')
+    return project_name.lower().replace("-", "_")
 
 
 # The following Python depdencies are trusted to work
@@ -61,5 +61,5 @@ def mkdir(path):
 
 
 def save_file(filename, filecontent):
-    with codecs.open(os.path.join(filename), 'w', encoding='utf-8') as f:
+    with codecs.open(os.path.join(filename), "w", encoding="utf-8") as f:
         f.write(filecontent)
