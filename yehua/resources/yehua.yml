@@ -32,11 +32,12 @@ templates:
   - "{{project_name}}.yml": project.yml
   - "{{project_name | replace('-', '_')}}/__init__.py": "__init__.py.jj2"
   - .moban.yml: project-moban.yml
+  - changelog.yml: changelog.yml
+  - Makefile: Makefile
 static:
   - ".moban.d/CUSTOM_README.rst.jj2": "CUSTOM_README.rst"
   - ".moban.d/custom_setup.py.jj2": custom_setup.py.jj2
   - ".moban.d/tests/custom_requirements.txt.jj2": "tests/custom_requirements.txt.jj2"
-  - Makefile: Makefile
   - CHANGELOG.rst: CHANGELOG.rst
   - MANIFEST.in: MANIFEST.in
   - setup.cfg: setup.cfg
@@ -58,4 +59,6 @@ post-moban:
     - ".moban.d"
     - ".travis.yml"
     - ".moban.yml"
+    - "Pipfile"
+    - "changelog.yml"
 

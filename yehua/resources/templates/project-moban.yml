@@ -16,3 +16,7 @@ targets:
   - .gitignore: gitignore.jj2
   - .travis.yml: travis.yml.jj2
   - Pipfile: Pipfile.jj2
+  - output: CHANGELOG.rst
+    configuration: changelog.yml
+    template: CHANGELOG.rst.jj2
+  - lint.sh: lint.script.jj2
