@@ -7,7 +7,7 @@ company: "Onni Software Ltd."
 version: "0.0.5"
 current_version: "0.0.5"
 release: "0.0.5"
-copyright_year: 2017
+copyright_year: 2017-2019
 command_line_interface: "yh"
 entry_point: "yehua.main:main"
 license: New BSD

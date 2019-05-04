@@ -4,11 +4,10 @@ releases:
 - changes:
   - action: Added
     details:
+    - "upgrade yehua to use pypi-mobans-pkg version 0.0.5"
+    - "generated project will have four new files: pipfile, lint.sh, changelog.yml and Makefile "
     - "`#6`: provide Pipfile for pipenv"
-  - action: Updated
-    details:
-    - "use pypi-mobans-pkg version 0.0.2"
-  date: 08/11/2018
+  date: 04/15/2019
   version: 0.0.5
 - changes:
   - action: Updated
