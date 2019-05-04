@@ -2,12 +2,19 @@ name: yehua
 organisation: moremoban
 releases:
 - changes:
-  - action: Added
+  - action: Updated
     details:
     - "upgrade yehua to use pypi-mobans-pkg version 0.0.5"
+  - action: Updated
+    details:
     - "generated project will have four new files: pipfile, lint.sh, changelog.yml and Makefile "
-    - "`#6`: provide Pipfile for pipenv"
   date: 04/15/2019
+  version: 0.0.6
+- changes:
+  - action: added
+    details:
+    - "`#6`: provide Pipfile for pipenv"
+  date: 08/11/2018
   version: 0.0.5
 - changes:
   - action: Updated

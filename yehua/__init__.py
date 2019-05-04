@@ -1,1 +1,1 @@
-from yehua._version import __version__, __author__  # noqa: F401
+from yehua._version import __author__, __version__  # noqa: F401
