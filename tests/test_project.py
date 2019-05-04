@@ -66,7 +66,6 @@ class TestProject(unittest.TestCase):
                 "tests/custom_requirements.txt.jj2",
                 "test-me/.moban.d/tests/custom_requirements.txt.jj2",
             ],
-            ["Makefile", "test-me/Makefile"],
             ["CHANGELOG.rst", "test-me/CHANGELOG.rst"],
             ["MANIFEST.in", "test-me/MANIFEST.in"],
             ["setup.cfg", "test-me/setup.cfg"],
