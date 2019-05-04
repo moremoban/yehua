@@ -1,5 +1,5 @@
 requires:
-  - pypi-mobans-pkg==0.0.2
+  - pypi-mobans-pkg==0.0.5
 configuration:
   template_dir:
   - "pypi-mobans-pkg:templates"
@@ -16,3 +16,7 @@ targets:
   - .gitignore: gitignore.jj2
   - .travis.yml: travis.yml.jj2
   - Pipfile: Pipfile.jj2
+  - output: CHANGELOG.rst
+    configuration: changelog.yml
+    template: CHANGELOG.rst.jj2
+  - lint.sh: lint.script.jj2

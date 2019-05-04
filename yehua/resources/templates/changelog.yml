@@ -1,0 +1,9 @@
+name: {{project_name}}
+organisation: {{organisation}}
+releases:
+- changes:
+  - action: first release
+    details:
+    - what a feat!
+  version: 0.0.1
+  date: {{today}}
