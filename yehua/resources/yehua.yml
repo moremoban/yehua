@@ -61,4 +61,5 @@ post-moban:
     - ".moban.yml"
     - "Pipfile"
     - "changelog.yml"
+    - "lint.sh"
 

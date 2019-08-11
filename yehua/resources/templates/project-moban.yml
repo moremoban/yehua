@@ -1,8 +1,8 @@
 requires:
-  - pypi-mobans-pkg==0.0.5
+  - pypi-mobans-pkg==0.0.7
 configuration:
   template_dir:
-  - "pypi-mobans-pkg:templates"
+  - "pypi://pypi-mobans-pkg/reources/templates"
   - ".moban.d"
   configuration: {{ project_name }}.yml
 targets:
