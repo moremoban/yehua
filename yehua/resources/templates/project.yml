@@ -21,3 +21,4 @@ sources:
 license: {{license}}
 dependencies: []
 description: "{{description}}"
+moban_command: make format git-diff-check
