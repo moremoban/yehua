@@ -65,4 +65,7 @@ post-moban:
     - "Pipfile"
     - "changelog.yml"
     - "lint.sh"
-
+    - "test.bat"
+    - "azure-pipelines.yml"
+    - ".azure-pipelines-steps-macos.yml"
+    - ".azure-pipelines-steps.yml"
