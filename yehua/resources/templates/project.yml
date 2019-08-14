@@ -21,4 +21,4 @@ sources:
 license: {{license}}
 dependencies: []
 description: "{{description}}"
-moban_command: make format git-diff-check
+lint_command: make install_test lint format git-diff-check
