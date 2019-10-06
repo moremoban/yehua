@@ -105,15 +105,15 @@ class TestProject(unittest.TestCase):
 
     def test_project_templating(self):
         def mock_save_file(filename, filecontent):
-            # file_to_write = os.path.join(
-            #    "tests", "fixtures",
-            #    "project_templating", filename)
-            # path = os.path.dirname(file_to_write)
-            # if not os.path.exists(path):
-            #    print(path)
-            #    os.mkdir(path)
-            # with open(file_to_write, 'w') as f:
-            #    f.write(filecontent)
+            file_to_write = os.path.join(
+               "tests", "fixtures",
+               "project_templating", filename)
+            path = os.path.dirname(file_to_write)
+            if not os.path.exists(path):
+               print(path)
+               os.mkdir(path)
+            with open(file_to_write, 'w') as f:
+               f.write(filecontent)
             file_to_read = os.path.join(
                 "tests", "fixtures", "project_templating", filename
             )
