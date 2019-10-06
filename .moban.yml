@@ -1,12 +1,7 @@
-requires:
-  - type: git
-    url: https://github.com/moremoban/pypi-mobans
-    submodule: true
-  - https://github.com/pyexcel/pyexcel-mobans
 configuration:
-  configuration_dir: "pyexcel-mobans:config"
+  configuration_dir: "git://github.com/pyexcel/pyexcel-mobans.git!/config"
   template_dir:
-    - "pypi-mobans:templates"
+    - "git://github.com/moremoban/pypi-mobans.git?submodule=true!/templates"
     - ".moban.d"
   configuration: yehua.yaml
 targets:
@@ -16,7 +11,7 @@ targets:
   - "tests/requirements.txt": "tests/requirements.txt.jj2"
   - test.sh: test.script.jj2
   - "docs/source/conf.py": "docs/source/conf.py.jj2"
-  - "docs/source/index.rst": "docs/source/index.rst"
+  - "docs/source/index.rst": "docs/source/index.rst.jj2"
   - 'yehua/_version.py': 'version.py.jj2'
   - output: CHANGELOG.rst
     configuration: changelog.yml
