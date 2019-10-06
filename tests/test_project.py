@@ -60,34 +60,16 @@ class TestProject(unittest.TestCase):
         calls = self.copy_file.call_args_list
         calls = [split_call_arguments(call) for call in calls]
         expected = [
-            [
-                "CUSTOM_README.rst",
-                "test-me/.moban.d/CUSTOM_README.rst.jj2",
-            ],
-            [
-                "custom_setup.py.jj2",
-                "test-me/.moban.d/custom_setup.py.jj2",
-            ],
+            ["CUSTOM_README.rst", "test-me/.moban.d/CUSTOM_README.rst.jj2"],
+            ["custom_setup.py.jj2", "test-me/.moban.d/custom_setup.py.jj2"],
             [
                 "tests/custom_requirements.txt.jj2",
                 "test-me/.moban.d/tests/custom_requirements.txt.jj2",
             ],
-            [
-                "CHANGELOG.rst",
-                "test-me/CHANGELOG.rst",
-            ],
-            [
-                "MANIFEST.in",
-                "test-me/MANIFEST.in",
-            ],
-            [
-                "setup.cfg",
-                "test-me/setup.cfg",
-            ],
-            [
-                "azure-pipelines.yml",
-                "test-me/azure-pipelines.yml",
-            ],
+            ["CHANGELOG.rst", "test-me/CHANGELOG.rst"],
+            ["MANIFEST.in", "test-me/MANIFEST.in"],
+            ["setup.cfg", "test-me/setup.cfg"],
+            ["azure-pipelines.yml", "test-me/azure-pipelines.yml"],
             [
                 ".azure-pipelines-steps-macos.yml",
                 "test-me/.azure-pipelines-steps-macos.yml",
@@ -106,14 +88,14 @@ class TestProject(unittest.TestCase):
     def test_project_templating(self):
         def mock_save_file(filename, filecontent):
             file_to_write = os.path.join(
-               "tests", "fixtures",
-               "project_templating", filename)
+                "tests", "fixtures", "project_templating", filename
+            )
             path = os.path.dirname(file_to_write)
             if not os.path.exists(path):
-               print(path)
-               os.mkdir(path)
-            with open(file_to_write, 'w') as f:
-               f.write(filecontent)
+                print(path)
+                os.mkdir(path)
+            with open(file_to_write, "w") as f:
+                f.write(filecontent)
             file_to_read = os.path.join(
                 "tests", "fixtures", "project_templating", filename
             )
