@@ -1,6 +1,16 @@
 Change log
 ================================================================================
 
+0.0.7 - 6/10/2019
+--------------------------------------------------------------------------------
+
+Updated
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+#. upgrade yehua to use pypi-mobans-pkg version 0.0.7
+#. generated project will have azure build pipeline, moban command stage in
+   travis and local flake8 check
+
 0.0.6 - 04/15/2019
 --------------------------------------------------------------------------------
 
@@ -8,10 +18,6 @@ Updated
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 #. upgrade yehua to use pypi-mobans-pkg version 0.0.5
-
-Updated
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
 #. generated project will have four new files: pipfile, lint.sh, changelog.yml
    and Makefile 
 

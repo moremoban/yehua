@@ -21,3 +21,4 @@ sources:
 license: {{license}}
 dependencies: []
 description: "{{description}}"
+lint_command: make install_test lint format git-diff-check
