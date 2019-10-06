@@ -61,39 +61,39 @@ class TestProject(unittest.TestCase):
         calls = [split_call_arguments(call) for call in calls]
         expected = [
             [
-                "/Users/jaska/github/moremoban/yehua-git/yehua/resources/static/CUSTOM_README.rst",
+                "CUSTOM_README.rst",
                 "test-me/.moban.d/CUSTOM_README.rst.jj2",
             ],
             [
-                "/Users/jaska/github/moremoban/yehua-git/yehua/resources/static/custom_setup.py.jj2",
+                "custom_setup.py.jj2",
                 "test-me/.moban.d/custom_setup.py.jj2",
             ],
             [
-                "/Users/jaska/github/moremoban/yehua-git/yehua/resources/static/tests/custom_requirements.txt.jj2",
+                "tests/custom_requirements.txt.jj2",
                 "test-me/.moban.d/tests/custom_requirements.txt.jj2",
             ],
             [
-                "/Users/jaska/github/moremoban/yehua-git/yehua/resources/static/CHANGELOG.rst",
+                "CHANGELOG.rst",
                 "test-me/CHANGELOG.rst",
             ],
             [
-                "/Users/jaska/github/moremoban/yehua-git/yehua/resources/static/MANIFEST.in",
+                "MANIFEST.in",
                 "test-me/MANIFEST.in",
             ],
             [
-                "/Users/jaska/github/moremoban/yehua-git/yehua/resources/static/setup.cfg",
+                "setup.cfg",
                 "test-me/setup.cfg",
             ],
             [
-                "/Users/jaska/github/moremoban/yehua-git/yehua/resources/static/azure-pipelines.yml",
+                "azure-pipelines.yml",
                 "test-me/azure-pipelines.yml",
             ],
             [
-                "/Users/jaska/github/moremoban/yehua-git/yehua/resources/static/.azure-pipelines-steps-macos.yml",
+                ".azure-pipelines-steps-macos.yml",
                 "test-me/.azure-pipelines-steps-macos.yml",
             ],
             [
-                "/Users/jaska/github/moremoban/yehua-git/yehua/resources/static/.azure-pipelines-steps.yml",
+                ".azure-pipelines-steps.yml",
                 "test-me/.azure-pipelines-steps.yml",
             ],
         ]
