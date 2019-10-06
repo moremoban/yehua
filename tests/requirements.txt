@@ -3,3 +3,6 @@ mock
 codecov
 coverage
 flake8
+isort
+black
+

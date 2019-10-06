@@ -10,3 +10,4 @@ copyright_year: 2019
 license: 
 dependencies: []
 description: ""
+lint_command: make install_test lint format git-diff-check
