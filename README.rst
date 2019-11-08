@@ -8,6 +8,12 @@ yehua - Let you focus on code, instead of setup scaffolding
 .. image:: https://codecov.io/github/moremoban/yehua/coverage.png
    :target: https://codecov.io/github/moremoban/yehua
 
+.. image:: https://badge.fury.io/py/yehua.svg
+   :target: https://pypi.org/project/yehua
+
+.. image:: https://pepy.tech/badge/yehua/month
+   :target: https://pepy.tech/project/yehua/month
+
 
 .. image:: https://readthedocs.org/projects/yehua/badge/?version=latest
    :target: http://yehua.readthedocs.org/en/latest/

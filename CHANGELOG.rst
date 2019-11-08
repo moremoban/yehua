@@ -4,8 +4,7 @@ Change log
 0.0.7 - 6/10/2019
 --------------------------------------------------------------------------------
 
-Updated
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+**Updated**
 
 #. upgrade yehua to use pypi-mobans-pkg version 0.0.7
 #. generated project will have azure build pipeline, moban command stage in
@@ -14,8 +13,7 @@ Updated
 0.0.6 - 04/15/2019
 --------------------------------------------------------------------------------
 
-Updated
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+**Updated**
 
 #. upgrade yehua to use pypi-mobans-pkg version 0.0.5
 #. generated project will have four new files: pipfile, lint.sh, changelog.yml
@@ -24,8 +22,7 @@ Updated
 0.0.5 - 08/11/2018
 --------------------------------------------------------------------------------
 
-added
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+**added**
 
 #. `#6 <https://github.com/moremoban/yehua/issues/6>`_: provide Pipfile for
    pipenv
@@ -33,8 +30,7 @@ added
 0.0.4 - 06/07/2018
 --------------------------------------------------------------------------------
 
-Updated
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+**Updated**
 
 #. `#11 <https://github.com/moremoban/yehua/issues/11>`_: keep up-to-date with
    pypi-mobans
@@ -42,8 +38,7 @@ Updated
 0.0.3 - 24/02/2018
 --------------------------------------------------------------------------------
 
-Added
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+**Added**
 
 #. To add all files to a git repo is being made optional. The action is
    specified in `git-repo-files` under `post-moban` section. This particular
@@ -52,8 +47,7 @@ Added
 0.0.2 - 15/10/2017
 --------------------------------------------------------------------------------
 
-Added
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+**Added**
 
 #. Automatically inflate project meta data. One yehua command and typing a few
    questions are required before a complete project scaffolding
@@ -61,8 +55,7 @@ Added
 #. Automatically initialize package as git project and add all project files for
    the user to commit
 
-Removed
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+**Removed**
 
 #. Built-in template files are off-loaded to setupmobans, which are more
    frequently updated.
