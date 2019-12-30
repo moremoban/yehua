@@ -1,4 +1,9 @@
+include LICENSE
 include README.rst
 include CONTRIBUTORS.rst
 include CHANGELOG.rst
 recursive-include yehua/resources *
+recursive-include tests *.py
+recursive-include tests *.txt
+recursive-include tests *.yml
+recursive-include tests Makefile

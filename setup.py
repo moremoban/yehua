@@ -74,7 +74,7 @@ INSTALL_REQUIRES = [
 SETUP_COMMANDS = {}
 
 
-PACKAGES = find_packages(exclude=["ez_setup", "examples", "tests"])
+PACKAGES = find_packages(exclude=["ez_setup", "examples", "tests", "tests.*"])
 EXTRAS_REQUIRE = {
 }
 # You do not need to read beyond this line
