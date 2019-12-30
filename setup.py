@@ -1,14 +1,14 @@
 #!/usr/bin/env python3
 
-import os
-import sys
 # Template by pypi-mobans
 import codecs
 import locale
+import os
 import platform
+import sys
 from shutil import rmtree
 
-from setuptools import Command, setup, find_packages
+from setuptools import Command, find_packages, setup
 
 PY2 = sys.version_info[0] == 2
 PY26 = PY2 and sys.version_info[1] < 7
@@ -67,14 +67,14 @@ CLASSIFIERS = [
 ]
 
 INSTALL_REQUIRES = [
-    "jinja2",
+    "Jinja2",
     "PyYAML",
-    "moban>=0.3.3",
+    "moban>=0.6.0",
 ]
 SETUP_COMMANDS = {}
 
 
-PACKAGES = find_packages(exclude=["ez_setup", "examples", "tests", "tests.*"])
+PACKAGES = find_packages(exclude=["ez_setup", "examples", "tests"])
 EXTRAS_REQUIRE = {
 }
 # You do not need to read beyond this line
