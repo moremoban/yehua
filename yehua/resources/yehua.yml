@@ -7,7 +7,7 @@ configuration:
 questions:
   - project_name: "project name:"
   - description: "description:"
-  - license: "license:"
+  - license: "license:(mit or newbsd)"
   - author: "author:"
   - contact: "contact email:"
   - organisation: "github profile/organisation:"
@@ -39,7 +39,6 @@ static:
   - ".moban.d/custom_setup.py.jj2": custom_setup.py.jj2
   - ".moban.d/tests/custom_requirements.txt.jj2": "tests/custom_requirements.txt.jj2"
   - CHANGELOG.rst: CHANGELOG.rst
-  - MANIFEST.in: MANIFEST.in
   - setup.cfg: setup.cfg
   - "azure-pipelines.yml": "azure-pipelines.yml"
   - ".azure-pipelines-steps-macos.yml": ".azure-pipelines-steps-macos.yml"
@@ -71,3 +70,4 @@ post-moban:
     - "azure-pipelines.yml"
     - ".azure-pipelines-steps-macos.yml"
     - ".azure-pipelines-steps.yml"
+    - "LICENSE"

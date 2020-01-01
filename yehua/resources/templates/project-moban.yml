@@ -19,3 +19,6 @@ targets:
     configuration: changelog.yml
     template: CHANGELOG.rst.jj2
   - lint.sh: lint.script.jj2
+  - LICENSE: "{{ license}}|lower }}_license.jj2"
+  - MANIFEST.in: MANIFEST.in.jj2
+
