@@ -4,6 +4,12 @@ releases:
 - changes:
   - action: Updated
     details:
+    - "`#30`: 'yh -h' or 'yh --help' triggers help text"
+  date: 2020
+  version: 0.0.8
+- changes:
+  - action: Updated
+    details:
     - "upgrade yehua to use pypi-mobans-pkg version 0.0.7"
     - "generated project will have azure build pipeline, moban command stage in travis and local flake8 check"
   date: 6/10/2019
