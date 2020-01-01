@@ -5,6 +5,7 @@
 :Source code: http://github.com/moremoban/yehua.git
 :Issues: http://github.com/moremoban/yehua/issues
 :License: New BSD License
+:Development: |release|
 :Released: |version|
 :Generated: |today|
 
