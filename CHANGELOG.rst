@@ -4,10 +4,16 @@ Change log
 0.0.8 - 2020
 --------------------------------------------------------------------------------
 
-**Updated**
+**Added**
 
 #. `#30 <https://github.com/moremoban/yehua/issues/30>`_: 'yh -h' or 'yh --help'
    triggers help text
+#. enable auto github auto publishing
+#. generate mit license
+
+**Updated**
+
+#. updated moban dependency to v0.6.0
 
 0.0.7 - 6/10/2019
 --------------------------------------------------------------------------------
