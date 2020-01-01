@@ -31,7 +31,7 @@ def main():
     yehua_file = None
     if len(sys.argv) == 2:
         argument = sys.argv[1]
-        if argument == "help":
+        if argument in ["help", "--help", "-h"]:
             usage()
         else:
             yehua_file = argument
