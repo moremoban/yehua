@@ -1,9 +1,7 @@
-requires:
-  - pypi-mobans-pkg==0.0.7
 configuration:
   template_dir:
-  - "pypi://pypi-mobans-pkg/resources/templates"
-  - ".moban.d"
+   - "pypi://pypi-mobans-pkg/resources/templates"
+   - ".moban.d"
   configuration: {{ project_name }}.yml
 targets:
   - README.rst: CUSTOM_README.rst.jj2
