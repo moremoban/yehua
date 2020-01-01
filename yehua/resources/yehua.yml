@@ -41,8 +41,8 @@ static:
   - CHANGELOG.rst: CHANGELOG.rst
   - setup.cfg: setup.cfg
   - "azure-pipelines.yml": "azure-pipelines.yml"
-  - ".azure-pipelines-steps-macos.yml": ".azure-pipelines-steps-macos.yml"
-  - ".azure-pipelines-steps.yml": ".azure-pipelines-steps.yml"
+  - ".azure-pipelines-steps-macos.yml": "azure/pipelines-steps-macos.yml"
+  - ".azure-pipelines-steps.yml": "azure/pipelines-steps.yml"
   - ".github/workflows/pythonpublish.yml": "pythonpublish.yml"
 post-moban:
   git-repo-files:
