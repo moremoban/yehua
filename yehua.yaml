@@ -12,6 +12,7 @@ command_line_interface: "yh"
 entry_point: "yehua.main:main"
 license: New BSD
 branch: master
+lint_command: bash lint.sh
 dependencies:
   - Jinja2
   - PyYAML

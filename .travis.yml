@@ -37,8 +37,7 @@ stages:
     submodules: false
   python: 3.6
   stage: lint
-  install: pip install flake8
-  script: flake8
+  script: bash lint.sh
 
 .moban: &moban
   <<: *disable_global
