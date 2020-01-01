@@ -13,6 +13,7 @@ targets:
   - "docs/source/conf.py": "docs/source/conf.py.jj2"
   - "docs/source/index.rst": "docs/source/index.rst.jj2"
   - 'yehua/_version.py': 'version.py.jj2'
+  - '.travis.yml': 'travis.yml.jj2'
   - output: CHANGELOG.rst
     configuration: changelog.yml
     template: CHANGELOG.rst.jj2
