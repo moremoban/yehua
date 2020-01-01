@@ -27,6 +27,7 @@ own package.
 
 
 def main():
+    signal.signal(signal.SIGINT, control_c_quit)
     argument = None
     yehua_file = None
     if len(sys.argv) == 2:
@@ -54,6 +55,3 @@ def usage():
 def control_c_quit(_, __):
     print("\n")
     sys.exit(0)
-
-
-signal.signal(signal.SIGINT, control_c_quit)
