@@ -3,6 +3,8 @@ import sys
 import codecs
 import shutil
 
+from ruamel.yaml import YAML
+
 DEFAULT_FILE = "yehua.yml"
 ENVIRONMENT_KEY = "YEHUA_FILE"
 PY2 = sys.version_info[0] == 2
@@ -63,3 +65,9 @@ def mkdir(path):
 def save_file(filename, filecontent):
     with codecs.open(os.path.join(filename), "w", encoding="utf-8") as f:
         f.write(filecontent)
+
+
+def load_yaml(content):
+    yaml = YAML(typ="rt")
+    data = yaml.load(content)
+    return data

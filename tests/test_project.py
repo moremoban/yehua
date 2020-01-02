@@ -60,30 +60,15 @@ class TestProject(unittest.TestCase):
         calls = self.copy_file.call_args_list
         calls = [split_call_arguments(call) for call in calls]
         expected = [
-            [
-                "CUSTOM_README.rst",
-                "test-me/.moban.d/CUSTOM_README.rst.jj2",
-            ],
-            [
-                "custom_setup.py.jj2",
-                "test-me/.moban.d/custom_setup.py.jj2",
-            ],
+            ["CUSTOM_README.rst", "test-me/.moban.d/CUSTOM_README.rst.jj2"],
+            ["custom_setup.py.jj2", "test-me/.moban.d/custom_setup.py.jj2"],
             [
                 "tests/custom_requirements.txt.jj2",
                 "test-me/.moban.d/tests/custom_requirements.txt.jj2",
             ],
-            [
-                "CHANGELOG.rst",
-                "test-me/CHANGELOG.rst",
-            ],
-            [
-                "setup.cfg",
-                "test-me/setup.cfg",
-            ],
-            [
-                "azure-pipelines.yml",
-                "test-me/azure-pipelines.yml",
-            ],
+            ["CHANGELOG.rst", "test-me/CHANGELOG.rst"],
+            ["setup.cfg", "test-me/setup.cfg"],
+            ["azure-pipelines.yml", "test-me/azure-pipelines.yml"],
             [
                 "azure/pipelines-steps-macos.yml",
                 "test-me/.azure-pipelines-steps-macos.yml",

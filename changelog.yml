@@ -10,6 +10,7 @@ releases:
   - action: Updated
     details:
     - "updated moban dependency to v0.6.0"
+    - "updated yaml library to ruamel.yaml. PyYAML is out because only one yaml library is wanted in the organisation."
   date: 2020
   version: 0.0.8
 - changes:

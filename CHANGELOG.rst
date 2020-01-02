@@ -14,6 +14,8 @@ Change log
 **Updated**
 
 #. updated moban dependency to v0.6.0
+#. updated yaml library to ruamel.yaml. PyYAML is out because only one yaml
+   library is wanted in the organisation.
 
 0.0.7 - 6/10/2019
 --------------------------------------------------------------------------------
