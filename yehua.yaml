@@ -20,4 +20,7 @@ dependencies:
   - ruamel.yaml>=0.15.98;python_version == '3.8'
   - Jinja2
   - moban>=0.6.0
+extra_dependencies:
+  - pypi-mobans:
+    - pypi-mobans-pkg==0.0.7
 description: An interactive command line tool to provide a default scaffolding for a python package.

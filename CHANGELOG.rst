@@ -8,6 +8,8 @@ Change log
 
 #. `#30 <https://github.com/moremoban/yehua/issues/30>`_: 'yh -h' or 'yh --help'
    triggers help text
+#. `#32 <https://github.com/moremoban/yehua/issues/32>`_: pypi-moban-pkg as
+   installation extras
 #. enable auto github auto publishing
 #. generate mit license
 

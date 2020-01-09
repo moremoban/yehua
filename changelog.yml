@@ -5,6 +5,7 @@ releases:
   - action: Added
     details:
     - "`#30`: 'yh -h' or 'yh --help' triggers help text"
+    - "`#32`: pypi-moban-pkg as installation extras"
     - "enable auto github auto publishing"
     - "generate mit license"
   - action: Updated

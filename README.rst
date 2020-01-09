@@ -150,6 +150,17 @@ or clone it and install it:
     $ cd yehua
     $ python setup.py install
 
+
+For offline usage, you need to get `pypi-mobans-pkg` installed::
+
+    $ pip install yehua[pypi-mobans]
+
+
+or::
+
+    $ pip install pypi-mobans-pkg
+
+
 Usage
 ================================================================================
 
