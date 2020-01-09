@@ -70,6 +70,13 @@ def test_yehua_file_passed_in_command_line():
             mocked_project.assert_called()
 
 
+@raises(Exception)
+def test_a_directory_is_passed_in_command_line():
+    args = ["yehua", "/"]
+    with patch.object(sys, "argv", args):
+        main()
+
+
 def test_get_yehua_file_1():
     file_name = "testme"
     os.environ["YEHUA_FILE"] = file_name

@@ -15,6 +15,8 @@ Change log
 
 **Updated**
 
+#. `#35 <https://github.com/moremoban/yehua/issues/35>`_: better error message
+   when the project name has been made a directory already
 #. updated moban dependency to v0.6.0
 #. updated yaml library to ruamel.yaml. PyYAML is out because only one yaml
    library is wanted in the organisation.

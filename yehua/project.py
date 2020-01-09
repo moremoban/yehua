@@ -10,6 +10,9 @@ class Project:
     def __init__(self, yehua_file):
         if not os.path.exists(yehua_file):
             raise Exception("%s does not exist" % yehua_file)
+        if os.path.isdir("yehua_file"):
+            raise Exception("A yehua file is expected. Not a directory")
+
         self.project_file = yehua_file
         self.project_name = None
         self.answers = None
