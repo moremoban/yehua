@@ -1,5 +1,3 @@
-# flake8: noqa
-
 import os
 import re
 import codecs
@@ -9,7 +7,7 @@ from yehua.main import get_yehua_file
 from yehua.project import Project
 
 from mock import patch
-from nose.tools import eq_
+from nose.tools import eq_, raises
 
 
 @patch("yehua.utils.mkdir")
@@ -34,6 +32,17 @@ def test_project(inputs, mkdir):
         "call('test-me/.moban.d/docs/source')",
     ]
     eq_(calls, expected)
+
+
+@raises(Exception)
+@patch("yehua.utils.mkdir")
+@patch("yehua.project.get_user_inputs")
+def test_existing_directory(inputs, mkdir):
+    mkdir.return_value = 0
+    inputs.return_value = dict(project_name="yehua")
+    yehua_file = get_yehua_file()
+    project = Project(yehua_file)
+    project.create_all_directories()
 
 
 class TestProject(unittest.TestCase):

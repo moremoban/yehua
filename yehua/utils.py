@@ -39,6 +39,8 @@ def make_directories(parent, node_dictionary):
             the_parent = os.path.join(parent, key)
         else:
             the_parent = key
+        if os.path.exists(the_parent):
+            raise Exception("%s exists. Please remove it." % the_parent)
         mkdir(the_parent)
         if value is None:
             continue
