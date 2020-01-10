@@ -123,7 +123,7 @@ class TestProject(unittest.TestCase):
 
 
 def split_call_arguments(mock_call):
-    pattern = "call\('(.*)', '(.*)'\)"
+    pattern = r"call\('(.*)', '(.*)'\)"
     result = re.match(pattern, str(mock_call))
     return [result.group(1), result.group(2)]
 
