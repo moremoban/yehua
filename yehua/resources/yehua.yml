@@ -24,6 +24,8 @@ layout:
   - tests
   - docs:
     - source
+  - .github
+    - workflows
   - .moban.d:
     - tests
     - docs:
