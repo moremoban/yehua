@@ -13,6 +13,7 @@ entry_point: "yehua.main:main"
 license: New BSD
 branch: master
 lint_command: bash lint.sh
+setup_use_markers: true
 dependencies:
   - ruamel.yaml>=0.15.5,<=0.15.94;python_version == '3.4'
   - ruamel.yaml>=0.15.42;python_version == '3.7'

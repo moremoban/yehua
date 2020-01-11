@@ -72,14 +72,14 @@ INSTALL_REQUIRES = [
 ]
 SETUP_COMMANDS = {}
 
-    INSTALL_REQUIRES.append('ruamel.yaml>=0.15.5,<=0.15.94')
-    INSTALL_REQUIRES.append('ruamel.yaml>=0.15.42')
-    INSTALL_REQUIRES.append('ruamel.yaml>=0.15.5')
-    INSTALL_REQUIRES.append('ruamel.yaml>=0.15.98')
 
 PACKAGES = find_packages(exclude=["ez_setup", "examples", "tests", "tests.*"])
 EXTRAS_REQUIRE = {
     "pypi-mobans": ['pypi-mobans-pkg==0.0.7'],
+    ":python_version == '3.4'": ["ruamel.yaml>=0.15.5,<=0.15.94"],
+    ":python_version == '3.7'": ["ruamel.yaml>=0.15.42"],
+    ":python_version != '3.4' and python_version < '3.7'": ["ruamel.yaml>=0.15.5"],
+    ":python_version == '3.8'": ["ruamel.yaml>=0.15.98"],
 }
 # You do not need to read beyond this line
 PUBLISH_COMMAND = "{0} setup.py sdist bdist_wheel upload -r pypi".format(sys.executable)
