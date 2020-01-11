@@ -24,8 +24,6 @@ layout:
   - tests
   - docs:
     - source
-  - .github
-    - workflows
   - .moban.d:
     - tests
     - docs:
@@ -45,7 +43,6 @@ static:
   - "azure-pipelines.yml": "azure-pipelines.yml"
   - ".azure-pipelines-steps-macos.yml": "azure/pipelines-steps-macos.yml"
   - ".azure-pipelines-steps.yml": "azure/pipelines-steps.yml"
-  - ".github/workflows/pythonpublish.yml": "pythonpublish.yml"
 post-moban:
   git-repo-files:
     - "CHANGELOG.rst"

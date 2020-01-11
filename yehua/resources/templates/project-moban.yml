@@ -1,6 +1,7 @@
 configuration:
   template_dir:
    - "pypi://pypi-mobans-pkg/resources/templates"
+   - "pypi://pypi-mobans-pkg/resources/statics"
    - ".moban.d"
   configuration: {{ project_name }}.yml
 targets:
@@ -19,6 +20,6 @@ targets:
     configuration: changelog.yml
     template: CHANGELOG.rst.jj2
   - lint.sh: lint.script.jj2
-  - LICENSE: "{{ license}}|lower }}_license.jj2"
+  - LICENSE: "{{ license|lower }}_license.jj2"
   - MANIFEST.in: MANIFEST.in.jj2
-
+  - ".github/workflows/pythonpublish.yml": "pythonpublish.yml"
