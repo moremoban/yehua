@@ -72,7 +72,6 @@ INSTALL_REQUIRES = [
 ]
 SETUP_COMMANDS = {}
 
-
 PACKAGES = find_packages(exclude=["ez_setup", "examples", "tests", "tests.*"])
 EXTRAS_REQUIRE = {
     "pypi-mobans": ['pypi-mobans-pkg==0.0.7'],
