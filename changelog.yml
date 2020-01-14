@@ -2,6 +2,20 @@ name: yehua
 organisation: moremoban
 releases:
 - changes:
+  - action: Added
+    details:
+    - "`#30`: 'yh -h' or 'yh --help' triggers help text"
+    - "`#32`: pypi-moban-pkg as installation extras"
+    - "enable auto github auto publishing"
+    - "generate mit license"
+  - action: Updated
+    details:
+    - "`#35`: better error message when the project name has been made a directory already"
+    - "updated moban dependency to v0.6.0"
+    - "updated yaml library to ruamel.yaml. PyYAML is out because only one yaml library is wanted in the organisation."
+  date: 2020
+  version: 0.0.8
+- changes:
   - action: Updated
     details:
     - "upgrade yehua to use pypi-mobans-pkg version 0.0.7"

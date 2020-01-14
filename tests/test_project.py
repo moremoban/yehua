@@ -1,5 +1,3 @@
-# flake8: noqa
-
 import os
 import re
 import codecs
@@ -9,7 +7,7 @@ from yehua.main import get_yehua_file
 from yehua.project import Project
 
 from mock import patch
-from nose.tools import eq_
+from nose.tools import eq_, raises
 
 
 @patch("yehua.utils.mkdir")
@@ -34,6 +32,17 @@ def test_project(inputs, mkdir):
         "call('test-me/.moban.d/docs/source')",
     ]
     eq_(calls, expected)
+
+
+@raises(Exception)
+@patch("yehua.utils.mkdir")
+@patch("yehua.project.get_user_inputs")
+def test_existing_directory(inputs, mkdir):
+    mkdir.return_value = 0
+    inputs.return_value = dict(project_name="yehua")
+    yehua_file = get_yehua_file()
+    project = Project(yehua_file)
+    project.create_all_directories()
 
 
 class TestProject(unittest.TestCase):
@@ -67,23 +76,27 @@ class TestProject(unittest.TestCase):
                 "test-me/.moban.d/tests/custom_requirements.txt.jj2",
             ],
             ["CHANGELOG.rst", "test-me/CHANGELOG.rst"],
-            ["MANIFEST.in", "test-me/MANIFEST.in"],
             ["setup.cfg", "test-me/setup.cfg"],
             ["azure-pipelines.yml", "test-me/azure-pipelines.yml"],
             [
-                ".azure-pipelines-steps-macos.yml",
+                "azure/pipelines-steps-macos.yml",
                 "test-me/.azure-pipelines-steps-macos.yml",
             ],
             [
-                ".azure-pipelines-steps.yml",
+                "azure/pipelines-steps.yml",
                 "test-me/.azure-pipelines-steps.yml",
+            ],
+            [
+                "pythonpublish.yml",
+                "test-me/.github/workflows/pythonpublish.yml",
             ],
         ]
         basepath = os.path.join(os.getcwd(), "yehua", "resources", "static")
         expected = [
             [os.path.join(basepath, path[0]), path[1]] for path in expected
         ]
-        eq_(calls, expected)
+        for call, expectee in zip(calls, expected):
+            eq_(call, expectee)
 
     def test_project_templating(self):
         def mock_save_file(filename, filecontent):
@@ -110,7 +123,7 @@ class TestProject(unittest.TestCase):
 
 
 def split_call_arguments(mock_call):
-    pattern = "call\('(.*)', '(.*)'\)"
+    pattern = r"call\('(.*)', '(.*)'\)"
     result = re.match(pattern, str(mock_call))
     return [result.group(1), result.group(2)]
 

@@ -44,12 +44,37 @@ def test_main_help():
             eq_(out.getvalue(), HELP_TEXT)
 
 
+@raises(SystemExit)
+def test_main_dash_dash_help():
+    args = ["yehua", "--help"]
+    with patch("sys.stdout", new_callable=StringIO) as out:
+        with patch.object(sys, "argv", args):
+            main()
+            eq_(out.getvalue(), HELP_TEXT)
+
+
+@raises(SystemExit)
+def test_main_dash_h():
+    args = ["yehua", "-h"]
+    with patch("sys.stdout", new_callable=StringIO) as out:
+        with patch.object(sys, "argv", args):
+            main()
+            eq_(out.getvalue(), HELP_TEXT)
+
+
 def test_yehua_file_passed_in_command_line():
     args = ["yehua", "/tmp/yehua.yml"]
     with patch("yehua.main.Project") as mocked_project:
         with patch.object(sys, "argv", args):
             main()
             mocked_project.assert_called()
+
+
+@raises(Exception)
+def test_a_directory_is_passed_in_command_line():
+    args = ["yehua", "/"]
+    with patch.object(sys, "argv", args):
+        main()
 
 
 def test_get_yehua_file_1():

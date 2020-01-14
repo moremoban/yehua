@@ -8,6 +8,12 @@ yehua - Let you focus on code, instead of setup scaffolding
 .. image:: https://codecov.io/github/moremoban/yehua/coverage.png
    :target: https://codecov.io/github/moremoban/yehua
 
+.. image:: https://badge.fury.io/py/yehua.svg
+   :target: https://pypi.org/project/yehua
+
+.. image:: https://pepy.tech/badge/yehua/month
+   :target: https://pepy.tech/project/yehua/month
+
 
 .. image:: https://readthedocs.org/projects/yehua/badge/?version=latest
    :target: http://yehua.readthedocs.org/en/latest/
@@ -143,6 +149,17 @@ or clone it and install it:
     $ git clone https://github.com/moremoban/yehua.git
     $ cd yehua
     $ python setup.py install
+
+
+For offline usage, you need to get `pypi-mobans-pkg` installed::
+
+    $ pip install yehua[pypi-mobans]
+
+
+or::
+
+    $ pip install pypi-mobans-pkg
+
 
 Usage
 ================================================================================

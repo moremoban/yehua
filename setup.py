@@ -1,8 +1,11 @@
 #!/usr/bin/env python3
 
+"""
+Template by pypi-mobans
+"""
+
 import os
 import sys
-# Template by pypi-mobans
 import codecs
 import locale
 import platform
@@ -29,7 +32,7 @@ except (ValueError, UnicodeError, locale.Error):
 
 NAME = "yehua"
 AUTHOR = "C.W."
-VERSION = "0.0.7"
+VERSION = "0.0.8"
 EMAIL = "wangc_2011@hotmail.com"
 LICENSE = "New BSD"
 ENTRY_POINTS = {
@@ -58,24 +61,25 @@ CLASSIFIERS = [
     "Programming Language :: Python :: 3.4",
     "Programming Language :: Python :: 3.5",
     "Programming Language :: Python :: 3.6",
-
     "Programming Language :: Python :: 3.7",
-
     "Programming Language :: Python :: 3.8",
 
     'Topic :: Utilities',
 ]
 
 INSTALL_REQUIRES = [
-    "jinja2",
-    "PyYAML",
-    "moban>=0.3.3",
+    "Jinja2",
+    "moban>=0.6.0",
 ]
 SETUP_COMMANDS = {}
 
-
-PACKAGES = find_packages(exclude=["ez_setup", "examples", "tests"])
+PACKAGES = find_packages(exclude=["ez_setup", "examples", "tests", "tests.*"])
 EXTRAS_REQUIRE = {
+    "pypi-mobans": ['pypi-mobans-pkg==0.0.12'],
+    ":python_version == '3.4'": ["ruamel.yaml>=0.15.5,<=0.15.94"],
+    ":python_version == '3.7'": ["ruamel.yaml>=0.15.42"],
+    ":python_version != '3.4' and python_version < '3.7'": ["ruamel.yaml>=0.15.5"],
+    ":python_version == '3.8'": ["ruamel.yaml>=0.15.98"],
 }
 # You do not need to read beyond this line
 PUBLISH_COMMAND = "{0} setup.py sdist bdist_wheel upload -r pypi".format(sys.executable)
@@ -122,7 +126,7 @@ class PublishCommand(Command):
             self.status(NO_GS_MESSAGE)
         if run_status:
             if os.system(PUBLISH_COMMAND) != 0:
-                self.status(UPLOAD_FAILED_MSG % PUBLISH_COMMAND)
+                self.status(UPLOAD_FAILED_MSG)
 
         sys.exit()
 

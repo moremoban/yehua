@@ -3,7 +3,6 @@ from datetime import datetime
 
 import yehua.utils as utils
 
-import yaml
 from jinja2 import Environment, FileSystemLoader
 
 
@@ -11,6 +10,9 @@ class Project:
     def __init__(self, yehua_file):
         if not os.path.exists(yehua_file):
             raise Exception("%s does not exist" % yehua_file)
+        if os.path.isdir("yehua_file"):
+            raise Exception("A yehua file is expected. Not a directory")
+
         self.project_file = yehua_file
         self.project_name = None
         self.answers = None
@@ -67,7 +69,7 @@ class Project:
     def _ask_questions(self):
         base_path = os.path.dirname(self.project_file)
         with open(self.project_file, "r") as f:
-            first_stage = yaml.load(f)
+            first_stage = utils.load_yaml(f.read())
             print(first_stage["introduction"])
             self.template_dir = os.path.join(
                 base_path, first_stage["configuration"]["template_path"]
@@ -88,7 +90,7 @@ class Project:
         tmp_env = self._create_jj2_environment(base_path)
         template = tmp_env.get_template(os.path.basename(self.project_file))
         renderred_content = template.render(**self.answers)
-        self.directives = yaml.load(renderred_content)
+        self.directives = utils.load_yaml(renderred_content)
 
     def _create_jj2_environment(self, path):
         template_loader = FileSystemLoader(path)
