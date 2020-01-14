@@ -23,5 +23,5 @@ dependencies:
   - moban>=0.6.0
 extra_dependencies:
   - pypi-mobans:
-    - pypi-mobans-pkg==0.0.7
+    - pypi-mobans-pkg==0.0.10
 description: An interactive command line tool to provide a default scaffolding for a python package.

@@ -1,8 +1,8 @@
 configuration:
   template_dir:
-   - "pypi://pypi-mobans-pkg/resources/templates"
-   - "pypi://pypi-mobans-pkg/resources/statics"
-   - ".moban.d"
+    - "pypi://pypi-mobans-pkg/resources/templates"
+    - "pypi://pypi-mobans-pkg/resources/statics"
+    - ".moban.d"
   configuration: {{ project_name }}.yml
 targets:
   - README.rst: CUSTOM_README.rst.jj2
@@ -23,3 +23,6 @@ targets:
   - LICENSE: "{{ license|lower }}_license.jj2"
   - MANIFEST.in: MANIFEST.in.jj2
   - ".github/workflows/pythonpublish.yml": "pythonpublish.yml"
+  - "azure-pipelines.yml": "azure/azure-pipelines.yml"
+  - ".azure-pipelines-steps-macos.yml": "azure/pipelines-steps-macos.yml"
+  - ".azure-pipelines-steps.yml": "azure/pipelines-steps.yml"

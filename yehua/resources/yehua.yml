@@ -40,9 +40,6 @@ static:
   - ".moban.d/tests/custom_requirements.txt.jj2": "tests/custom_requirements.txt.jj2"
   - CHANGELOG.rst: CHANGELOG.rst
   - setup.cfg: setup.cfg
-  - "azure-pipelines.yml": "azure-pipelines.yml"
-  - ".azure-pipelines-steps-macos.yml": "azure/pipelines-steps-macos.yml"
-  - ".azure-pipelines-steps.yml": "azure/pipelines-steps.yml"
 post-moban:
   git-repo-files:
     - "CHANGELOG.rst"
