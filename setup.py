@@ -75,7 +75,7 @@ SETUP_COMMANDS = {}
 
 PACKAGES = find_packages(exclude=["ez_setup", "examples", "tests", "tests.*"])
 EXTRAS_REQUIRE = {
-    "pypi-mobans": ['pypi-mobans-pkg==0.0.9'],
+    "pypi-mobans": ['pypi-mobans-pkg==0.0.12'],
     ":python_version == '3.4'": ["ruamel.yaml>=0.15.5,<=0.15.94"],
     ":python_version == '3.7'": ["ruamel.yaml>=0.15.42"],
     ":python_version != '3.4' and python_version < '3.7'": ["ruamel.yaml>=0.15.5"],
