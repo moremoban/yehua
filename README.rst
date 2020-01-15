@@ -14,6 +14,9 @@ yehua - Let you focus on code, instead of setup scaffolding
 .. image:: https://pepy.tech/badge/yehua/month
    :target: https://pepy.tech/project/yehua/month
 
+.. image:: https://img.shields.io/github/stars/moremoban/yehua.svg?style=social&maxAge=3600&label=Star
+    :target: https://github.com/moremoban/yehua/stargazers
+
 
 .. image:: https://readthedocs.org/projects/yehua/badge/?version=latest
    :target: http://yehua.readthedocs.org/en/latest/
