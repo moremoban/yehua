@@ -6,7 +6,7 @@ contact: "wangc_2011@hotmail.com"
 company: "Onni Software Ltd."
 version: "0.0.8"
 current_version: "0.0.8"
-release: "0.0.7"
+release: "0.0.8"
 copyright_year: 2017-2020
 command_line_interface: "yh"
 entry_point: "yehua.main:main"

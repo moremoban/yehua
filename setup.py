@@ -45,7 +45,7 @@ DESCRIPTION = (
     "a python package."
 )
 URL = "https://github.com/moremoban/yehua"
-DOWNLOAD_URL = "%s/archive/0.0.7.tar.gz" % URL
+DOWNLOAD_URL = "%s/archive/0.0.8.tar.gz" % URL
 FILES = ["README.rst", "CHANGELOG.rst"]
 KEYWORDS = [
     "python",
@@ -83,8 +83,8 @@ EXTRAS_REQUIRE = {
 }
 # You do not need to read beyond this line
 PUBLISH_COMMAND = "{0} setup.py sdist bdist_wheel upload -r pypi".format(sys.executable)
-GS_COMMAND = ("gs yehua v0.0.7 " +
-              "Find 0.0.7 in changelog for more details")
+GS_COMMAND = ("gs yehua v0.0.8 " +
+              "Find 0.0.8 in changelog for more details")
 NO_GS_MESSAGE = ("Automatic github release is disabled. " +
                  "Please install gease to enable it.")
 UPLOAD_FAILED_MSG = (
