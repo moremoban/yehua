@@ -7,7 +7,6 @@ yehua - Let you focus on code, instead of setup scaffolding
 
 .. image:: https://codecov.io/github/moremoban/yehua/coverage.png
    :target: https://codecov.io/github/moremoban/yehua
-
 .. image:: https://badge.fury.io/py/yehua.svg
    :target: https://pypi.org/project/yehua
 
@@ -17,13 +16,18 @@ yehua - Let you focus on code, instead of setup scaffolding
 .. image:: https://img.shields.io/github/stars/moremoban/yehua.svg?style=social&maxAge=3600&label=Star
     :target: https://github.com/moremoban/yehua/stargazers
 
-
 .. image:: https://readthedocs.org/projects/yehua/badge/?version=latest
    :target: http://yehua.readthedocs.org/en/latest/
 
 .. image:: https://badges.gitter.im/chfw_yehua/Lobby.svg
    :alt: Join the chat at https://gitter.im/chfw_yehua/Lobby
    :target: https://gitter.im/chfw_yehua/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge
+
+
+NOTE
+================================================================================
+
+Version 0.0.8 needs pypi-moban-pkg version 0.0.12.
 
 Introduction
 ================================================================================

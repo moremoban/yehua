@@ -67,6 +67,7 @@ CLASSIFIERS = [
     'Topic :: Utilities',
 ]
 
+
 INSTALL_REQUIRES = [
     "Jinja2",
     "moban>=0.6.0",
