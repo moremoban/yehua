@@ -22,11 +22,15 @@ stages:
   git:
     submodules: false
   python: 3.6
+  env:
+    - MINREQ=0
   stage: lint
   script: bash lint.sh
 
 .moban: &moban
   python: 3.6
+  env:
+    - MINREQ=0
   stage: moban
   install: pip install moban>=0.0.4 gitfs2 pypifs
   script:
