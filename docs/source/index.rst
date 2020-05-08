@@ -5,6 +5,7 @@
 :Source code: http://github.com/moremoban/yehua.git
 :Issues: http://github.com/moremoban/yehua/issues
 :License: New BSD License
+:Development: |release|
 :Released: |version|
 :Generated: |today|
 
@@ -142,7 +143,7 @@ Usage
 
 
 
-.. image:: https://github.com/chfw/yehua/raw/master/yehua-usage.gif
+.. image:: https://github.com/moremoban/yehua/raw/master/yehua-usage.gif
    :width: 600px
 
 Please note, since version 0.0.2, the command line is shortened. Due to
@@ -161,6 +162,24 @@ It will do these for you:
 
 You will simply need to commit it after you will have reviewed the
 generated files.
+
+Cookiecutter users
+--------------------------
+
+Yes, we now support cookiecutter templates. It has been requested since 2018
+Europython. Simply there is tons of cookiecutter templates out there. What
+you do is to replace 'cookiecutter' with 'yh'::
+
+    $ yh git://github.com/audreyr/cookiecutter-pypackage.git
+
+And what moremoban promise is, whenever your source template changes, you
+can synchronize them any time with another moremoban's command 'moban':
+
+    $ moban
+
+Yes, you need a separate command, which replaces your effort to synchronize
+the upstream templates all the time.
+
 
 Tutorial
 -----------------
@@ -250,7 +269,7 @@ push it to your github::
 
 Then create your project repository in github and do these to push it out::
 
-    $ git remote add origin https://github.com/chfw/hello.git
+    $ git remote add origin https://github.com/moremoban/hello.git
     $ git push origin master
 
 
@@ -290,7 +309,7 @@ done so. And then go to travis and activate your project.
 .. |slide10| image:: _static/push2github.png
    :scale: 60%
 
-.. _hello project: https://github.com/chfw/hello
+.. _hello project: https://github.com/moremoban/hello
 .. _pyexcel commons: https://github.com/pyexcel/pyexcel-commons
 .. _pyexcel: https://github.com/pyexcel
 .. _moban: https://github.com/moremoban/moban

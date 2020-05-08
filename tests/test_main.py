@@ -18,7 +18,8 @@ def test_main(copy, save, mkdir, inputs, os_system):
     save.return_value = 0
     mkdir.return_value = 0
     inputs.return_value = dict(project_name="test-me")
-    main()
+    with patch.object(sys, "argv", ["yh"]):
+        main()
     calls = mkdir.call_args_list
     calls = [str(call) for call in calls]
     expected = [
@@ -33,15 +34,6 @@ def test_main(copy, save, mkdir, inputs, os_system):
         "call('test-me/.moban.d/docs/source')",
     ]
     eq_(calls, expected)
-
-
-@raises(SystemExit)
-def test_main_help():
-    args = ["yehua", "help"]
-    with patch("sys.stdout", new_callable=StringIO) as out:
-        with patch.object(sys, "argv", args):
-            main()
-            eq_(out.getvalue(), HELP_TEXT)
 
 
 @raises(SystemExit)

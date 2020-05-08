@@ -1,2 +1,3 @@
 pip freeze
-nosetests --with-coverage --cover-package yehua --cover-package tests tests  docs/source yehua
+pip install -e .
+pytest --cov=yehua --cov=tests tests/

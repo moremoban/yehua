@@ -1,7 +1,21 @@
 Change log
 ================================================================================
 
-0.0.8 - 2020
+0.1.0 - 2020
+--------------------------------------------------------------------------------
+
+**Removed**
+
+#. python 2 support has been dropped
+
+**Added**
+
+#. `#37 <https://github.com/moremoban/yehua/issues/37>`_: cookiecutter support
+#. added moban update work flow
+#. python filesystem 2 support. yehua templates and cookiecutter templates can
+   be in git, zip, s3, etc.
+
+0.0.8 - 10-01-2020
 --------------------------------------------------------------------------------
 
 **Added**

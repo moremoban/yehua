@@ -3,14 +3,17 @@ from datetime import datetime
 
 import yehua.utils as utils
 
-from jinja2 import Environment, FileSystemLoader
+import fs
+from jinja2 import Environment
+from jinja2_fsloader import FSLoader
+from moban.externals.file_system import exists, is_dir, read_unicode
 
 
 class Project:
     def __init__(self, yehua_file):
-        if not os.path.exists(yehua_file):
+        if not exists(yehua_file):
             raise Exception("%s does not exist" % yehua_file)
-        if os.path.isdir("yehua_file"):
+        if is_dir(yehua_file):
             raise Exception("A yehua file is expected. Not a directory")
 
         self.project_file = yehua_file
@@ -37,6 +40,8 @@ class Project:
                 utils.save_file(target, rendered_content)
 
     def copy_static_files(self):
+        if "static" not in self.directives:
+            return
         for static in self.directives["static"]:
             for output, source in static.items():
                 source = os.path.abspath(os.path.join(self.static_dir, source))
@@ -67,17 +72,18 @@ class Project:
         print("All done!! project %s is created" % self.project_name)
 
     def _ask_questions(self):
-        base_path = os.path.dirname(self.project_file)
-        with open(self.project_file, "r") as f:
-            first_stage = utils.load_yaml(f.read())
-            print(first_stage["introduction"])
+        content = read_unicode(self.project_file)
+        first_stage = utils.load_yaml(content)
+        base_path = fs.path.dirname(self.project_file)
+        with fs.open_fs(base_path) as the_fs:
             self.template_dir = os.path.join(
-                base_path, first_stage["configuration"]["template_path"]
+                the_fs._root_path,
+                first_stage["configuration"]["template_path"],
             )
             self.static_dir = os.path.join(
-                base_path, first_stage["configuration"]["static_path"]
+                the_fs._root_path, first_stage["configuration"]["static_path"]
             )
-            self.answers = get_user_inputs(first_stage["questions"])
+        self.answers = get_user_inputs(first_stage["questions"])
 
     def _append_magic_variables(self):
         self.project_name = self.answers["project_name"]
@@ -86,19 +92,28 @@ class Project:
         self.jj2_environment = self._create_jj2_environment(self.template_dir)
 
     def _template_yehua_file(self):
-        base_path = os.path.dirname(self.project_file)
-        tmp_env = self._create_jj2_environment(base_path)
-        template = tmp_env.get_template(os.path.basename(self.project_file))
-        renderred_content = template.render(**self.answers)
-        self.directives = utils.load_yaml(renderred_content)
+        base_path = fs.path.dirname(self.project_file)
+        with fs.open_fs(base_path) as the_fs:
+            base_path = the_fs._root_path
+            tmp_env = self._create_jj2_environment(base_path)
+            template = tmp_env.get_template(
+                os.path.basename(self.project_file)
+            )
+            renderred_content = template.render(**self.answers)
+            self.directives = utils.load_yaml(renderred_content)
 
     def _create_jj2_environment(self, path):
-        template_loader = FileSystemLoader(path)
+        template_loader = FSLoader(path)
+        default_extensions = [
+            "cookiecutter.extensions.JsonifyExtension",
+            "jinja2_time.TimeExtension",
+        ]
         environment = Environment(
             loader=template_loader,
             keep_trailing_newline=True,
             trim_blocks=True,
             lstrip_blocks=True,
+            extensions=default_extensions,
         )
         return environment
 

@@ -3,6 +3,7 @@ import sys
 import codecs
 import shutil
 
+import fs
 from ruamel.yaml import YAML
 
 DEFAULT_FILE = "yehua.yml"
@@ -73,3 +74,16 @@ def load_yaml(content):
     yaml = YAML(typ="rt")
     data = yaml.load(content)
     return data
+
+
+def dump_yaml(content, file_handle):
+    yaml = YAML(typ="rt")
+    yaml.dump(content, file_handle)
+
+
+def find_project_name(parent_directory):
+    with fs.open_fs(parent_directory) as the_fs:
+        for a_file in the_fs.listdir("."):
+            project_name_condition = a_file.startswith("{{")
+            if project_name_condition:
+                return a_file

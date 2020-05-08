@@ -1,0 +1,12 @@
+introduction: "\nYehua will walk you through creating a blank python package.\nPress\
+  \ ^C to quit at any time.\n"
+configuration:
+  template_path: '{{cookiecutter.directory_name}}'
+  static_path: '{{cookiecutter.directory_name}}'
+questions:
+- directory_name: 'directory_name:'
+- file_name: 'file_name:'
+- greeting_recipient: 'greeting_recipient:'
+templates:
+- <cookiecutter<cookiecutter.file_name>cookiecutter>.py: '{{cookiecutter.file_name}}.py'
+layout: []

@@ -4,8 +4,8 @@ organisation: "moremoban"
 author: "C.W."
 contact: "wangc_2011@hotmail.com"
 company: "Onni Software Ltd."
-version: "0.0.8"
-current_version: "0.0.8"
+version: "0.1.0"
+current_version: "0.1.0"
 release: "0.0.8"
 copyright_year: 2017-2020
 command_line_interface: "yh"
@@ -24,4 +24,11 @@ dependencies:
 extra_dependencies:
   - pypi-mobans:
     - pypi-mobans-pkg==0.0.12
+  - cookiecutter:
+    - cookiecutter==1.7.0
+test_dependencies:
+  - pytest
+  - pytest-cov
+  - cookiecutter
+  - gitfs2
 description: An interactive command line tool to provide a default scaffolding for a python package.

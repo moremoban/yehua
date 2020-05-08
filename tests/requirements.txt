@@ -3,3 +3,7 @@ mock;python_version<"3"
 codecov
 coverage
 flake8
+pytest
+pytest-cov
+cookiecutter
+gitfs2

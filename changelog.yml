@@ -2,6 +2,17 @@ name: yehua
 organisation: moremoban
 releases:
 - changes:
+  - action: Removed
+    details:
+    - "python 2 support has been dropped"
+  - action: Added
+    details:
+    - "`#37`: cookiecutter support"
+    - "added moban update work flow"
+    - "python filesystem 2 support. yehua templates and cookiecutter templates can be in git, zip, s3, etc."
+  date: 2020
+  version: 0.1.0
+- changes:
   - action: Added
     details:
     - "`#30`: 'yh -h' or 'yh --help' triggers help text"
@@ -13,7 +24,7 @@ releases:
     - "`#35`: better error message when the project name has been made a directory already"
     - "updated moban dependency to v0.6.0"
     - "updated yaml library to ruamel.yaml. PyYAML is out because only one yaml library is wanted in the organisation."
-  date: 2020
+  date: 10-01-2020
   version: 0.0.8
 - changes:
   - action: Updated
