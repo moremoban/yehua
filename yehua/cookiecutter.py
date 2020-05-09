@@ -7,16 +7,23 @@ from yehua.project import Project, get_user_inputs
 
 from jinja2 import Environment
 
-MOBAN = """
+MOBAN_FILE_FOR_COOKIE_CUTTER = """
 configuration:
   template_dir:
   - ""
   configuration: project.json
-  force_template_type: jj2
-extensions:
-  jinja2:
-   - cookiecutter.extensions.JsonifyExtension
-   - jinja2_time.TimeExtension
+  force_template_type: cookiecutter
+  template_types:
+    cookiecutter:
+      base_type: jinja2
+      file_extensions:
+        - cookiecutter
+      options:
+        trim_blocks: false
+        lstrip_blocks: false
+        extensions:
+          - cookiecutter.extensions.JsonifyExtension
+          - jinja2_time.TimeExtension
 """
 
 
@@ -72,9 +79,11 @@ class CookieCutter(Project):
             self.answers["project_name"], self.answers["project_name"] + ".yml"
         )
         with open(path, "w") as f:
-            dump_yaml(self.answers, f)
+            project_yaml = deepcopy(self.answers)
+            project_yaml.pop("now")  # is not required
+            dump_yaml(project_yaml, f)
 
-        moban_file = utils.load_yaml(MOBAN)
+        moban_file = utils.load_yaml(MOBAN_FILE_FOR_COOKIE_CUTTER)
         moban_file["configuration"]["configuration"] = (
             self.answers["project_name"] + ".yml"
         )

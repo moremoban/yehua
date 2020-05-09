@@ -1,9 +1,13 @@
 import os
 import sys
+import shutil
 
 from yehua.main import main
+from moban.externals.file_system import is_dir, url_join, read_unicode
 
+import fs
 from mock import patch
+from nose.tools import eq_
 
 
 @patch("yehua.cookiecutter.get_user_inputs")
@@ -54,3 +58,52 @@ def test_github_package(fake_inputs):
     os.unlink(os.path.join(project_name, ".moban.yml"))
     os.unlink(os.path.join(project_name, ".moban.hashes"))
     os.rmdir(project_name)
+
+
+@patch("yehua.cookiecutter.get_user_inputs")
+def test_reference_pypi_package(fake_inputs):
+    project_name = "project_s"
+    fake_inputs.return_value = {
+        "full_name": "full_n",
+        "email": "email_",
+        "github_username": "github_u",
+        "project_name": "project_n",
+        "project_slug": project_name,
+        "project_short_description": "project_sd",
+        "pypi_username": "pypi_u",
+        "version": "1.0",
+        "use_pytest": "1",
+        "use_pypi_deployment_with_travis": "1",
+        "add_pyup_badge": "1",
+        "command_line_interface": "1",
+        "create_author_file": "1",
+        "open_source_license": "1",
+    }
+    path = "git://github.com/moremoban/cookiecutter-pypackage.git"
+    with patch.object(sys, "argv", ["yh", path]):
+        main()
+
+    for a_file in find_files("project_s"):
+        reference = url_join("tests/fixtures", a_file)
+        if ".moban.yml" in a_file:
+            # no way to compare them
+            continue
+        if ".moban.hashes" in a_file:
+            continue
+        r = read_unicode(reference)
+        a = read_unicode(a_file)
+        eq_(r, a, f"{a_file} differs")
+        os.unlink(a_file)
+
+    shutil.rmtree(project_name)
+
+
+def find_files(dir):
+    with fs.open_fs(dir) as the_fs:
+        for a_file in the_fs.listdir("."):
+            relative_path = url_join(dir, a_file)
+            if is_dir(relative_path):
+                a_list = find_files(relative_path)
+                yield from a_list
+            else:
+                yield relative_path

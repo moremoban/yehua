@@ -6,10 +6,9 @@ import argparse
 from yehua.utils import get_yehua_file
 from yehua.project import Project
 from yehua._version import __version__
+from moban.exceptions import FileNotFound
 from yehua.cookiecutter import CookieCutter
 from yehua.cookiecutter_to_yehua import cookiecutter_json_to_yehua_file
-
-from moban.exceptions import FileNotFound
 
 HELP_TEXT = (
     """

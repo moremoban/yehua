@@ -2,9 +2,9 @@ import json
 from io import StringIO
 
 from yehua.utils import dump_yaml, find_project_name
+from moban.externals.file_system import is_dir, url_join, read_unicode
 
 import fs
-from moban.externals.file_system import is_dir, url_join, read_unicode
 
 INTRODUCTION = """
 Yehua will walk you through creating a blank python package.
