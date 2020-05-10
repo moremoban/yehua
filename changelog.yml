@@ -5,6 +5,9 @@ releases:
   - action: Removed
     details:
     - "python 2 support has been dropped"
+  - action: Updated
+    details:
+    - "-v is changed to do moban style verbose(-v, -vv, -vvv), for version, please use -V"
   - action: Added
     details:
     - "`#37`: cookiecutter support"

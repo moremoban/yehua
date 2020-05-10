@@ -10,11 +10,11 @@ with open('README.rst') as readme_file:
 with open('HISTORY.rst') as history_file:
     history = history_file.read()
 
-requirements = [ ]
+requirements = ['Click>=7.0', ]
 
-setup_requirements = [ ]
+setup_requirements = ['pytest-runner', ]
 
-test_requirements = [ ]
+test_requirements = ['pytest>=3', ]
 
 setup(
     author="full_n",
@@ -23,6 +23,7 @@ setup(
     classifiers=[
         'Development Status :: 2 - Pre-Alpha',
         'Intended Audience :: Developers',
+        'License :: OSI Approved :: MIT License',
         'Natural Language :: English',
         'Programming Language :: Python :: 3',
         'Programming Language :: Python :: 3.5',
@@ -37,6 +38,7 @@ setup(
         ],
     },
     install_requires=requirements,
+    license="MIT license",
     long_description=readme + '\n\n' + history,
     include_package_data=True,
     keywords='project_s',

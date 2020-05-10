@@ -10,6 +10,7 @@ Welcome to project_n's documentation!
    usage
    modules
    contributing
+   authors
    history
 
 Indices and tables

@@ -17,8 +17,17 @@ def cookiecutter_json_to_yehua_file(path):
     cookie_questions = json.loads(content)
 
     questions = []
-    for key in cookie_questions.keys():
-        questions.append({key: f"{key}:"})
+    for key, value in cookie_questions.items():
+        if isinstance(value, list):
+            complex_question = {"question": f"{key}:"}
+            for index, option in enumerate(value, 1):
+                complex_question[f"{index}. {option}"] = "N/A"
+            questions.append({key: [complex_question]})
+        else:
+            prompt = f"{key}: "
+            if "{{" not in value:
+                prompt += f"({value})"
+            questions.append({key: f"{prompt}"})
     project_dir = find_project_name(path)
     dir_list = walk_tree(url_join(path, project_dir))
     better_list = cleanse(dir_list, url_join(path, project_dir))

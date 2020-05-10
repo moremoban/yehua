@@ -68,16 +68,16 @@ def test_reference_pypi_package(fake_inputs):
         "email": "email_",
         "github_username": "github_u",
         "project_name": "project_n",
-        "project_slug": project_name,
+        "project_slug": "project_s",
         "project_short_description": "project_sd",
         "pypi_username": "pypi_u",
         "version": "1.0",
-        "use_pytest": "1",
-        "use_pypi_deployment_with_travis": "1",
-        "add_pyup_badge": "1",
-        "command_line_interface": "1",
-        "create_author_file": "1",
-        "open_source_license": "1",
+        "use_pytest": "y",
+        "use_pypi_deployment_with_travis": "y",
+        "add_pyup_badge": "y",
+        "command_line_interface": "Click",
+        "create_author_file": "y",
+        "open_source_license": "MIT license",
     }
     path = "git://github.com/moremoban/cookiecutter-pypackage.git"
     with patch.object(sys, "argv", ["yh", path]):

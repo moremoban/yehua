@@ -14,12 +14,16 @@ project_n
         :alt: Documentation Status
 
 
+.. image:: https://pyup.io/repos/github/github_u/project_s/shield.svg
+     :target: https://pyup.io/repos/github/github_u/project_s/
+     :alt: Updates
+
 
 
 project_sd
 
 
-* Free software: 1
+* Free software: MIT license
 * Documentation: https://project-s.readthedocs.io.
 
 

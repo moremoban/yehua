@@ -111,8 +111,8 @@ Tips
 
 To run a subset of tests::
 
+$ pytest tests.test_project_s
 
-    $ python -m unittest tests.test_project_s
 
 Deploying
 ---------

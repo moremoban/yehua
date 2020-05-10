@@ -8,6 +8,11 @@ Change log
 
 #. python 2 support has been dropped
 
+**Updated**
+
+#. -v is changed to do moban style verbose(-v, -vv, -vvv), for version, please
+   use -V
+
 **Added**
 
 #. `#37 <https://github.com/moremoban/yehua/issues/37>`_: cookiecutter support
