@@ -41,7 +41,7 @@ def main():
     signal.signal(signal.SIGINT, control_c_quit)
     parser = create_parser()
     options = vars(parser.parse_args())
-    handle_verbose(options['verbose'])
+    handle_verbose(options["verbose"])
 
     yehua_file = options.get("url")
     if yehua_file is None:

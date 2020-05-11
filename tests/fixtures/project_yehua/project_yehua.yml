@@ -1,0 +1,15 @@
+name: "project_yehua"
+organisation: "github"
+author: "author"
+contact: "contact"
+company: "copyright"
+version: "0.0.1"
+current_version: "0.0.1"
+release: "0.0.0"
+copyright_year: 2020
+command_line_interface: "cli"
+entry_point: "project_yehua.main:main"
+license: mit
+dependencies: []
+description: "description"
+lint_command: make install_test lint format git-diff-check

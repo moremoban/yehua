@@ -129,7 +129,7 @@ def split_call_arguments(mock_call):
 
 
 def test_get_simple_user_inputs():
-    from yehua.project import get_user_inputs
+    from yehua.utils import get_user_inputs
 
     simple_questions = [{"hello": "world?"}]
 
@@ -139,8 +139,25 @@ def test_get_simple_user_inputs():
         assert answers["hello"] == "hello"
 
 
+def test_template():
+    from yehua.utils import get_user_inputs
+
+    questions_with_template = [
+        {"hello": "hello?"},
+        {"foo": "foo [{{yehua.hello}}]"},
+        {"bar": "bar [{{cookiecutter.hello}}]"},
+    ]
+
+    with patch("yehua.utils.yehua_input") as yehua_input:
+        yehua_input.side_effect = ["hello", None, None]
+        answers = get_user_inputs(questions_with_template)
+        assert answers["hello"] == "hello"
+        assert answers["foo"] == "hello"
+        assert answers["bar"] == "hello"
+
+
 def test_get_complex_user_inputs():
-    from yehua.project import get_user_inputs
+    from yehua.utils import get_user_inputs
 
     simple_questions = [
         {
@@ -157,5 +174,5 @@ def test_get_complex_user_inputs():
     with patch("yehua.utils.yehua_input") as yehua_input:
         yehua_input.side_effect = ["2", "hello"]
         answers = get_user_inputs(simple_questions)
-        eq_(answers["hello"], "2")
+        eq_(answers["hello"], "option 2")
         eq_(answers["option 2"], "hello")

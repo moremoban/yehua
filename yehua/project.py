@@ -2,6 +2,7 @@ import os
 from datetime import datetime
 
 import yehua.utils as utils
+from yehua.utils import get_user_inputs
 from moban.externals.file_system import exists, is_dir, read_unicode
 
 import fs
@@ -116,36 +117,3 @@ class Project:
             extensions=default_extensions,
         )
         return environment
-
-
-def get_user_inputs(questions):
-    answers = {}
-    for q in questions:
-        for key, question in q.items():
-            if isinstance(question, list):
-                q, additional = raise_complex_question(question)
-                answers[key] = q
-                if additional:
-                    answers.update(additional)
-            else:
-                a = utils.yehua_input(question + " ")
-                answers[key] = a
-    return answers
-
-
-def raise_complex_question(question):
-    additional_answers = None
-    for subq in question:
-        subquestion = subq.pop("question")
-        suggested_answers = sorted(subq.keys())
-        long_question = [subquestion] + suggested_answers
-        choice = "(%s): " % (
-            ",".join([str(x) for x in range(1, len(long_question))])
-        )
-        long_question.append(choice)
-        a = utils.yehua_input("\n".join(long_question))
-        for key in suggested_answers:
-            if key.startswith(a) and subq[key] != "N/A":
-                additional_answers = get_user_inputs(subq[key])
-        break
-    return a, additional_answers

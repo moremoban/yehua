@@ -1,20 +1,18 @@
 import os
-import sys
+import re
 import codecs
 import shutil
+import logging
 
 import fs
+from jinja2 import Environment
 from ruamel.yaml import YAML
 
 DEFAULT_FILE = "yehua.yml"
 ENVIRONMENT_KEY = "YEHUA_FILE"
-PY2 = sys.version_info[0] == 2
+LOG = logging.getLogger(__name__)
 
-
-if PY2:
-    yehua_input = raw_input  # noqa: F821
-else:
-    yehua_input = input
+yehua_input = input
 
 
 def get_yehua_file():
@@ -87,3 +85,54 @@ def find_project_name(parent_directory):
             project_name_condition = a_file.startswith("{{")
             if project_name_condition:
                 return a_file
+
+
+def get_user_inputs(questions):  # refactor this later
+    LOG.debug(questions)
+    answers = {}
+    env = Environment()
+    for q in questions:
+        for key, question in q.items():
+            if isinstance(question, list):
+                q, additional = raise_complex_question(question)
+                answers[key] = q
+                if additional:
+                    answers.update(additional)
+            else:
+                if "{{" in question:
+                    # {"foo": "foo [{{yehua.hello}}]"},
+                    # {"bar": "bar [{{cookiecutter.hello}}]"}
+                    template = env.from_string(question)
+                    question = template.render(
+                        cookiecutter=answers, yehua=answers
+                    )
+                a = yehua_input(question)
+                if not a:
+                    match = re.match(r".*\[(.*)\].*", question)
+                    if match:
+                        a = match.group(1)
+                answers[key] = a
+    LOG.debug(answers)
+    return answers
+
+
+def raise_complex_question(question):
+    additional_answers = None
+    for subq in question:
+        subquestion = subq.pop("question")
+        suggested_answers = sorted(subq.keys())
+        long_question = [subquestion] + suggested_answers
+        choice = "Choose from %s [1]: " % (
+            ",".join([str(x) for x in range(1, len(long_question))])
+        )
+        long_question.append(choice)
+        a = yehua_input("\n".join(long_question))
+        if not a:
+            a = "1"
+        for key in suggested_answers:
+            if key.startswith(a):
+                string_answer = key.split(".")[1].strip()
+                if subq[key] != "N/A":
+                    additional_answers = get_user_inputs(subq[key])
+                break
+    return string_answer, additional_answers

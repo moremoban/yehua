@@ -85,10 +85,12 @@ def test_reference_pypi_package(fake_inputs):
 
     for a_file in find_files("project_s"):
         reference = url_join("tests/fixtures", a_file)
-        if ".moban.yml" in a_file:
+        if fs.path.basename(a_file) in [
+            ".moban.yml",
+            "HISTORY.rst",
+            ".moban.hashes",
+        ]:
             # no way to compare them
-            continue
-        if ".moban.hashes" in a_file:
             continue
         r = read_unicode(reference)
         a = read_unicode(a_file)

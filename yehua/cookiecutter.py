@@ -1,13 +1,12 @@
 import os
+import logging
 from copy import deepcopy
 
 import yehua.utils as utils
-from yehua.utils import dump_yaml
+from yehua.utils import dump_yaml, get_user_inputs
 from yehua.project import Project
 
 from jinja2 import Environment
-import logging
-
 
 MOBAN_FILE_FOR_COOKIE_CUTTER = """
 configuration:
@@ -106,40 +105,3 @@ class CookieCutter(Project):
             os.path.join(self.answers["project_name"], ".moban.yml"), "w"
         ) as f:
             dump_yaml(moban_file, f)
-
-
-def get_user_inputs(questions):  # refactor this later
-    LOG.debug(questions)
-    answers = {}
-    for q in questions:
-        for key, question in q.items():
-            if isinstance(question, list):
-                q, additional = raise_complex_question(question)
-                answers[key] = q
-                if additional:
-                    answers.update(additional)
-            else:
-                a = utils.yehua_input(question + " ")
-                answers[key] = a
-    LOG.debug(answers)
-    return answers
-
-
-def raise_complex_question(question):
-    additional_answers = None
-    for subq in question:
-        subquestion = subq.pop("question")
-        suggested_answers = sorted(subq.keys())
-        long_question = [subquestion] + suggested_answers
-        choice = "(%s): " % (
-            ",".join([str(x) for x in range(1, len(long_question))])
-        )
-        long_question.append(choice)
-        a = utils.yehua_input("\n".join(long_question))
-        for key in suggested_answers:
-            if key.startswith(a):
-                string_answer = key.split(".")[1].strip()
-                if subq[key] != "N/A":
-                    additional_answers = get_user_inputs(subq[key])
-        break
-    return string_answer, additional_answers

@@ -17,7 +17,7 @@ questions:
       "1. library": "N/A"
       "2. command line interface":
         - cli: "cli executable name?"
-      "3. C externsion":
+      "3. C extension":
         - sources: "source files?(Comma separated list is expected. For example: pymodule.c,file.c)"
 layout:
   - "{{project_name|lower|replace('-', '_')}}"

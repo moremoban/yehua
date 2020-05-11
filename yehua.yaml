@@ -31,4 +31,6 @@ test_dependencies:
   - pytest-cov
   - cookiecutter
   - gitfs2
+  - pypifs
+  - pypi-mobans-pkg==0.0.12  
 description: An interactive command line tool to provide a default scaffolding for a python package.
