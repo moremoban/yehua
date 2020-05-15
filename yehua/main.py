@@ -47,6 +47,9 @@ def main():
     if yehua_file is None:
         yehua_file = get_yehua_file()
     try:
+        if yehua_file.endswith("git") and yehua_file.startswith("https"):
+            yehua_file = yehua_file.replace("https://", "git://")
+
         yehua = cookiecutter_json_to_yehua_file(yehua_file)
         project = CookieCutter(yehua, yehua_file)
     except FileNotFound:

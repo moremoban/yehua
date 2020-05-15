@@ -41,8 +41,7 @@ ENTRY_POINTS = {
     ],
 }
 DESCRIPTION = (
-    "An interactive command line tool to provide a default scaffolding for" +
-    "a python package."
+    "Yet another a project template tool for an organisation."
 )
 URL = "https://github.com/moremoban/yehua"
 DOWNLOAD_URL = "%s/archive/0.0.8.tar.gz" % URL
@@ -71,6 +70,7 @@ CLASSIFIERS = [
 INSTALL_REQUIRES = [
     "Jinja2",
     "moban>=0.6.0",
+    "crayons",
 ]
 SETUP_COMMANDS = {}
 

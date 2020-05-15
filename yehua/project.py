@@ -65,8 +65,7 @@ class Project:
         cmd = "cd %s && git init" % project_name
         os.system(cmd)
         for file_name in project_files:
-            cmd = "cd %s && git add %s" % (project_name, file_name)
-            os.system(cmd)
+            _git_add(project_name, file_name)
         print("Please review changes before commit!")
 
     def end(self):
@@ -75,6 +74,7 @@ class Project:
     def _ask_questions(self):
         content = read_unicode(self.project_file)
         first_stage = utils.load_yaml(content)
+        print(first_stage["introduction"])
         base_path = fs.path.dirname(self.project_file)
         with fs.open_fs(base_path) as the_fs:
             self.template_dir = os.path.join(
@@ -117,3 +117,8 @@ class Project:
             extensions=default_extensions,
         )
         return environment
+
+
+def _git_add(project_name, file_name):
+    cmd = "cd %s && git add %s" % (project_name, file_name)
+    os.system(cmd)

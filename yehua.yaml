@@ -1,5 +1,5 @@
 name: "yehua"
-full_name: "Let you focus on code, instead of setup scaffolding"
+full_name: "Project template tool for an organisation"
 organisation: "moremoban"
 author: "C.W."
 contact: "wangc_2011@hotmail.com"
@@ -21,6 +21,7 @@ dependencies:
   - ruamel.yaml>=0.15.98;python_version == '3.8'
   - Jinja2
   - moban>=0.6.0
+  - crayons
 extra_dependencies:
   - pypi-mobans:
     - pypi-mobans-pkg==0.0.12
@@ -33,4 +34,4 @@ test_dependencies:
   - gitfs2
   - pypifs
   - pypi-mobans-pkg==0.0.12  
-description: An interactive command line tool to provide a default scaffolding for a python package.
+description: Yet another a project template tool for an organisation.

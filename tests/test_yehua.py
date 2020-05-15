@@ -1,16 +1,15 @@
+import os
 import sys
 import shutil
 from filecmp import dircmp
 
-import yehua.project
 from yehua.main import main
 
 from mock import patch
 
 
-@patch.object(yehua.project.Project, "post_moban")
 @patch("yehua.project.get_user_inputs")
-def test_reference_pypi_package(fake_inputs, fake_post_moban):
+def test_reference_pypi_package(fake_inputs):
     project_name = "project_yehua"
     fake_inputs.return_value = {
         "project_name": project_name,
@@ -25,6 +24,9 @@ def test_reference_pypi_package(fake_inputs, fake_post_moban):
     }
     with patch.object(sys, "argv", ["yh"]):
         main()
+
+    assert os.path.exists(os.path.join("project_yehua", ".git"))
+    shutil.rmtree(os.path.join("project_yehua", ".git"))
 
     c = dircmp("project_yehua", "tests/fixtures/project_yehua")
     assert len(c.diff_files) == 0, "\n".join(c.diff_files)

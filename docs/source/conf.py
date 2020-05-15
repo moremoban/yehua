@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 DESCRIPTION = (
-    'An interactive command line tool to provide a default scaffolding for ' +
-    'a python package.' +
+    'Yet another a project template tool for an organisation.' +
     ''
 )
 extensions = [

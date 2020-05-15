@@ -61,6 +61,7 @@ class CookieCutter(Project):
 
     def _ask_questions(self):
         first_stage = utils.load_yaml(self.project_content)
+        print(first_stage["introduction"])
         self.answers = get_user_inputs(first_stage["questions"])
 
         my_dict = {"cookiecutter": deepcopy(self.answers)}

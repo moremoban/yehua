@@ -29,15 +29,16 @@ def test_local_cookie_cutter_package(fake_inputs):
 
     assert content == 'print("Hello, yehua!")\n'
     os.unlink(os.path.join(project_name, f"{file_name}.py"))
-    os.unlink(os.path.join(project_name, "my_test.yml"))
+    os.unlink(os.path.join(project_name, f"{project_name}.yml"))
     os.unlink(os.path.join(project_name, ".moban.yml"))
     os.unlink(os.path.join(project_name, ".moban.hashes"))
-    os.rmdir(project_name)
+    shutil.rmtree(project_name)
 
 
+@patch("yehua.project._git_add")
 @patch("yehua.cookiecutter.get_user_inputs")
-def test_github_package(fake_inputs):
-    project_name = "my_test"
+def test_github_package(fake_inputs, fake_system):
+    project_name = "git_package_test"
     file_name = "yehua_test"
     fake_inputs.return_value = {
         "directory_name": project_name,
@@ -54,10 +55,10 @@ def test_github_package(fake_inputs):
 
     assert content == 'print("Hello, yehua!")\n'
     os.unlink(os.path.join(project_name, f"{file_name}.py"))
-    os.unlink(os.path.join(project_name, "my_test.yml"))
+    os.unlink(os.path.join(project_name, f"{project_name}.yml"))
     os.unlink(os.path.join(project_name, ".moban.yml"))
     os.unlink(os.path.join(project_name, ".moban.hashes"))
-    os.rmdir(project_name)
+    shutil.rmtree(project_name)
 
 
 @patch("yehua.cookiecutter.get_user_inputs")
@@ -83,8 +84,12 @@ def test_reference_pypi_package(fake_inputs):
     with patch.object(sys, "argv", ["yh", path]):
         main()
 
+    assert os.path.exists(os.path.join("project_s", ".git"))
+
     for a_file in find_files("project_s"):
         reference = url_join("tests/fixtures", a_file)
+        if ".git" in a_file:
+            continue
         if fs.path.basename(a_file) in [
             ".moban.yml",
             "HISTORY.rst",

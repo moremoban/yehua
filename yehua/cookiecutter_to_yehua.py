@@ -7,7 +7,7 @@ from moban.externals.file_system import is_dir, url_join, read_unicode
 import fs
 
 INTRODUCTION = """
-Yehua will walk you through creating a blank python package.
+Yehua will walk you through cookiecutter templating wizard.
 Press ^C to quit at any time.
 """
 
@@ -29,12 +29,18 @@ def cookiecutter_json_to_yehua_file(path):
     dir_list = walk_tree(url_join(path, project_dir))
     better_list = cleanse(dir_list, url_join(path, project_dir))
     layout = find_sub_directories(url_join(path, project_dir))
+
+    git_repo_files = []
+    for entry in better_list:
+        git_repo_files += list(entry.keys())
+    git_repo_files += [".moban.yml", cookiefy(project_dir + ".yml")]
     yehua = {
         "introduction": INTRODUCTION,
         "configuration": {
             "template_path": project_dir,
             "static_path": project_dir,
         },
+        "post-moban": {"git-repo-files": git_repo_files},
         "questions": questions,
         "moban": better_list,
         "layout": layout,

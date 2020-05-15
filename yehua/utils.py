@@ -5,6 +5,7 @@ import shutil
 import logging
 
 import fs
+import crayons
 from jinja2 import Environment
 from ruamel.yaml import YAML
 
@@ -106,7 +107,16 @@ def get_user_inputs(questions):  # refactor this later
                     question = template.render(
                         cookiecutter=answers, yehua=answers
                     )
-                a = yehua_input(question)
+
+                match = re.match(r"(.*)\[(.*)\].*", question)
+                if match:
+                    q, default_answer = match.group(1), match.group(2)
+                    decorated_question = (
+                        f"{q}[{crayons.yellow(default_answer)}]: "
+                    )
+                else:
+                    decorated_question = question
+                a = yehua_input(decorated_question)
                 if not a:
                     match = re.match(r".*\[(.*)\].*", question)
                     if match:
