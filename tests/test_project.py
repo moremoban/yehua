@@ -156,7 +156,9 @@ def test_template():
         assert answers["bar"] == "hello"
 
 
-def test_get_complex_user_inputs():
+@patch("yehua.utils.cutie.select")
+@patch("yehua.utils.yehua_input")
+def test_get_complex_user_inputs(fake_input, fake_select):
     from yehua.utils import get_user_inputs
 
     simple_questions = [
@@ -171,8 +173,8 @@ def test_get_complex_user_inputs():
         }
     ]
 
-    with patch("yehua.utils.yehua_input") as yehua_input:
-        yehua_input.side_effect = ["2", "hello"]
-        answers = get_user_inputs(simple_questions)
-        eq_(answers["hello"], "option 2")
-        eq_(answers["option 2"], "hello")
+    fake_select.return_value = 2
+    fake_input.return_value = "hello"
+    answers = get_user_inputs(simple_questions)
+    eq_(answers["hello"], "option 2")
+    eq_(answers["option 2"], "hello")

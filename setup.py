@@ -70,7 +70,10 @@ CLASSIFIERS = [
 INSTALL_REQUIRES = [
     "Jinja2",
     "moban>=0.6.0",
-    "crayons",
+    "colorful",
+    "rich",
+    "readchar",
+    "colorama",
 ]
 SETUP_COMMANDS = {}
 

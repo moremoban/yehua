@@ -74,7 +74,7 @@ class Project:
     def _ask_questions(self):
         content = read_unicode(self.project_file)
         first_stage = utils.load_yaml(content)
-        print(first_stage["introduction"])
+        utils.color_print(first_stage["introduction"])
         base_path = fs.path.dirname(self.project_file)
         with fs.open_fs(base_path) as the_fs:
             self.template_dir = os.path.join(

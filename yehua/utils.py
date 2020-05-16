@@ -4,8 +4,11 @@ import codecs
 import shutil
 import logging
 
+from yehua.theme import THEME
+from yehua.thirdparty import cutie
+
 import fs
-import crayons
+import colorful
 from jinja2 import Environment
 from ruamel.yaml import YAML
 
@@ -92,6 +95,7 @@ def get_user_inputs(questions):  # refactor this later
     LOG.debug(questions)
     answers = {}
     env = Environment()
+    colorful.update_palette({"peach": "#f47983"})
     for q in questions:
         for key, question in q.items():
             if isinstance(question, list):
@@ -112,11 +116,27 @@ def get_user_inputs(questions):  # refactor this later
                 if match:
                     q, default_answer = match.group(1), match.group(2)
                     decorated_question = (
-                        f"{q}[{crayons.yellow(default_answer)}]: "
+                        f"{q}[{colorful.peach(default_answer)}]: "
                     )
+                    if default_answer in ["y", "n"]:
+                        decorated_question = (
+                            q + f"[{colorful.peach(default_answer)}]"
+                        )
+                        a = cutie.prompt_yes_or_no(
+                            decorated_question,
+                            default_is_yes=default_answer == "y",
+                            deselected_prefix="  ",
+                            selected_prefix=colorful.bold_peach("\u27a4 "),
+                            char_prompt=False,
+                        )
+                        if a is None:
+                            raise Exception()
+
+                    else:
+                        a = yehua_input(decorated_question)
                 else:
                     decorated_question = question
-                a = yehua_input(decorated_question)
+                    a = yehua_input(decorated_question)
                 if not a:
                     match = re.match(r".*\[(.*)\].*", question)
                     if match:
@@ -129,20 +149,36 @@ def get_user_inputs(questions):  # refactor this later
 def raise_complex_question(question):
     additional_answers = None
     for subq in question:
-        subquestion = subq.pop("question")
+        question = subq.pop("question")
         suggested_answers = sorted(subq.keys())
-        long_question = [subquestion] + suggested_answers
-        choice = "Choose from %s [1]: " % (
-            ",".join([str(x) for x in range(1, len(long_question))])
+        full_question = [question] + suggested_answers
+        a = cutie.select(
+            full_question,
+            caption_indices=[0],
+            selected_index=1,
+            deselected_prefix="[ ] ",
+            selected_prefix=(
+                colorful.bold_white("[")
+                + colorful.bold_peach("\u2713")
+                + colorful.bold_white("] ")
+            ),
         )
-        long_question.append(choice)
-        a = yehua_input("\n".join(long_question))
-        if not a:
-            a = "1"
+        if a is None:
+            raise Exception()
         for key in suggested_answers:
-            if key.startswith(a):
+            if key.startswith(str(a)):
                 string_answer = key.split(".")[1].strip()
                 if subq[key] != "N/A":
                     additional_answers = get_user_inputs(subq[key])
                 break
     return string_answer, additional_answers
+
+
+def color_print(rich_text):
+    from rich.theme import Theme
+    from rich.console import Console
+
+    theme = Theme(THEME)
+    console = Console(theme=theme)
+    console.print(rich_text)
+    print("\n")

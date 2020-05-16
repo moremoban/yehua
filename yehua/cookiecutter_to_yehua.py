@@ -7,7 +7,7 @@ from moban.externals.file_system import is_dir, url_join, read_unicode
 import fs
 
 INTRODUCTION = """
-Yehua will walk you through cookiecutter templating wizard.
+[info]Yehua /'jɛhwa/[/info] will walk you through cookiecutter template wizard
 Press ^C to quit at any time.
 """
 

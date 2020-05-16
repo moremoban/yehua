@@ -43,4 +43,8 @@ License
 ================================================================================
 
 NEW BSD License
+
+
+It embeds MIT licensed `cutie <>`_ from Hans Schülein. Please refer to LICENSE
+file for more details
 {% endblock %}
