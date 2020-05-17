@@ -109,7 +109,7 @@ def get_user_inputs(questions):  # refactor this later
                     # {"bar": "bar [{{cookiecutter.hello}}]"}
                     template = env.from_string(question)
                     question = template.render(
-                        cookiecutter=answers, yehua=answers
+                        cookiecutter=answers, **answers
                     )
 
                 match = re.match(r"(.*)\[(.*)\].*", question)
@@ -181,4 +181,3 @@ def color_print(rich_text):
     theme = Theme(THEME)
     console = Console(theme=theme)
     console.print(rich_text)
-    print("\n")

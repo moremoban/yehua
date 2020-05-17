@@ -35,9 +35,8 @@ def test_local_cookie_cutter_package(fake_inputs):
     shutil.rmtree(project_name)
 
 
-@patch("yehua.project._git_add")
 @patch("yehua.cookiecutter.get_user_inputs")
-def test_github_package(fake_inputs, fake_system):
+def test_github_package(fake_inputs):
     project_name = "git_package_test"
     file_name = "yehua_test"
     fake_inputs.return_value = {

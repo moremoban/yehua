@@ -1,4 +1,5 @@
 import os
+import subprocess
 from datetime import datetime
 
 import yehua.utils as utils
@@ -50,8 +51,15 @@ class Project:
                 utils.copy_file(source, dest)
 
     def inflate_all_by_moban(self):
-        cmd = "cd %s && moban" % self.answers["project_name"]
-        os.system(cmd)
+        current = os.getcwd()
+        project_name = self.answers["project_name"]
+        os.chdir(project_name)
+        cmd = "moban"
+        _run_command(cmd)
+        os.chdir(current)
+        utils.color_print(
+            f"\u2713 Files are generated under [info]{project_name}[/info]"
+        )
 
     def post_moban(self):
         if "post-moban" not in self.directives:
@@ -62,14 +70,27 @@ class Project:
 
     def initialize_git_and_add_all(self, project_files):
         project_name = self.answers["project_name"]
-        cmd = "cd %s && git init" % project_name
-        os.system(cmd)
+        current = os.getcwd()
+        os.chdir(project_name)
+        cmd = "git init"
+        _run_command(cmd)
         for file_name in project_files:
-            _git_add(project_name, file_name)
-        print("Please review changes before commit!")
+            _run_command(f"git add {file_name}")
+        os.chdir(current)
+        utils.color_print(
+            f"\u2713 Git repo initialized under [info]{project_name}[/info]"
+            + " and is ready to commit"
+        )
 
     def end(self):
-        print("All done!! project %s is created" % self.project_name)
+        utils.color_print(
+            "All done!! project [info]%s[/info] is created."
+            % self.project_name
+        )
+        utils.color_print(
+            "In the future, "
+            + "run [info]moban[/info] to synchronize with the project template"
+        )
 
     def _ask_questions(self):
         content = read_unicode(self.project_file)
@@ -119,6 +140,9 @@ class Project:
         return environment
 
 
-def _git_add(project_name, file_name):
-    cmd = "cd %s && git add %s" % (project_name, file_name)
-    os.system(cmd)
+def _run_command(command):
+    subprocess.check_call(
+        command.split(" "),
+        stdout=subprocess.DEVNULL,
+        stderr=subprocess.DEVNULL,
+    )

@@ -9,6 +9,7 @@ import fs
 INTRODUCTION = """
 [info]Yehua /'jɛhwa/[/info] will walk you through cookiecutter template wizard
 Press ^C to quit at any time.
+
 """
 
 

@@ -85,6 +85,9 @@ class CookieCutter(Project):
             project_yaml = deepcopy(self.answers)
             project_yaml.pop("now")  # is not required
             dump_yaml(project_yaml, f)
+        utils.color_print(
+            f"\u2713 Your answers are saved in [info]{path}[/info]!"
+        )
 
         moban_file = utils.load_yaml(MOBAN_FILE_FOR_COOKIE_CUTTER)
         moban_file["configuration"]["configuration"] = (
@@ -102,7 +105,12 @@ class CookieCutter(Project):
                 + "/"
                 + self.cookie_cutter_dir
             )
-        with open(
-            os.path.join(self.answers["project_name"], ".moban.yml"), "w"
-        ) as f:
+        moban_file_path = os.path.join(
+            self.answers["project_name"], ".moban.yml"
+        )
+        with open(moban_file_path, "w") as f:
             dump_yaml(moban_file, f)
+        utils.color_print(
+            f"\u2713 [info]{moban_file_path}[/info]! l"
+            + "inks your project with the template."
+        )

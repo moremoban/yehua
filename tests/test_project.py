@@ -144,7 +144,7 @@ def test_template():
 
     questions_with_template = [
         {"hello": "hello?"},
-        {"foo": "foo [{{yehua.hello}}]"},
+        {"foo": "foo [{{hello}}]"},  # note yehua does not require a prefix
         {"bar": "bar [{{cookiecutter.hello}}]"},
     ]
 

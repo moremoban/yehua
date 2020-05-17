@@ -11,6 +11,7 @@ releases:
   - action: Added
     details:
     - "`#37`: cookiecutter support"
+    - "`#38`: non-verbose mode"
     - "added moban update work flow"
     - "python filesystem 2 support. yehua templates and cookiecutter templates can be in git, zip, s3, etc."
   date: 2020

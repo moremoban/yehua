@@ -8,12 +8,13 @@ from mock import patch
 from nose.tools import eq_, raises
 
 
-@patch("os.system")
+@patch("yehua.project.os.chdir")
+@patch("yehua.project._run_command")
 @patch("yehua.project.get_user_inputs")
 @patch("yehua.utils.mkdir")
 @patch("yehua.utils.save_file")
 @patch("yehua.utils.copy_file")
-def test_main(copy, save, mkdir, inputs, os_system):
+def test_main(copy, save, mkdir, inputs, *_):
     copy.return_value = 0
     save.return_value = 0
     mkdir.return_value = 0

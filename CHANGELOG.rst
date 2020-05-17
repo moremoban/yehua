@@ -16,6 +16,7 @@ Change log
 **Added**
 
 #. `#37 <https://github.com/moremoban/yehua/issues/37>`_: cookiecutter support
+#. `#38 <https://github.com/moremoban/yehua/issues/38>`_: non-verbose mode
 #. added moban update work flow
 #. python filesystem 2 support. yehua templates and cookiecutter templates can
    be in git, zip, s3, etc.
