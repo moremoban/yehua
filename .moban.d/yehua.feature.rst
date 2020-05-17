@@ -1,3 +1,8 @@
+
+
+.. image:: https://github.com/moremoban/yehua/raw/dev/docs/source/_static/yehua-cookiecutter.gif
+   :width: 600px
+
 **yehua** /'jɛhwa/ is {{description|lower}} It creates a project skeleton, S
 from the default project template, T,  of an organisation. `moban`_, the other
 tool of moremoban organisation, keeps S in synchronisation with T forever. This
