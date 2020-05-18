@@ -9,9 +9,6 @@
 .. image:: https://github.com/moremoban/yehua/raw/master/yehua-usage.gif
    :width: 600px
 
-Please note, since version 0.0.2, the command line is shortened. Due to
-time constaints, the demo video uses `yehua` still.
-
 Simply type in and you are taken care of::
 
     $ yh
@@ -70,27 +67,7 @@ files for
 #. sharing it on github
 #. configuring travis via github
 
-Step 3 Inflates the meta data
-**********************************
-Let's change to 'hello' directory
-
-|slide3|
-
-All meta data is inflated via **`moban`_ automatically**
-The templates come from `setupmobans`_
-Run moban. It inflates the all meta data.
-
-|slide4|
-
-Why is moban involved here? It helps reduce duplicated meta data when
-your project grows. For example, yehua had this tutorial in README and in sphinx
-documentation. I wrote it in one file and moban copies it to both
-places. What's more, it helps further when the number of your
-project grows. For example, `pyexcel`_ project has dozens of
-sub projects. I wrote most of the generic documentation in
-`pyexcel commons`_ and moban copies them across all sub projects.
-
-Step 4 Start coding
+Step 3 Start coding
 *************************
 Let's write up the actual code in hello/main.py
 
@@ -104,13 +81,13 @@ Why is it enough? yehua generates a command utility python and
 it has pre-wired to invoke hello.main.main() function. You
 can find it out in setup.py.
 
-Step 5 Install it
+Step 4 Install it
 *********************
 Now all is done. Let's install it
 
 |slide7|
 
-Step 6 Run it
+Step 5 Run it
 ********************
 
 Let's run it
@@ -119,15 +96,12 @@ Let's run it
 
 All done.
 
-Step 7 push to github
+Step 6 push to github
 ***************************
 
 Suppose you are happy with everything. Please do the following to
 push it to your github::
 
-    $ git init
-    $ git add *
-    $ git add .gitignore .moban.d/ .moban.yml .travis.yml
     $ git commit -am ":sparkle: initial commit"
 
 Then create your project repository in github and do these to push it out::
@@ -145,7 +119,7 @@ Then create your project repository in github and do these to push it out::
 
 You can find the `hello project`_ on github.
 
-Step 8 enable travis
+Step 7 enable travis
 ***************************
 
 The generated project already has `.travis.yml` file. What you
