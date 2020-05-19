@@ -6,7 +6,7 @@ contact: "wangc_2011@hotmail.com"
 company: "Onni Software Ltd."
 version: "0.1.0"
 current_version: "0.1.0"
-release: "0.0.8"
+release: "0.1.0"
 copyright_year: 2017-2020
 command_line_interface: "yh"
 entry_point: "yehua.main:main"
@@ -15,7 +15,6 @@ branch: master
 lint_command: bash lint.sh
 setup_use_markers: true
 dependencies:
-  - ruamel.yaml>=0.15.5,<=0.15.94;python_version == '3.4'
   - ruamel.yaml>=0.15.42;python_version == '3.7'
   - ruamel.yaml>=0.15.5;python_version != '3.4' and python_version < '3.7'
   - ruamel.yaml>=0.15.98;python_version == '3.8'
@@ -27,7 +26,7 @@ dependencies:
   - colorama
 extra_dependencies:
   - pypi-mobans:
-    - pypi-mobans-pkg==0.0.12
+    - pypi-mobans-pkg>=0.0.14
   - cookiecutter:
     - cookiecutter==1.7.0
 test_dependencies:
@@ -38,3 +37,5 @@ test_dependencies:
   - pypifs
   - pypi-mobans-pkg==0.0.12  
 description: Yet another a project template tool for an organisation.
+python_requires: ">=3.6"
+min_python_version: "3.6"
