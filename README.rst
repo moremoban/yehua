@@ -19,6 +19,9 @@ yehua - Project template tool for an organisation
 .. image:: https://readthedocs.org/projects/yehua/badge/?version=latest
    :target: http://yehua.readthedocs.org/en/latest/
 
+.. image:: https://raw.githubusercontent.com/pyexcel/pyexcel.github.io/master/images/patreon.png
+   :target: https://www.patreon.com/chfw
+
 .. image:: https://badges.gitter.im/chfw_yehua/Lobby.svg
    :alt: Join the chat at https://gitter.im/chfw_yehua/Lobby
    :target: https://gitter.im/chfw_yehua/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge
