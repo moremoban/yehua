@@ -24,6 +24,10 @@ yehua - Project template tool for an organisation
    :target: https://gitter.im/chfw_yehua/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge
 
 
+Introduction
+================================================================================
+
+
 .. image:: https://github.com/moremoban/yehua/raw/dev/yehua-usage.gif
    :width: 600px
 
