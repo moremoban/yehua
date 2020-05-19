@@ -162,16 +162,9 @@ Now all is done. Let's install it
 
 |slide7|
 
-Step 5 Run it
-********************
+You can now run `hello` at your command line. 
 
-Let's run it
-
-|slide8|
-
-All done.
-
-Step 6 push to github
+Step 5 push to github
 ***************************
 
 Suppose you are happy with everything. Please do the following to
@@ -183,12 +176,6 @@ Then create your project repository in github and do these to push it out::
 
     $ git remote add origin https://github.com/moremoban/hello.git
     $ git push origin master
-
-
-|slide9|
-
-|slide10|
-
 
 You can find the `hello project`_ on github.
 
@@ -212,9 +199,7 @@ done so. And then go to travis and activate your project.
    :scale: 100%
 .. |slide6| image:: _static/yehua-5.png
    :scale: 100%
-.. |slide7| image:: _static/yehua-6.png
-   :scale: 100%
-.. |slide8| image:: _static/yehua-7.png
+.. |slide7| image:: _static/yehua-7.png
    :scale: 100%
 .. |slide9| image:: _static/github.png
    :scale: 60%
