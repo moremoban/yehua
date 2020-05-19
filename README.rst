@@ -24,10 +24,6 @@ yehua - Project template tool for an organisation
    :target: https://gitter.im/chfw_yehua/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge
 
 
-Introduction
-================================================================================
-
-
 .. image:: https://github.com/moremoban/yehua/raw/dev/yehua-usage.gif
    :width: 600px
 
@@ -151,11 +147,7 @@ Tutorial
 -----------------
 
 Let's make a python command line utility using `yehua`. The command
-will be `hello` and it prints `world`. You will need to issue::
-
-    $ pip install yehua
-
-before proceeding.
+will be `hello` and it prints `world`. 
 
 Step 1 Let's launch yehua
 ******************************
@@ -245,7 +237,6 @@ done so. And then go to travis and activate your project.
 
 Background
 ================================================================================
-
 
 The original problem I was trying to solve is: I would like to place
 common paragraphs in the documentation of my projects in a central

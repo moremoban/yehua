@@ -24,11 +24,7 @@ Tutorial
 -----------------
 
 Let's make a python command line utility using `yehua`. The command
-will be `hello` and it prints `world`. You will need to issue::
-
-    $ pip install yehua
-
-before proceeding.
+will be `hello` and it prints `world`. 
 
 Step 1 Let's launch yehua
 ******************************
