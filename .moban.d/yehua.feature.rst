@@ -7,6 +7,34 @@ from the default project template, T,  of an organisation. `moban`_, the other
 tool of moremoban organisation, keeps S in synchronisation with T forever. This
 use case is what we called: **continuous templating**.
 
+.. image:: https://github.com/moremoban/yehua/raw/dev/docs/source/_static/yehua-story.png
+   :width: 600px
+
+Cookiecutter users
+--------------------------
+
+Yes, we now support cookiecutter templates. It has been requested since 2018
+Europython. Simply there is tons of cookiecutter templates out there.
+
+
+.. image:: https://github.com/moremoban/yehua/raw/dev/docs/source/_static/yehua-cookiecutter.gif
+   :width: 600px
+
+What you do is to replace 'cookiecutter' with 'yh'::
+
+    $ yh git://github.com/audreyr/cookiecutter-pypackage.git
+
+And what moremoban promise is, whenever your source template changes, you
+can `synchronize` them any time with another moremoban's command 'moban'::
+
+    $ moban
+
+Yes, you need a separate command, which replaces your effort to synchronize
+the upstream templates all the time.
+
+What's different with Yehua
+------------------------------------
+
 When the scope is a single project, **yehua** is no different to `cookiecutter`_ and
 `PyScaffold`_. It will create a project skeleton from `pypi-mobans`_, other templates such
 as cookiecutter templates, yehua mobans.

@@ -20,29 +20,6 @@ It will do these for you:
 You will simply need to commit it after you will have reviewed the
 generated files.
 
-Cookiecutter users
---------------------------
-
-Yes, we now support cookiecutter templates. It has been requested since 2018
-Europython. Simply there is tons of cookiecutter templates out there.
-
-
-.. image:: https://github.com/moremoban/yehua/raw/dev/docs/source/_static/yehua-cookiecutter.gif
-   :width: 600px
-
-What you do is to replace 'cookiecutter' with 'yh'::
-
-    $ yh git://github.com/audreyr/cookiecutter-pypackage.git
-
-And what moremoban promise is, whenever your source template changes, you
-can synchronize them any time with another moremoban's command 'moban':
-
-    $ moban
-
-Yes, you need a separate command, which replaces your effort to synchronize
-the upstream templates all the time.
-
-
 Tutorial
 -----------------
 
