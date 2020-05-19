@@ -1,6 +1,5 @@
 
-
-.. image:: https://github.com/moremoban/yehua/raw/dev/docs/source/_static/yehua-cookiecutter.gif
+.. image:: https://github.com/moremoban/yehua/raw/dev/yehua-usage.gif
    :width: 600px
 
 **yehua** /'jɛhwa/ is {{description|lower}} It creates a project skeleton, S
@@ -27,7 +26,7 @@ and vision are closer to that of `cookiecutter`_:
 1. we do not want to limit ourselves in pythonsphere. We wanted to serve all
    IT projects. In our mind, they are all about text templating.
 
-1. we split the tool and the templates, serving the previous statement.
+2. we split the tool and the templates, serving the previous statement.
    People can create npm package template and use yehua+moban for continuous templating.
    Here are a list of examples:
 

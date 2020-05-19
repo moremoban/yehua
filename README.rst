@@ -28,8 +28,7 @@ Introduction
 ================================================================================
 
 
-
-.. image:: https://github.com/moremoban/yehua/raw/dev/docs/source/_static/yehua-cookiecutter.gif
+.. image:: https://github.com/moremoban/yehua/raw/dev/yehua-usage.gif
    :width: 600px
 
 **yehua** /'jɛhwa/ is yet another a project template tool for an organisation. It creates a project skeleton, S
@@ -56,7 +55,7 @@ and vision are closer to that of `cookiecutter`_:
 1. we do not want to limit ourselves in pythonsphere. We wanted to serve all
    IT projects. In our mind, they are all about text templating.
 
-1. we split the tool and the templates, serving the previous statement.
+2. we split the tool and the templates, serving the previous statement.
    People can create npm package template and use yehua+moban for continuous templating.
    Here are a list of examples:
 
@@ -106,9 +105,6 @@ Usage
 
 
 
-.. image:: https://github.com/moremoban/yehua/raw/master/yehua-usage.gif
-   :width: 600px
-
 Simply type in and you are taken care of::
 
     $ yh
@@ -127,8 +123,13 @@ Cookiecutter users
 --------------------------
 
 Yes, we now support cookiecutter templates. It has been requested since 2018
-Europython. Simply there is tons of cookiecutter templates out there. What
-you do is to replace 'cookiecutter' with 'yh'::
+Europython. Simply there is tons of cookiecutter templates out there.
+
+
+.. image:: https://github.com/moremoban/yehua/raw/dev/docs/source/_static/yehua-cookiecutter.gif
+   :width: 600px
+
+What you do is to replace 'cookiecutter' with 'yh'::
 
     $ yh git://github.com/audreyr/cookiecutter-pypackage.git
 
@@ -159,23 +160,22 @@ Step 2 Fill-in the meta data for your project
 ***********************************************
 |slide2|
 
-At the end, yehua generates a folder named 'hello', which contains all necessary
-files for
-
-#. installing it as a package
-#. testing via nose
-#. sharing it on github
-#. configuring travis via github
+At the end, yehua generates a folder named 'hello', which contains [all necessary
+files](https://github.com/moremoban/pypi-mobans).
 
 Step 3 Start coding
 *************************
-Let's write up the actual code in hello/main.py
 
-|slide5|
+.. image:: https://github.com/moremoban/yehua/raw/dev/docs/source/_static/yehua-hello.gif
+   :width: 600px
 
-Put in just a main() function and save it.
 
-|slide6|
+In above animation, we write up the actual code in hello/main.py
+
+.. code:: python
+
+    def main():
+        print('world')
 
 Why is it enough? yehua generates a command utility python and
 it has pre-wired to invoke hello.main.main() function. You
@@ -282,5 +282,5 @@ License
 NEW BSD License
 
 
-It embeds MIT licensed `cutie <>`_ from Hans Schülein. Please refer to LICENSE
-file for more details
+It embeds MIT licensed `cutie <https://github.com/kamik423/cutie>`_ from
+Hans Schülein. Please refer to LICENSE file for more details

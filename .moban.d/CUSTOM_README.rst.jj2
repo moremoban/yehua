@@ -45,6 +45,6 @@ License
 NEW BSD License
 
 
-It embeds MIT licensed `cutie <>`_ from Hans Schülein. Please refer to LICENSE
-file for more details
+It embeds MIT licensed `cutie <https://github.com/kamik423/cutie>`_ from
+Hans Schülein. Please refer to LICENSE file for more details
 {% endblock %}
