@@ -7,11 +7,11 @@ version: "0.0.1"
 current_version: "0.0.1"
 release: "0.0.0"
 copyright_year: {{now.year}}
-{% if project_type == '2'%}
+{% if project_type == 'command line interface'%}
 command_line_interface: "{{cli}}"
 entry_point: "{{project_name | replace('-', '_')}}.main:main"
 {% endif %}
-{% if project_type == '3'%}
+{% if project_type == 'C extension'%}
 external_module_library: {{project_name}}
 sources:
 {% for source in sources: %}

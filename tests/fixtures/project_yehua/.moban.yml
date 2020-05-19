@@ -1,0 +1,28 @@
+configuration:
+  template_dir:
+    - "pypi://pypi-mobans-pkg/resources/templates"
+    - "pypi://pypi-mobans-pkg/resources/statics"
+    - ".moban.d"
+  configuration: project_yehua.yml
+targets:
+  - README.rst: CUSTOM_README.rst.jj2
+  - setup.py: custom_setup.py.jj2
+  - requirements.txt: requirements.txt.jj2
+  - "tests/requirements.txt": "tests/custom_requirements.txt.jj2"
+  - "docs/source/conf.py": "docs/conf.py_t"
+  - test.sh: test.script.jj2
+  - test.bat: test.script.jj2
+  - "project_yehua/_version.py": "_version.py.jj2"
+  - .gitignore: gitignore.jj2
+  - .travis.yml: travis.yml.jj2
+  - Pipfile: Pipfile.jj2
+  - output: CHANGELOG.rst
+    configuration: changelog.yml
+    template: CHANGELOG.rst.jj2
+  - lint.sh: lint.script.jj2
+  - LICENSE: "mit_license.jj2"
+  - MANIFEST.in: MANIFEST.in.jj2
+  - ".github/workflows/pythonpublish.yml": "pythonpublish.yml"
+  - "azure-pipelines.yml": "azure/azure-pipelines.yml"
+  - ".azure-pipelines-steps-macos.yml": "azure/pipelines-steps-macos.yml"
+  - ".azure-pipelines-steps.yml": "azure/pipelines-steps.yml"

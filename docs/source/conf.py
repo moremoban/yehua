@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 DESCRIPTION = (
-    'An interactive command line tool to provide a default scaffolding for ' +
-    'a python package.' +
+    'Yet another a project template tool for an organisation.' +
     ''
 )
 extensions = [
@@ -17,8 +16,8 @@ master_doc = 'index'
 spelling_word_list_filename = 'spelling_wordlist.txt'
 project = u'yehua'
 copyright = u'2017-2020 Onni Software Ltd.'
-version = '0.0.7'
-release = '0.0.8'
+version = '0.1.0'
+release = '0.1.0'
 exclude_patterns = []
 pygments_style = 'sphinx'
 html_theme = 'default'

@@ -1,6 +1,8 @@
 {% from "usage.rst.jj2" import usage %}
 {%include "header.rst" %}
 
+{% include 'badges.rst.jj2' %}
+{% include 'additional_badges.rst.jj2' %}
 
 Introduction
 --------------------------------------------------------------------------------

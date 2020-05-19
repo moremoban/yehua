@@ -1,0 +1,16 @@
+cookiecutter:
+  full_name: full_n
+  email: email_
+  github_username: github_u
+  project_name: project_n
+  project_slug: project_s
+  project_short_description: project_sd
+  pypi_username: pypi_u
+  version: '1.0'
+  use_pytest: y
+  use_pypi_deployment_with_travis: y
+  add_pyup_badge: y
+  command_line_interface: Click
+  create_author_file: y
+  open_source_license: MIT license
+project_name: project_s

@@ -1,7 +1,27 @@
 Change log
 ================================================================================
 
-0.0.8 - 2020
+0.1.0 - 19.05.2020
+--------------------------------------------------------------------------------
+
+**Removed**
+
+#. python 2 support has been dropped
+
+**Updated**
+
+#. -v is changed to do moban style verbose(-v, -vv, -vvv), for version, please
+   use -V
+
+**Added**
+
+#. `#37 <https://github.com/moremoban/yehua/issues/37>`_: cookiecutter support
+#. `#38 <https://github.com/moremoban/yehua/issues/38>`_: non-verbose mode
+#. added moban update work flow
+#. python filesystem 2 support. yehua templates and cookiecutter templates can
+   be in git, zip, s3, etc.
+
+0.0.8 - 10-01-2020
 --------------------------------------------------------------------------------
 
 **Added**

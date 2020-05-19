@@ -1,104 +1,69 @@
 
-* Are you tired of writing up setup.py files by hand? Have you ever wondered why
-  pypi displays raw rst file for your README?
-* When you add a new library to the collection of your organization, how would
-  you make sure the static information are the same as others?
-* How would you update static information across all packages of your
-  organisation? For example, one line change in your company's profile.
-  Copy and paste? If yes, you still live in 20th century.
+.. image:: https://github.com/moremoban/yehua/raw/dev/yehua-usage.gif
+   :width: 600px
 
-**yehua** is {{description|lower}} The name is the pinyin of the Chinese word
-“夜华”, /'jɛhwa/. It create a blank python package that is usable and ready to push to github. And future
-updates on your organisation's specific static information can be instantly applies the
-update accurately using `moban`_. Here is a list of features:
+**yehua** /'jɛhwa/ is {{description|lower}} It creates a project skeleton, S
+from the default project template, T,  of an organisation. `moban`_, the other
+tool of moremoban organisation, keeps S in synchronisation with T forever. This
+use case is what we called: **continuous templating**.
 
-#. core python package
-#. test configuration setup
-#. ready to commit github repository
-#. automated upload to pypi through twine
-#. version management through jinja2
-#. automated github release through gease
-#. permanent parent-child bond: keep your packages in synchronization with your template forever
+.. image:: https://github.com/moremoban/yehua/raw/dev/docs/source/_static/yehua-story.png
+   :width: 600px
 
-What's more, you can provide your own python package templates and your own
-yehua file to customize **yehua** to meet your own needs. Here are a list of
-examples:
+Cookiecutter users
+--------------------------
+
+Yes, we now support cookiecutter templates. It has been requested since 2018
+Europython. Simply there is tons of cookiecutter templates out there.
+
+
+.. image:: https://github.com/moremoban/yehua/raw/dev/docs/source/_static/yehua-cookiecutter.gif
+   :width: 600px
+
+What you do is to replace 'cookiecutter' with 'yh'::
+
+    $ yh git://github.com/audreyr/cookiecutter-pypackage.git
+
+And what moremoban promise is, whenever your source template changes, you
+can `synchronize` them any time with another moremoban's command 'moban'::
+
+    $ moban
+
+Yes, you need a separate command, which replaces your effort to synchronize
+the upstream templates all the time.
+
+What's different with Yehua
+------------------------------------
+
+When the scope is a single project, **yehua** is no different to `cookiecutter`_ and
+`PyScaffold`_. It will create a project skeleton from `pypi-mobans`_, other templates such
+as cookiecutter templates, yehua mobans.
+
+When the scope is all projects within an organisation, **yehua** helps tackle
+information fragmentation problem, because all new projects after its creation,
+are still in synchronisation with T. For example, removing python 2.7 test
+in your travis file, can be done either manually by hand or automatically via
+`moban`_. What's the difference? The latter is faster and typo-free option. Here is
+`an example`_.
+
+`PyScaffold`_ version 3 has rolled out '--update' option, recognizing the organisational
+need of continous templating. Why do not **yehua** join `PyScaffold`_? Well,
+moremoban organisation started with '--update' at the start so our architecture
+and vision are closer to that of `cookiecutter`_:
+
+1. we do not want to limit ourselves in pythonsphere. We wanted to serve all
+   IT projects. In our mind, they are all about text templating.
+
+2. we split the tool and the templates, serving the previous statement.
+   People can create npm package template and use yehua+moban for continuous templating.
+   Here are a list of examples:
 
 * `pypkg-mobans in pyecharts project <https://github.com/pyecharts/pypkg-mobans>`_
 * `echarts-js-mobans in echarts-map project <https://github.com/echarts-maps/echarts-js-mobans>`_
 
+.. _moban: https://github.com/moremoban/moban
+.. _cookiecutter: https://github.com/cookiecutter/cookiecutter
+.. _PyScaffold: https://github.com/pyscaffold/pyscaffold
+.. _pypi-mobans: https://github.com/moremobans/pypi-mobans
+.. _an example: https://github.com/moremoban/yehua/blob/dev/.github/workflows/moban-update.yml
 
-Feature comparision
---------------------------------------------------------------------------------
-
-The following table is a personal feature comparision. If you have a different
-opinion, especially you are the author of the following repository, please
-raise an issue and we can talk. This table is not a commerical sales pitch.
-
-#. Y: have such a feature
-#. M: manual operation
-#. A: automatic operation
-
-.. table:: Detailed feature comparision
-
-    ============== ========================== ======================= ===================== ========== =====
-    Group          Feature                    cookiecutter-pypackage  cookiecutter-vanguard PyScaffold yehua
-    ============== ========================== ======================= ===================== ========== =====
-    essential      setup.py                   Y                        Y                     Y         Y
-    .              setup.cfg                  Y                        Y                     Y         Y
-    .              source code stub           Y                        Y                     Y         Y
-    test setup     requirements.txt                                    Y                     Y         Y
-    .              requirements_dev.txt       Y                        Y                               Y
-    .              Makefile                   Y                                                        Y
-    .              tests code                 Y                        Y                     Y
-    .              tox                        Y                                              Y
-    .              travis                     Y                                              Y         Y
-    .              test coverage                                       Y                               Y
-    .              flake8                                                                              Y
-    documentation  README.rst                 Y                                              Y         Y
-    .              labels                                                                              Y
-    .              gitignore                  Y                                              Y         Y
-    .              AUTHORS.rst                Y                        Y                     Y
-    .              CONTRIBUTING.rst           Y                        Y
-    .              HISTORY.rst/CHANGELOG .rst Y                        Y                     Y         Y
-    .              LICENCE                    Y                        Y                     Y         Y
-    .              MANIFEST.in                Y                        Y                               Y
-    .              sphinx docs                Y                        Y                     Y         Y
-    usability      interactive shell          Y                        Y                               Y
-    .              one liner                                                                 Y
-    .              initialize github repo                                                              Y
-    maintenance    publish on pypi            A                        M                               M
-    .              dependency management      M                                              M         A
-    .              template customization                                                              Y
-    .              version management         M                                              M         A
-    .              automated github release                                                            Y
-    .              continous templating                                                                Y
-    ============== ========================== ======================= ===================== ========== =====
-
-
-Comparing with cookiecutter, the difference comes in the later phase
-of the created project. **moremoban** organisation assumes
-the life time responsibility: keep its template always
-up-to-date with its originating template, for the created project.
-Whereas, the templates of cookiecutter are disconnected once
-the project has been created successfully. In my personal experience
-(maintaining pyexcel), I am finding that the documentation
-changes as well. For example, someone helped to correct my spellings
-in one of my project's documentation. Via moremoban's toolset, I can
-upstream the spelling updates to pyexcel-mobans and propagate all
-the spellings to the rest of the projects.
-
-Comparing with PyScaffold, the first difference is the difference in
-command line interface. Yehua prefers interactivity whereas PyScaffold
-uses one liner. Why? I am influenced by yeoman, the scaffolding tool
-for front end developers. I am convinced that conversational style
-does lower the entry barrier for new comers, because the question on
-the left hand side is a self-explantory sentence so the user does
-not need to read up the user manual. The second difference is that
-Yehua has an interface layer(YEHUA_FILE) which cuts its ties with its own
-built-in templates, which means you instruct yehua to make a npm package
-if your custom YEHUA_FILE instructs. That's an extreme. The third difference
-is that its own templates(I called it mobans) can be overriden/customized
-by another set of templates/mobans. For example, pyexcel project has
-pyexcel-mobans, which overlays on top of pypi-mobans. pyexcel-mobans
-is more concerned of pyexcel project's documentation.

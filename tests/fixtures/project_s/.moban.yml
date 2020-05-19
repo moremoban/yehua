@@ -1,0 +1,47 @@
+configuration:
+  template_dir:
+  - git://github.com/moremoban/cookiecutter-pypackage.git!/{{cookiecutter.project_slug}}
+  configuration: project_s.yml
+  force_template_type: cookiecutter
+  template_types:
+    cookiecutter:
+      base_type: jinja2
+      file_extensions:
+      - cookiecutter
+      options:
+        trim_blocks: false
+        lstrip_blocks: false
+        extensions:
+        - cookiecutter.extensions.JsonifyExtension
+        - jinja2_time.TimeExtension
+targets:
+- LICENSE: LICENSE
+- CONTRIBUTING.rst: CONTRIBUTING.rst
+- Makefile: Makefile
+- tests/test_project_s.py: tests/test_{{cookiecutter.project_slug}}.py
+- tests/__init__.py: tests/__init__.py
+- MANIFEST.in: MANIFEST.in
+- docs/index.rst: docs/index.rst
+- docs/contributing.rst: docs/contributing.rst
+- docs/Makefile: docs/Makefile
+- docs/conf.py: docs/conf.py
+- docs/usage.rst: docs/usage.rst
+- docs/make.bat: docs/make.bat
+- docs/history.rst: docs/history.rst
+- docs/installation.rst: docs/installation.rst
+- docs/authors.rst: docs/authors.rst
+- docs/readme.rst: docs/readme.rst
+- .editorconfig: .editorconfig
+- setup.py: setup.py
+- .gitignore: .gitignore
+- HISTORY.rst: HISTORY.rst
+- project_s/__init__.py: '{{cookiecutter.project_slug}}/__init__.py'
+- project_s/cli.py: '{{cookiecutter.project_slug}}/cli.py'
+- project_s/project_s.py: '{{cookiecutter.project_slug}}/{{cookiecutter.project_slug}}.py'
+- .github/ISSUE_TEMPLATE.md: .github/ISSUE_TEMPLATE.md
+- tox.ini: tox.ini
+- AUTHORS.rst: AUTHORS.rst
+- setup.cfg: setup.cfg
+- README.rst: README.rst
+- .travis.yml: .travis.yml
+- requirements_dev.txt: requirements_dev.txt

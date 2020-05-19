@@ -32,7 +32,7 @@ except (ValueError, UnicodeError, locale.Error):
 
 NAME = "yehua"
 AUTHOR = "C.W."
-VERSION = "0.0.8"
+VERSION = "0.1.0"
 EMAIL = "wangc_2011@hotmail.com"
 LICENSE = "New BSD"
 ENTRY_POINTS = {
@@ -41,11 +41,10 @@ ENTRY_POINTS = {
     ],
 }
 DESCRIPTION = (
-    "An interactive command line tool to provide a default scaffolding for" +
-    "a python package."
+    "Yet another a project template tool for an organisation."
 )
 URL = "https://github.com/moremoban/yehua"
-DOWNLOAD_URL = "%s/archive/0.0.7.tar.gz" % URL
+DOWNLOAD_URL = "%s/archive/0.1.0.tar.gz" % URL
 FILES = ["README.rst", "CHANGELOG.rst"]
 KEYWORDS = [
     "python",
@@ -55,11 +54,11 @@ CLASSIFIERS = [
     "Topic :: Software Development :: Libraries",
     "Programming Language :: Python",
     "Intended Audience :: Developers",
-    "Programming Language :: Python :: 2.6",
-    "Programming Language :: Python :: 2.7",
-    "Programming Language :: Python :: 3.3",
-    "Programming Language :: Python :: 3.4",
-    "Programming Language :: Python :: 3.5",
+
+    "Programming Language :: Python :: 3 :: Only",
+
+
+
     "Programming Language :: Python :: 3.6",
     "Programming Language :: Python :: 3.7",
     "Programming Language :: Python :: 3.8",
@@ -67,24 +66,30 @@ CLASSIFIERS = [
     'Topic :: Utilities',
 ]
 
+PYTHON_REQUIRES = ">=3.6"
+
 INSTALL_REQUIRES = [
     "Jinja2",
     "moban>=0.6.0",
+    "colorful",
+    "rich",
+    "readchar",
+    "colorama",
 ]
 SETUP_COMMANDS = {}
 
 PACKAGES = find_packages(exclude=["ez_setup", "examples", "tests", "tests.*"])
 EXTRAS_REQUIRE = {
-    "pypi-mobans": ['pypi-mobans-pkg==0.0.12'],
-    ":python_version == '3.4'": ["ruamel.yaml>=0.15.5,<=0.15.94"],
+    "pypi-mobans": ['pypi-mobans-pkg>=0.0.14'],
+    "cookiecutter": ['cookiecutter==1.7.0'],
     ":python_version == '3.7'": ["ruamel.yaml>=0.15.42"],
     ":python_version != '3.4' and python_version < '3.7'": ["ruamel.yaml>=0.15.5"],
     ":python_version == '3.8'": ["ruamel.yaml>=0.15.98"],
 }
 # You do not need to read beyond this line
 PUBLISH_COMMAND = "{0} setup.py sdist bdist_wheel upload -r pypi".format(sys.executable)
-GS_COMMAND = ("gs yehua v0.0.7 " +
-              "Find 0.0.7 in changelog for more details")
+GS_COMMAND = ("gs yehua v0.1.0 " +
+              "Find 0.1.0 in changelog for more details")
 NO_GS_MESSAGE = ("Automatic github release is disabled. " +
                  "Please install gease to enable it.")
 UPLOAD_FAILED_MSG = (
@@ -204,6 +209,7 @@ if __name__ == "__main__":
         long_description=read_files(*FILES),
         license=LICENSE,
         keywords=KEYWORDS,
+        python_requires=PYTHON_REQUIRES,
         extras_require=EXTRAS_REQUIRE,
         tests_require=["nose"],
         install_requires=INSTALL_REQUIRES,

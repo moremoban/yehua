@@ -1,0 +1,23 @@
+@startuml
+
+Participant "Project Template" as T1
+Participant "Awesome Template" as T2
+Participant "Nth Generated Project" as G
+
+T1 --> G : yehua generate
+G --> G: development starts
+group continuous templating
+T1 --> T1 : new features added
+T1 --> G : moban synchronize
+G --> G : development continues
+end
+group no limit on the numer of source templates
+G --> G : add another awesome template
+T2 --> G: moban synchronize
+T1 --> T1: bug fix
+T1 --> G: moban synchronize
+T2 --> T2: a typo correction
+T2 --> G: moban synchornize
+end
+
+@enduml

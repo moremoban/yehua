@@ -3,9 +3,7 @@
 {% from "usage.rst.jj2" import usage %}
 
 {% block features %}
-.. image:: https://badges.gitter.im/chfw_yehua/Lobby.svg
-   :alt: Join the chat at https://gitter.im/chfw_yehua/Lobby
-   :target: https://gitter.im/chfw_yehua/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge
+{% include 'additional_badges.rst.jj2' %}
 
 Introduction
 ================================================================================
@@ -34,7 +32,6 @@ Usage
 Background
 ================================================================================
 
-
 {%include "yehua.background.rst" %}
 
 
@@ -42,4 +39,8 @@ License
 ================================================================================
 
 NEW BSD License
+
+
+It embeds MIT licensed `cutie <https://github.com/kamik423/cutie>`_ from
+Hans Schülein. Please refer to LICENSE file for more details
 {% endblock %}
