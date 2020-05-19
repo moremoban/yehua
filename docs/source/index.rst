@@ -9,6 +9,26 @@
 :Released: |version|
 :Generated: |today|
 
+.. image:: https://api.travis-ci.org/moremoban/yehua.svg
+   :target: http://travis-ci.org/moremoban/yehua
+
+.. image:: https://codecov.io/github/moremoban/yehua/coverage.png
+   :target: https://codecov.io/github/moremoban/yehua
+.. image:: https://badge.fury.io/py/yehua.svg
+   :target: https://pypi.org/project/yehua
+
+.. image:: https://pepy.tech/badge/yehua/month
+   :target: https://pepy.tech/project/yehua/month
+
+.. image:: https://img.shields.io/github/stars/moremoban/yehua.svg?style=social&maxAge=3600&label=Star
+    :target: https://github.com/moremoban/yehua/stargazers
+.. image:: https://raw.githubusercontent.com/pyexcel/pyexcel.github.io/master/images/patreon.png
+   :target: https://www.patreon.com/chfw
+
+.. image:: https://badges.gitter.im/chfw_yehua/Lobby.svg
+   :alt: Join the chat at https://gitter.im/chfw_yehua/Lobby
+   :target: https://gitter.im/chfw_yehua/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge
+
 
 Introduction
 --------------------------------------------------------------------------------
