@@ -1,11 +1,12 @@
-introduction: |
-  [info]Yehua[/info] will walk you through creating a blank python package.
+introduction: |+
+  [info]Yehua /'jɛhwa/[/info] will walk you through creating a blank python package.
   Press ^C to quit at any time.
+
 configuration:
   template_path: ./templates
   static_path: ./static
 questions:
-  - project_name: "project name [yehua boilerplate]: "
+  - project_name: "project name [yehua-boilerplate]: "
   - description: "description [Moremoban organisation's best template]: "
   - license:
     - question: "license: "
@@ -20,8 +21,6 @@ questions:
       "1. library": "N/A"
       "2. command line interface":
         - cli: "cli executable name: "
-      "3. C extension":
-        - sources: "source files?(Comma separated list is expected. For example: pymodule.c,file.c)"
 layout:
   - "{{project_name|lower|replace('-', '_')}}"
   - tests
