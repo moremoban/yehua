@@ -2,6 +2,12 @@ name: yehua
 organisation: moremoban
 releases:
 - changes:
+  - action: Fixed
+    details:
+    - "`#62`: fix unwanted dependency for yh standalone use"
+  date: 29.05.2020
+  version: 0.1.1
+- changes:
   - action: Removed
     details:
     - "python 2 support has been dropped"
