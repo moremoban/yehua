@@ -126,16 +126,11 @@ class Project:
 
     def _create_jj2_environment(self, path):
         template_loader = FSLoader(path)
-        default_extensions = [
-            "cookiecutter.extensions.JsonifyExtension",
-            "jinja2_time.TimeExtension",
-        ]
         environment = Environment(
             loader=template_loader,
             keep_trailing_newline=True,
             trim_blocks=True,
-            lstrip_blocks=True,
-            extensions=default_extensions,
+            lstrip_blocks=True
         )
         return environment
 

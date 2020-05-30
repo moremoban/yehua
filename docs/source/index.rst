@@ -56,6 +56,7 @@ Europython. Simply there is tons of cookiecutter templates out there.
 
 What you do is to replace 'cookiecutter' with 'yh'::
 
+    $ pip install yehua[cookiecutter]
     $ yh git://github.com/audreyr/cookiecutter-pypackage.git
 
 And what moremoban promise is, whenever your source template changes, you
