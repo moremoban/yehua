@@ -24,7 +24,7 @@ dependencies:
   - rich
   - readchar
   - colorama
-  - moban_jinja2_contributors
+  - moban-jinja2-github
 extra_dependencies:
   - pypi-mobans:
     - pypi-mobans-pkg>=0.0.15
