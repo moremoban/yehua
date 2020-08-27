@@ -30,4 +30,4 @@ def test_reference_pypi_package(fake_inputs):
 
     c = dircmp("project_yehua", "tests/fixtures/project_yehua")
     assert len(c.diff_files) == 0, "\n".join(c.diff_files)
-    #shutil.rmtree("project_yehua")
+    shutil.rmtree("project_yehua")
