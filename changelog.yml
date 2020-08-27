@@ -4,6 +4,15 @@ releases:
 - changes:
   - action: Fixed
     details:
+    - "support pypi-mobans v0.0.15."
+    - auto-generation of contributors
+    - github action for moban update and commits
+    - better isort action
+  date: 26.08.2020
+  version: 0.1.2
+- changes:
+  - action: Fixed
+    details:
     - "`#62`: fix unwanted dependency for yh standalone use"
   date: 29.05.2020
   version: 0.1.1

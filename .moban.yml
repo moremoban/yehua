@@ -1,6 +1,7 @@
 configuration:
   configuration_dir: "git://github.com/pyexcel/pyexcel-mobans.git!/config"
   template_dir:
+    - "git://github.com/moremoban/pypi-mobans.git?submodule=true&brach=master!/statics"
     - "git://github.com/moremoban/pypi-mobans.git?submodule=true&branch=dev!/templates"
     - ".moban.d"
   configuration: yehua.yaml
@@ -16,3 +17,6 @@ targets:
   - output: CHANGELOG.rst
     configuration: changelog.yml
     template: CHANGELOG.rst.jj2
+  - ".github/workflows/moban-update.yml": "moban-update.yml"
+  - Makefile: Makefile.jj2
+  - format.sh: format.sh.jj2

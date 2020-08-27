@@ -69,3 +69,7 @@ post-moban:
     - ".azure-pipelines-steps-macos.yml"
     - ".azure-pipelines-steps.yml"
     - "LICENSE"
+    - format.sh
+    - lint.sh
+    - .isort.cfg
+    - CONTRIBUTORS.rst
