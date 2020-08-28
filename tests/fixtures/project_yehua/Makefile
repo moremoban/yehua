@@ -13,9 +13,7 @@ lint:
 	bash lint.sh
 
 format:
-	isort -y $(find project_yehua -name "*.py"|xargs echo) $(find tests -name "*.py"|xargs echo)
-	black -l 79 project_yehua
-	black -l 79 tests
+	bash format.sh
 
 git-diff-check:
 	git diff --exit-code

@@ -36,7 +36,7 @@ test_dependencies:
   - cookiecutter
   - gitfs2
   - pypifs
-  - pypi-mobans-pkg==0.0.12  
+  - pypi-mobans-pkg==0.0.15 
 description: Yet another a project template tool for an organisation.
 python_requires: ">=3.6"
 min_python_version: "3.6"
