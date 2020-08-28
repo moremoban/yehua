@@ -75,7 +75,7 @@ INSTALL_REQUIRES = [
     "rich",
     "readchar",
     "colorama",
-    "moban-jinja2-github",
+    "moban-jinja2-github>=0.0.2",
 ]
 SETUP_COMMANDS = {}
 
