@@ -45,7 +45,7 @@ DESCRIPTION = (
 )
 URL = "https://github.com/moremoban/yehua"
 DOWNLOAD_URL = "%s/archive/0.1.2.tar.gz" % URL
-FILES = ["README.rst",CONTRIBUTORS.rst, "CHANGELOG.rst"]
+FILES = ["README.rst","CONTRIBUTORS.rst", "CHANGELOG.rst"]
 KEYWORDS = [
     "python",
 ]
