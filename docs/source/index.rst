@@ -1,7 +1,7 @@
 `yehua` - Let you focus on code, instead of setup scaffolding
 ================================================================================
 
-:Author: C.W.
+:Author: chfw
 :Source code: http://github.com/moremoban/yehua.git
 :Issues: http://github.com/moremoban/yehua/issues
 :License: New BSD License
