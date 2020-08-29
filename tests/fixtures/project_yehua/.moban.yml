@@ -23,6 +23,11 @@ targets:
   - LICENSE: "mit_license.jj2"
   - MANIFEST.in: MANIFEST.in.jj2
   - ".github/workflows/pythonpublish.yml": "pythonpublish.yml"
+  - ".github/workflows/moban-update.yml": "moban-update.yml"
   - "azure-pipelines.yml": "azure/azure-pipelines.yml"
   - ".azure-pipelines-steps-macos.yml": "azure/pipelines-steps-macos.yml"
   - ".azure-pipelines-steps.yml": "azure/pipelines-steps.yml"
+  - Makefile: Makefile.jj2
+  - format.sh: format.sh.jj2
+  - .isort.cfg: isort.cfg.jj2
+  - CONTRIBUTORS.rst: CONTRIBUTORS.rst.jj2

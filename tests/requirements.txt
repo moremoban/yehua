@@ -3,9 +3,15 @@ mock;python_version<"3"
 codecov
 coverage
 flake8
+black
+isort
+collective.checkdocs
+pygments
+moban
+moban_jinja2_github
 pytest
 pytest-cov
 cookiecutter
 gitfs2
 pypifs
-pypi-mobans-pkg==0.0.12
+pypi-mobans-pkg==0.0.15
