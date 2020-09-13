@@ -32,7 +32,7 @@ except (ValueError, UnicodeError, locale.Error):
 
 NAME = "yehua"
 AUTHOR = "chfw"
-VERSION = "0.1.2"
+VERSION = "0.1.3"
 EMAIL = "wangc_2011@hotmail.com"
 LICENSE = "New BSD"
 ENTRY_POINTS = {
@@ -44,7 +44,7 @@ DESCRIPTION = (
     "Yet another a project template tool for an organisation."
 )
 URL = "https://github.com/moremoban/yehua"
-DOWNLOAD_URL = "%s/archive/0.1.2.tar.gz" % URL
+DOWNLOAD_URL = "%s/archive/0.1.3.tar.gz" % URL
 FILES = ["README.rst","CONTRIBUTORS.rst", "CHANGELOG.rst"]
 KEYWORDS = [
     "python",
@@ -76,12 +76,13 @@ INSTALL_REQUIRES = [
     "readchar",
     "colorama",
     "moban-jinja2-github>=0.0.2",
+    "moban-ansible",
 ]
 SETUP_COMMANDS = {}
 
 PACKAGES = find_packages(exclude=["ez_setup", "examples", "tests", "tests.*"])
 EXTRAS_REQUIRE = {
-    "pypi-mobans": ['pypi-mobans-pkg>=0.0.15'],
+    "pypi-mobans": ['pypi-mobans-pkg>=0.1.4'],
     "cookiecutter": ['cookiecutter==1.7.0'],
     ":python_version == '3.7'": ["ruamel.yaml>=0.15.42"],
     ":python_version != '3.4' and python_version < '3.7'": ["ruamel.yaml>=0.15.5"],
@@ -89,8 +90,8 @@ EXTRAS_REQUIRE = {
 }
 # You do not need to read beyond this line
 PUBLISH_COMMAND = "{0} setup.py sdist bdist_wheel upload -r pypi".format(sys.executable)
-GS_COMMAND = ("gs yehua v0.1.2 " +
-              "Find 0.1.2 in changelog for more details")
+GS_COMMAND = ("gs yehua v0.1.3 " +
+              "Find 0.1.3 in changelog for more details")
 NO_GS_MESSAGE = ("Automatic github release is disabled. " +
                  "Please install gease to enable it.")
 UPLOAD_FAILED_MSG = (
