@@ -10,7 +10,10 @@ Simply type in and you are taken care of::
 
     $ yh
 
-It will do these for you:
+It will use pypi-mobans-pkg by default and if it is not installed, it will
+install latest one. Then pypi-mobans-pkg takes over and will do
+[these](https://github.com/moremoban/pypi-mobans/blob/dev/yehua.yml)
+for you:
 
 #. Consult you on your project static information which can update as
    many as you want to.
