@@ -72,30 +72,16 @@ class TestProject(unittest.TestCase):
             ["CUSTOM_README.rst", "test-me/.moban.d/CUSTOM_README.rst.jj2"],
             ["custom_setup.py.jj2", "test-me/.moban.d/custom_setup.py.jj2"],
             [
-                "tests/custom_requirements.txt.jj2",
+                "requirements.txt.jj2",
                 "test-me/.moban.d/tests/custom_requirements.txt.jj2",
             ],
             ["CHANGELOG.rst", "test-me/CHANGELOG.rst"],
             ["setup.cfg", "test-me/setup.cfg"],
-            ["azure-pipelines.yml", "test-me/azure-pipelines.yml"],
-            [
-                "azure/pipelines-steps-macos.yml",
-                "test-me/.azure-pipelines-steps-macos.yml",
-            ],
-            [
-                "azure/pipelines-steps.yml",
-                "test-me/.azure-pipelines-steps.yml",
-            ],
-            [
-                "pythonpublish.yml",
-                "test-me/.github/workflows/pythonpublish.yml",
-            ],
         ]
-        basepath = os.path.join(os.getcwd(), "yehua", "resources", "static")
-        expected = [
-            [os.path.join(basepath, path[0]), path[1]] for path in expected
+        updated_calls = [
+            [os.path.basename(call[0]), call[1]] for call in calls
         ]
-        for call, expectee in zip(calls, expected):
+        for call, expectee in zip(updated_calls, expected):
             eq_(call, expectee)
 
     def test_project_templating(self):

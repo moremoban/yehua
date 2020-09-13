@@ -14,4 +14,4 @@ pytest-cov
 cookiecutter
 gitfs2
 pypifs
-pypi-mobans-pkg==0.0.15
+pypi-mobans-pkg>=0.1.4

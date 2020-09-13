@@ -87,9 +87,9 @@ def test_get_yehua_file_2():
 
 
 def test_get_yehua_file_3():
-    default_yehua_file = os.path.join("yehua", "resources", "yehua.yml")
+    default_yehua_file = 'pypi://pypi-mobans-pkg/resources/yehua.yml'
     yehua_file = get_yehua_file()
-    eq_(os.path.abspath(default_yehua_file), yehua_file)
+    eq_(default_yehua_file, yehua_file)
 
 
 @raises(SystemExit)

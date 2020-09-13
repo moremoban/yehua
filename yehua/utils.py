@@ -13,6 +13,7 @@ from jinja2 import Environment
 from ruamel.yaml import YAML
 
 DEFAULT_FILE = "yehua.yml"
+DEFAULT_PYPI_YEHUA_FILE = 'pypi://pypi-mobans-pkg/resources/yehua.yml'
 ENVIRONMENT_KEY = "YEHUA_FILE"
 LOG = logging.getLogger(__name__)
 
@@ -25,8 +26,7 @@ def get_yehua_file():
         if os.path.exists(DEFAULT_FILE):
             yehua_file = os.path.abspath(DEFAULT_FILE)
         else:
-            default = get_resource_dir("resources")
-            yehua_file = os.path.join(default, DEFAULT_FILE)
+            yehua_file = DEFAULT_PYPI_YEHUA_FILE
     return yehua_file
 
 
