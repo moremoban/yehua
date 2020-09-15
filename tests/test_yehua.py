@@ -3,9 +3,9 @@ import sys
 import shutil
 from filecmp import dircmp
 
-from yehua.main import main
-
 from mock import patch
+
+from yehua.main import main
 
 
 @patch("yehua.project.get_user_inputs")

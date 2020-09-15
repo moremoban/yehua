@@ -1,6 +1,6 @@
-from yehua.thirdparty import cutie
-
 import readchar
+
+from yehua.thirdparty import cutie
 
 
 def PrintCall(states):

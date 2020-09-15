@@ -3,10 +3,11 @@ import signal
 import logging
 import argparse
 
+from moban.exceptions import FileNotFound
+
 from yehua.utils import get_yehua_file
 from yehua.project import Project
 from yehua._version import __version__
-from moban.exceptions import FileNotFound
 from yehua.cookiecutter import CookieCutter
 from yehua.cookiecutter_to_yehua import cookiecutter_json_to_yehua_file
 
@@ -49,6 +50,11 @@ def main():
     try:
         if yehua_file.endswith("git") and yehua_file.startswith("https"):
             yehua_file = yehua_file.replace("https://", "git://")
+
+        if yehua_file.startswith("gh:"):
+            yehua_file = yehua_file.replace("gh:", "git://github.com/")
+            if not yehua_file.endswith(".git"):
+                yehua_file = yehua_file + ".git"
 
         yehua = cookiecutter_json_to_yehua_file(yehua_file)
         project = CookieCutter(yehua, yehua_file)

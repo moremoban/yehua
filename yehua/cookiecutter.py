@@ -2,11 +2,11 @@ import os
 import logging
 from copy import deepcopy
 
+from jinja2 import Environment
+
 import yehua.utils as utils
 from yehua.utils import dump_yaml, get_user_inputs
 from yehua.project import Project
-
-from jinja2 import Environment
 
 MOBAN_FILE_FOR_COOKIE_CUTTER = """
 configuration:

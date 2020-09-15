@@ -4,6 +4,12 @@ releases:
 - changes:
   - action: Updated
     details:
+    - "`#53`: parity with cookiecutter: support gh:audreyr/cookiecutter-pypackage"
+  date: 14.09.2020
+  version: 0.1.4
+- changes:
+  - action: Updated
+    details:
     - "use pypi-mobans v0.1.0"
     - no longer, yehua has any template in itself.
   date: 13.09.2020

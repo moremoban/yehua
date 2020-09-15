@@ -32,7 +32,7 @@ except (ValueError, UnicodeError, locale.Error):
 
 NAME = "yehua"
 AUTHOR = "chfw"
-VERSION = "0.1.3"
+VERSION = "0.1.4"
 EMAIL = "wangc_2011@hotmail.com"
 LICENSE = "New BSD"
 ENTRY_POINTS = {
@@ -44,7 +44,7 @@ DESCRIPTION = (
     "Yet another a project template tool for an organisation."
 )
 URL = "https://github.com/moremoban/yehua"
-DOWNLOAD_URL = "%s/archive/0.1.3.tar.gz" % URL
+DOWNLOAD_URL = "%s/archive/0.1.4.tar.gz" % URL
 FILES = ["README.rst","CONTRIBUTORS.rst", "CHANGELOG.rst"]
 KEYWORDS = [
     "python",
@@ -90,8 +90,8 @@ EXTRAS_REQUIRE = {
 }
 # You do not need to read beyond this line
 PUBLISH_COMMAND = "{0} setup.py sdist bdist_wheel upload -r pypi".format(sys.executable)
-GS_COMMAND = ("gs yehua v0.1.3 " +
-              "Find 0.1.3 in changelog for more details")
+GS_COMMAND = ("gs yehua v0.1.4 " +
+              "Find 0.1.4 in changelog for more details")
 NO_GS_MESSAGE = ("Automatic github release is disabled. " +
                  "Please install gease to enable it.")
 UPLOAD_FAILED_MSG = (
