@@ -3,6 +3,7 @@ import unittest
 from unittest import mock
 
 import readchar
+
 from . import PrintCall, InputContext, MockException, cutie
 
 print_call = PrintCall(

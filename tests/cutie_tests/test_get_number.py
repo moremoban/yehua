@@ -2,7 +2,6 @@ import unittest
 from unittest import mock
 
 from yehua.thirdparty import cutie
-
 from . import MockException
 
 

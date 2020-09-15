@@ -3,11 +3,11 @@ import re
 import codecs
 import unittest
 
-from yehua.main import get_yehua_file
-from yehua.project import Project
-
 from mock import patch
 from nose.tools import eq_, raises
+
+from yehua.main import get_yehua_file
+from yehua.project import Project
 
 
 @patch("yehua.utils.mkdir")

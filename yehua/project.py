@@ -2,12 +2,12 @@ import os
 import subprocess
 from datetime import datetime
 
-import yehua.utils as utils
-from yehua.utils import get_user_inputs
+from jinja2 import Environment
 from moban.externals.file_system import exists, is_dir, read_unicode
 
 import fs
-from jinja2 import Environment
+import yehua.utils as utils
+from yehua.utils import get_user_inputs
 from jinja2_fsloader import FSLoader
 
 
@@ -130,7 +130,7 @@ class Project:
             loader=template_loader,
             keep_trailing_newline=True,
             trim_blocks=True,
-            lstrip_blocks=True
+            lstrip_blocks=True,
         )
         return environment
 

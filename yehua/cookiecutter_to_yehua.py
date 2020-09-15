@@ -1,10 +1,10 @@
 import json
 from io import StringIO
 
-from yehua.utils import dump_yaml, find_project_name
 from moban.externals.file_system import is_dir, url_join, read_unicode
 
 import fs
+from yehua.utils import dump_yaml, find_project_name
 
 INTRODUCTION = """
 [info]Yehua /'jɛhwa/[/info] will walk you through cookiecutter template wizard
