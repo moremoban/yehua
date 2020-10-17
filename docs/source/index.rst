@@ -1,7 +1,7 @@
 `yehua` - Let you focus on code, instead of setup scaffolding
 ================================================================================
 
-:Author: chfw
+:Author: C. W.
 :Source code: http://github.com/moremoban/yehua.git
 :Issues: http://github.com/moremoban/yehua/issues
 :License: New BSD License
@@ -21,6 +21,12 @@
 
 .. image:: https://img.shields.io/github/stars/moremoban/yehua.svg?style=social&maxAge=3600&label=Star
     :target: https://github.com/moremoban/yehua/stargazers
+
+.. image:: https://img.shields.io/static/v1?label=continuous%20templating&message=%E6%A8%A1%E7%89%88%E6%9B%B4%E6%96%B0&color=blue&style=flat-square
+    :target: https://moban.readthedocs.io/en/latest/#at-scale-continous-templating-for-open-source-projects
+
+.. image:: https://img.shields.io/static/v1?label=coding%20style&message=black&color=black&style=flat-square
+    :target: https://github.com/psf/black
 .. image:: https://raw.githubusercontent.com/pyexcel/pyexcel.github.io/master/images/patreon.png
    :target: https://www.patreon.com/chfw
 
