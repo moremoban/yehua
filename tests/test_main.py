@@ -1,11 +1,11 @@
 import os
 import sys
 
-from yehua.main import HELP_TEXT, main, control_c_quit, get_yehua_file
-
-from six import StringIO
 from mock import patch
 from nose.tools import eq_, raises
+
+from six import StringIO
+from yehua.main import HELP_TEXT, main, control_c_quit, get_yehua_file
 
 
 @patch("yehua.project.os.chdir")
@@ -63,6 +63,18 @@ def test_yehua_file_passed_in_command_line():
             mocked_project.assert_called()
 
 
+@patch("yehua.main.Project")
+@patch("yehua.main.cookiecutter_json_to_yehua_file")
+def test_gh_url(cookie_cutter_handler, mocked_project):
+    from moban.exceptions import FileNotFound
+
+    args = ["yehua", "gh:org/repo"]
+    cookie_cutter_handler.side_effect = FileNotFound
+    with patch.object(sys, "argv", args):
+        main()
+        mocked_project.assert_called_with("git://github.com/org/repo.git")
+
+
 @raises(Exception)
 def test_a_directory_is_passed_in_command_line():
     args = ["yehua", "/"]
@@ -87,7 +99,7 @@ def test_get_yehua_file_2():
 
 
 def test_get_yehua_file_3():
-    default_yehua_file = 'pypi://pypi-mobans-pkg/resources/yehua.yml'
+    default_yehua_file = "pypi://pypi-mobans-pkg/resources/yehua.yml"
     yehua_file = get_yehua_file()
     eq_(default_yehua_file, yehua_file)
 

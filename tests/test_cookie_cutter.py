@@ -2,12 +2,12 @@ import os
 import sys
 import shutil
 
-from yehua.main import main
+from mock import patch
+from nose.tools import eq_
 from moban.externals.file_system import is_dir, url_join, read_unicode
 
 import fs
-from mock import patch
-from nose.tools import eq_
+from yehua.main import main
 
 
 @patch("yehua.cookiecutter.get_user_inputs")
@@ -79,7 +79,7 @@ def test_reference_pypi_package(fake_inputs):
         "create_author_file": "y",
         "open_source_license": "MIT license",
     }
-    path = "git://github.com/moremoban/cookiecutter-pypackage.git"
+    path = "gh:moremoban/cookiecutter-pypackage"
     with patch.object(sys, "argv", ["yh", path]):
         main()
 

@@ -4,16 +4,16 @@ import codecs
 import shutil
 import logging
 
-from yehua.theme import THEME
-from yehua.thirdparty import cutie
-
-import fs
 import colorful
 from jinja2 import Environment
 from ruamel.yaml import YAML
 
+import fs
+from yehua.theme import THEME
+from yehua.thirdparty import cutie
+
 DEFAULT_FILE = "yehua.yml"
-DEFAULT_PYPI_YEHUA_FILE = 'pypi://pypi-mobans-pkg/resources/yehua.yml'
+DEFAULT_PYPI_YEHUA_FILE = "pypi://pypi-mobans-pkg/resources/yehua.yml"
 ENVIRONMENT_KEY = "YEHUA_FILE"
 LOG = logging.getLogger(__name__)
 
@@ -108,9 +108,7 @@ def get_user_inputs(questions):  # refactor this later
                     # {"foo": "foo [{{yehua.hello}}]"},
                     # {"bar": "bar [{{cookiecutter.hello}}]"}
                     template = env.from_string(question)
-                    question = template.render(
-                        cookiecutter=answers, **answers
-                    )
+                    question = template.render(cookiecutter=answers, **answers)
 
                 match = re.match(r"(.*)\[(.*)\].*", question)
                 if match:
